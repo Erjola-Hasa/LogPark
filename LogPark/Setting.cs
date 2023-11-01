@@ -6,6 +6,7 @@ using LogPark.BLL;
 using System.Threading;
 using LogPark.DAL;
 using Microsoft.VisualBasic;
+using System.Drawing;
 
 namespace LogPark
 {
@@ -16,7 +17,13 @@ namespace LogPark
         public Setting()
         {
             InitializeComponent();
-           
+            StartPosition = FormStartPosition.Manual;
+            Rectangle screen = Screen.FromPoint(Cursor.Position).WorkingArea;
+            int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
+            int h = Height >= screen.Height ? screen.Height : (screen.Height + Height) / 2;
+            Location = new Point(screen.Left + (screen.Width - w) / 2, screen.Top + (screen.Height - h) / 2);
+            Size = new Size(w, h);
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

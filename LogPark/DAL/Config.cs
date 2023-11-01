@@ -16,9 +16,10 @@ namespace LogPark.DAL
         public string connectionString;
         public Config()
         {
+            string ConnectionString = Properties.Settings.Default.ConnectionString;
         }
  
-        public bool  ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
+        public void   ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
             string ConnectionString = $"Data Source={ServerName};Initial Catalog={DatabaseName};User Id ={UserId};Password={Password} Trusted_Connection=true; MultipleActiveResultSets=true;Integrated Security=True;TrustServerCertificate=Yes";
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -26,8 +27,10 @@ namespace LogPark.DAL
                 try
                 {
                     con.Open();
-                    
-                    return true;
+
+                    Properties.Settings.Default.Connection = ConnectionString;
+                    Properties.Settings.Default.Save();
+                    con.Close();
 
                 }
 
@@ -37,7 +40,7 @@ namespace LogPark.DAL
                 }
 
             }
-            return false;
+         
 
 
         }

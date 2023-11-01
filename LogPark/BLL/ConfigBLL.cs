@@ -19,13 +19,13 @@ namespace LogPark.BLL
         }
 
 
-        public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
+        public void ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
 
             DAL.Config config = new DAL.Config();
-            bool isConnected = config.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            config.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
 
-            if (isConnected != false)
+            if (config != null)
             {
                 MessageBox.Show("Your Connection is successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
@@ -37,21 +37,21 @@ namespace LogPark.BLL
                 MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
           
-            return isConnected;
+           
 
 
         }
 
-        public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
+        public void TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
             DAL.Config config = new DAL.Config();
-            bool isConnected = config.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+          config.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
 
             if (string.IsNullOrWhiteSpace(ServerName) || string.IsNullOrWhiteSpace(DatabaseName) || string.IsNullOrWhiteSpace(UserId) || string.IsNullOrWhiteSpace(Password))
             {
                 MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           else if (isConnected !=false )
+           else if (config !=null )
             {
                 MessageBox.Show("Your Connection is successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -60,7 +60,7 @@ namespace LogPark.BLL
             {
                 MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return isConnected;
+        
 
         }
     }

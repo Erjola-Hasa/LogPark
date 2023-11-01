@@ -11,58 +11,72 @@ using System.Windows.Forms;
 
 namespace LogPark.DAL
 {
+
     public class UserRepository
     {
-        MyConnection db = new MyConnection();
-        
+      //  private string ConnectionString;
 
-
+        //  MyConnection db = new MyConnection();
+        Config df = new Config();
       
+        string ConnectionString=Properties.Settings.Default.ConnectionString;
+
+
+
+
 
         public void InsertUser(Users user)
         {
-            db.con.Open();
-           
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                db.Open();
 
-            db.con.Execute("InsertUser", user, commandType: CommandType.StoredProcedure);
 
-            db.con.Close();
+
+                db.Execute("InsertUser", user, commandType: CommandType.StoredProcedure);
+
+                db.Close();
+            }
         }
 
 
         public Users GetUserByUserName(string userName, string Password)
         {
-            db.con.Open();
-            var parameters = new
+            using (var db = new SqlConnection(ConnectionString))
             {
-                UserName = userName,
-                password = Password
-             };
+                db.Open();
 
-            // string query = "SELECT UserName, Password, Profile FROM Users WHERE UserName=@UserName";
-            var result = db.con.ExecuteReader("SelectUserName", parameters, commandType: CommandType.StoredProcedure);
-            {
-                while (result.Read())
+                var parameters = new
                 {
-                    Users users = new Users();
+                    UserName = userName,
+                    password = Password
+                };
+
+                // string query = "SELECT UserName, Password, Profile FROM Users WHERE UserName=@UserName";
+                var result = db.ExecuteReader("SelectUserName", parameters, commandType: CommandType.StoredProcedure);
+                {
+                    while (result.Read())
                     {
-                        users.UserName = userName;
-                        users.Password = Password;
-                        users.Profile = result.GetString(4);
-                    };
-                    db.con.Close();
-                    return users;
+                        Users users = new Users();
+                        {
+                            users.UserName = userName;
+                            users.Password = Password;
+                            users.Profile = result.GetString(4);
+                        };
+                        db.Close();
+                        return users;
+                    }
                 }
+
+
+
+                return null;
+
+
+
             }
 
-        
-          
-            return null;
-
-
-          
         }
-
     }
 }
 

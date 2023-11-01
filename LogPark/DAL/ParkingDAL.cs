@@ -110,7 +110,7 @@ namespace LogPark.DAL
         {
             db.con.Open();
             int reservationID = -1;
-
+         
             var parameters = new
             {
                 RezervationCode = barcode,
@@ -122,9 +122,11 @@ namespace LogPark.DAL
             if (result != null && result != DBNull.Value)
             {
                 reservationID = (int)result;
+              
             }
             return reservationID;
         }
+       
 
 
 

@@ -20,7 +20,13 @@ namespace LogPark
         public CheckOut()
         {
             InitializeComponent();
-           
+            StartPosition = FormStartPosition.Manual;
+            Rectangle screen = Screen.FromPoint(Cursor.Position).WorkingArea;
+            int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
+            int h = Height >= screen.Height ? screen.Height : (screen.Height + Height) / 2;
+            Location = new Point(screen.Left + (screen.Width - w) / 2, screen.Top + (screen.Height - h) / 2);
+            Size = new Size(w, h);
+
 
 
         }
@@ -39,6 +45,7 @@ namespace LogPark
              decimal price = parkingService.CalculatePrice(entryTime, exitTime);
          
              int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
+             
 
             DialogResult result1 = MessageBox.Show("Are you sure you want to procced with the action?",
                 "Confirm Action",

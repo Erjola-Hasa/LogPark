@@ -12,7 +12,7 @@ namespace LogPark.BLL
 {
     public class UserService
     {
-
+        
         public void InsertUser(string firstName, string lastName, string userName, string password, string profile)
         {
             UserRepository userRepository = new UserRepository();

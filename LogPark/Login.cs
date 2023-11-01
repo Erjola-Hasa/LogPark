@@ -15,12 +15,13 @@ using System.Xml.Linq;
 using Org.BouncyCastle.Tsp;
 using System.Globalization;
 using System.Threading;
+using Microsoft.IdentityModel.Tokens;
 
 namespace LogPark
 {
     public partial class Login : Form
     {
-        
+
 
         public Login()
         {
@@ -28,6 +29,13 @@ namespace LogPark
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+
+            StartPosition = FormStartPosition.Manual;
+            Rectangle screen = Screen.FromPoint(Cursor.Position).WorkingArea;
+            int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
+            int h = Height >= screen.Height ? screen.Height : (screen.Height + Height) / 2;
+            Location = new Point(screen.Left + (screen.Width - w) / 2, screen.Top + (screen.Height - h) / 2);
+            Size = new Size(w, h);
 
 
         }
@@ -38,21 +46,22 @@ namespace LogPark
 
             string username = textBox1.Text;
             string password = textBox2.Text;
-           
-           
+
+
             UserService userService = new UserService();
-          
-            Users user = userService.AuthenticateUser(username,password);
+
+
+            Users user = userService.AuthenticateUser(username, password);
 
 
             if (user != null)
             {
-             
+
 
                 if (user.Profile == "Supervizor")
                 {
                     this.Hide();
-                    DashboardSupervizor dashboard = new DashboardSupervizor(); 
+                    DashboardSupervizor dashboard = new DashboardSupervizor();
 
                     dashboard.ShowDialog();
 
@@ -71,23 +80,23 @@ namespace LogPark
                 {
 
                     this.Hide();
-                    DashboardAdmin dashboard = new DashboardAdmin(); 
+                    DashboardAdmin dashboard = new DashboardAdmin();
                     dashboard.ShowDialog();
 
                 }
 
 
             }
-            else 
+            else
             {
-                MessageBox.Show("Invalid username or password.","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DialogResult result1 = MessageBox.Show("Are you new in this app?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 {
                     if (result1 == DialogResult.Yes)
                     {
                         DatabaseSettings setting = new DatabaseSettings();
                         setting.ShowDialog();
-                       
+
                     }
                     else
                     {
@@ -103,7 +112,7 @@ namespace LogPark
 
         private void Login_Load(object sender, EventArgs e)
         {
-                                                                                                                                                                                        
+
         }
         public void ChangeLanguage(string lang)
         {
@@ -112,8 +121,16 @@ namespace LogPark
                 ComponentResourceManager resources = new ComponentResourceManager(typeof(SettingsAdmin));
                 CultureInfo cultureInfo = new CultureInfo(lang);
 
-              
+
             }
         }
+
+      
+
+       
+        
+
+       
+            
     }
 }

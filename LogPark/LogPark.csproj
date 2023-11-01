@@ -402,6 +402,7 @@
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resolution.cs" />
     <Compile Include="SettingsAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

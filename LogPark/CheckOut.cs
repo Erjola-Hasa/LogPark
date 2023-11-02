@@ -57,13 +57,11 @@ namespace LogPark
             {
                 parkingService.UpdateReservation(reservationID, exitTime, price);
                 this.Hide();
-
+                MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dashboard dashboard = new Dashboard();
-
                 dashboard.Show();
 
-                MessageBox.Show("Your Check Out ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+               
             }
          
             else

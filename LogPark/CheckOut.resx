@@ -129,7 +129,7 @@
     <value>0</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>CheckOut</value>
+    <value>Confirm Checkout</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>

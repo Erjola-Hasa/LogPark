@@ -286,10 +286,10 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>329, 316</value>
+    <value>445, 318</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>134, 29</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -427,10 +427,10 @@
     <value>4</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 318</value>
+    <value>695, 318</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 27</value>
+    <value>125, 29</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>

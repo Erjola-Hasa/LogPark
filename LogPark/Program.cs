@@ -17,11 +17,22 @@ namespace LogPark
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            string Connection = Properties.Settings.Default.Connection;
+
            
+            if ((bool)Properties.Settings.Default["FirstRun"] == true)
+            {
+                Properties.Settings.Default["FirstRun"] = false;
+                //Save setting
+                Properties.Settings.Default.Save();
 
-
-
-            Application.Run(new Login());
+               
+                DatabaseSettings databaseSettings = new DatabaseSettings();
+                databaseSettings.Show();
+            }
+            else
+            {
+                Application.Run(new Login());
+            }
 
 
         }

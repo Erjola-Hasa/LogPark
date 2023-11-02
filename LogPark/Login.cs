@@ -100,6 +100,22 @@ namespace LogPark
 
         private void Login_Load(object sender, EventArgs e)
         {
+            //if ((bool)Properties.Settings.Default["FirstRun"] == true)
+            //{
+            //    Properties.Settings.Default["FirstRun"] = false;
+            //    //Save setting
+            //    Properties.Settings.Default.Save();
+
+            //    this.Hide();
+            //    DatabaseSettings databaseSettings = new DatabaseSettings();
+            //    databaseSettings.Show();
+            //}
+            //else
+            //{
+            //   Login login = new Login();
+            //}
+
+
 
         }
         public void ChangeLanguage(string lang)

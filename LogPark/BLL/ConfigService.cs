@@ -1,4 +1,5 @@
 ﻿
+using LogPark.DAL;
 using System;
 
 namespace LogPark.BLL
@@ -16,9 +17,9 @@ namespace LogPark.BLL
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
 
-           ConfigService _config= new ConfigService();
-            _config.ConnectToDatabase(UserId,Password,ServerName,DatabaseName);
-             return false;
+           ConfigRepository _config= new ConfigRepository();
+            _config.ConnectDatabase(UserId,Password,ServerName,DatabaseName);
+             return true;
            
 
 
@@ -27,9 +28,9 @@ namespace LogPark.BLL
         public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
 
-            ConfigService _config=new ConfigService();
-            _config.ConnectToDatabase(UserId,Password,ServerName,DatabaseName); 
-            return false;
+            ConfigRepository _config = new ConfigRepository();
+            _config.ConnectDatabase(UserId,Password,ServerName,DatabaseName); 
+            return true;
         }
            
     }

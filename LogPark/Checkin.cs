@@ -56,6 +56,7 @@ namespace LogPark
                 string barcode = label3.Text;
                 DateTime checkInDateTime = DateTime.Now;
                 parkingService.CheckIn(barcode,checkInDateTime);
+                MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else  
             {

@@ -122,7 +122,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 199</value>
+    <value>301, 200</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 47</value>

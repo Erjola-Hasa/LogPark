@@ -31,7 +31,7 @@ namespace LogPark
             Resolution objFormResizer = new Resolution();
             objFormResizer.ResizeForm(this, screenHeight, screenWidth);
 
-            parkingService = new ParkingService(new ParkingDAL());
+            parkingService = new ParkingService(new ParkingRepository());
 
         }
 

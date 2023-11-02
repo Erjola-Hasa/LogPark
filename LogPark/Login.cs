@@ -40,7 +40,7 @@ namespace LogPark
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
 
 
             string username = textBox1.Text;
@@ -90,20 +90,8 @@ namespace LogPark
             else
             {
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DialogResult result1 = MessageBox.Show("Are you new in this app?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                {
-                    if (result1 == DialogResult.Yes)
-                    {
-                        DatabaseSettings setting = new DatabaseSettings();
-                        setting.ShowDialog();
-
-                    }
-                    else
-                    {
-                        Login login = new Login();
-                        login.ShowDialog();
-                    }
-                }
+               
+                
 
             }
 

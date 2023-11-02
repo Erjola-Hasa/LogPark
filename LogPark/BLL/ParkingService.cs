@@ -12,9 +12,9 @@ namespace LogPark.BLL
 {
     public class ParkingService
     {
-        private ParkingDAL parkingDAL;
+        private ParkingRepository parkingDAL;
 
-        public ParkingService(ParkingDAL parkingDAL)
+        public ParkingService(ParkingRepository parkingDAL)
         {
             this.parkingDAL = parkingDAL;
         }

@@ -1,14 +1,8 @@
 ﻿using LogPark.BLL;
+using LogPark.DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace LogPark
 {
@@ -36,9 +30,21 @@ namespace LogPark
             string UserId = textBox3.Text;
             string Password = textBox4.Text;
 
-            ConfigBLL configBLL = new ConfigBLL();
-            configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
+            ConfigService configBLL = new ConfigService();
+            bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
+
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                DatabaseSetting databaseSetting = new DatabaseSetting();
+                databaseSetting.DatabaseName = DatabaseName;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,9 +54,21 @@ namespace LogPark
             string UserId = textBox3.Text;
             string Password = textBox4.Text;
 
-            ConfigBLL configBLL = new ConfigBLL();
-            configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
-
+            ConfigService configBLL = new ConfigService();
+            bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DatabaseSetting databaseSetting = new DatabaseSetting();
+                databaseSetting.DatabaseName = DatabaseName;
+            }
 
         }
     }

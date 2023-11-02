@@ -331,7 +331,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ConfigBLL.cs" />
+    <Compile Include="BLL\ConfigService.cs" />
     <Compile Include="BLL\LanguageService.cs" />
     <Compile Include="BLL\ParkingService.cs" />
     <Compile Include="BLL\UserService.cs" />
@@ -353,13 +353,13 @@
     <Compile Include="CheckOut.Designer.cs">
       <DependentUpon>CheckOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Config.cs" />
+    <Compile Include="DAL\ConfigRepository.cs" />
     <Compile Include="DAL\LanguageRepository.cs" />
     <Compile Include="DAL\Model\Configuration.cs" />
     <Compile Include="DAL\Model\Cryptography.cs" />
     <Compile Include="DAL\Model\DatabaseSetting.cs" />
     <Compile Include="DAL\Model\MyConnection.cs" />
-    <Compile Include="DAL\ParkingDAL.cs" />
+    <Compile Include="DAL\ParkingRepository.cs" />
     <Compile Include="DAL\Model\ReportData.cs" />
     <Compile Include="DAL\Model\Reservations.cs" />
     <Compile Include="DAL\Model\User.cs" />

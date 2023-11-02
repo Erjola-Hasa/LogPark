@@ -8,14 +8,14 @@ namespace LogPark.DAL
     public class MyConnection
     {
 
-        public SqlConnection con;
-        public MyConnection()
-        {
-            con = new SqlConnection(ConfigurationManager.ConnectionStrings["LogiPark"].ConnectionString);
+        //public SqlConnection con;
+        //public MyConnection()
+        //{
+        //    con = new SqlConnection(ConfigurationManager.ConnectionStrings["LogiPark"].ConnectionString);
         
 
-        }
-        public static string Profile;
+        //}
+        //public static string Profile;
 
     }
 }

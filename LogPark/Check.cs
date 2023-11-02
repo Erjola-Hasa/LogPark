@@ -25,7 +25,7 @@ namespace LogPark
             objFormResizer.ResizeForm(this, screenHeight, screenWidth);
 
 
-            parkingService = new ParkingService(new ParkingDAL());
+            parkingService = new ParkingService(new ParkingRepository());
         }
 
         private void Check_Load(object sender, EventArgs e)

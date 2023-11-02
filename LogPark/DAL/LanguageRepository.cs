@@ -11,31 +11,38 @@ namespace LogPark.DAL
 {
     public class LanguageRepository
     {
-        MyConnection db = new MyConnection();
+        //  MyConnection db = new MyConnection();
+        string ConnectionString = Properties.Settings.Default.Connection;
 
 
-     
 
         public void UpdatePrice(int PricePerHour)
         {
-            db.con.Open();
-
-            var parameters = new
+            using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                PricePerHour = PricePerHour
-              
-            
-            };
+                db.Open();
 
-            db.con.Execute("UpdatePrice", parameters, commandType: CommandType.StoredProcedure);
 
-            db.con.Close();
+                var parameters = new
+                {
+                    PricePerHour = PricePerHour
+
+
+                };
+
+                db.Execute("UpdatePrice", parameters, commandType: CommandType.StoredProcedure);
+
+                db.Close();
+            }
         }
         public  int GetPrice()
         {
-            return db.con.ExecuteScalar<int>("PricePerHour", commandType: CommandType.StoredProcedure);
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
 
+                return db.ExecuteScalar<int>("PricePerHour", commandType: CommandType.StoredProcedure);
 
+            }
 
         }
 

@@ -25,7 +25,7 @@ namespace LogPark
             DateTime startDate = dateTimePicker1.Value;
             DateTime endDate = dateTimePicker2.Value;
 
-             ParkingService parkingService = new ParkingService(new ParkingDAL());
+             ParkingService parkingService = new ParkingService(new ParkingRepository());
 
              ReportData reportData = parkingService.GenerateReport(startDate, endDate);
 

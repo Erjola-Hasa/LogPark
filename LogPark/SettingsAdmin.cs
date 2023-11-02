@@ -150,7 +150,7 @@ namespace LogPark
       
 
 
-            ConfigBLL configBLL = new ConfigBLL();
+            ConfigService configBLL = new ConfigService();
             configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
 
         }
@@ -162,7 +162,7 @@ namespace LogPark
             string UserId = textBox9.Text;
             string Password = textBox8.Text;
 
-            ConfigBLL configBLL = new ConfigBLL();
+            ConfigService configBLL = new ConfigService();
             configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
 
         }

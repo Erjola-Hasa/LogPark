@@ -16,7 +16,7 @@ namespace LogPark
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-        //  string Connection = Properties.Settings.Default.Connection;
+           string Connection = Properties.Settings.Default.Connection;
            
 
 

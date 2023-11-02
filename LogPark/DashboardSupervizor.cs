@@ -31,7 +31,7 @@ namespace LogPark
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
 
-            parkingService = new ParkingService(new ParkingDAL());
+            parkingService = new ParkingService(new ParkingRepository());
         }
 
         private void DashboardSupervizor_Load(object sender, EventArgs e)

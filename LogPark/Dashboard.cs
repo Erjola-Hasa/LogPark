@@ -28,7 +28,7 @@ namespace LogPark
             string SaveLanguage = Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
-            parkingService = new ParkingService(new ParkingDAL());
+            parkingService = new ParkingService(new ParkingRepository());
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

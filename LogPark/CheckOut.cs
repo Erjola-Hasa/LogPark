@@ -36,7 +36,7 @@ namespace LogPark
         {
              string barcode = textBox1.Text;
             
-            ParkingService parkingService = new ParkingService(new ParkingDAL());
+            ParkingService parkingService = new ParkingService(new ParkingRepository());
 
 
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
@@ -84,7 +84,7 @@ namespace LogPark
 
            
 
-            ParkingService parkingService = new ParkingService(new ParkingDAL());
+            ParkingService parkingService = new ParkingService(new ParkingRepository());
 
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);

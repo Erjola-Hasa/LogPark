@@ -19,6 +19,11 @@ namespace LogPark.BLL
             languageRepository.UpdatePrice(Price);
            
         }
+        public int GetPrice()
+        {
+            LanguageRepository languageRepository = new LanguageRepository();
+           return languageRepository.GetPrice();
+        }
     }
 
 }

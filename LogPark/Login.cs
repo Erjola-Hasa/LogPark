@@ -61,7 +61,8 @@ namespace LogPark
                 {
                     this.Hide();
                     DashboardSupervizor dashboard = new DashboardSupervizor();
-
+                   
+               
                     dashboard.ShowDialog();
 
 

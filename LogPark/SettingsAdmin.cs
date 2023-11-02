@@ -1,6 +1,7 @@
 ﻿
 using LogPark.BLL;
 using LogPark.DAL;
+using Microsoft.Data.SqlClient;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -18,6 +19,7 @@ namespace LogPark
         public SettingsAdmin()
         {
             InitializeComponent();
+            this.WindowState = (FormWindowState)FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Normal;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
@@ -66,6 +68,7 @@ namespace LogPark
            // int Price = Convert.ToInt32(textBox5.Text);
            int Price = Convert.ToInt32(textBox5.Text);
             languageService.UpdatePrice(Price);
+            textBox5.Text = Price.ToString();
             this.Hide();
             DashboardAdmin dsha = new DashboardAdmin();
             dsha.ShowDialog();
@@ -120,11 +123,19 @@ namespace LogPark
 
             comboBox2.Items.Add("English");
             comboBox2.Items.Add("Albanian");
-           //comboBox2.SelectedIndex = 1;
+            //comboBox2.SelectedIndex = 1;
+            
+
+            LanguageService languageService = new LanguageService();
+            int Price = languageService.GetPrice();
+            textBox5.Text = Price.ToString();
+
 
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+
+
 
 
         }
@@ -158,6 +169,7 @@ namespace LogPark
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
+           
 
 
             string SaveLanguage = Properties.Settings.Default.Language;

@@ -31,6 +31,13 @@ namespace LogPark.DAL
 
             db.con.Close();
         }
+        public  int GetPrice()
+        {
+            return db.con.ExecuteScalar<int>("PricePerHour", commandType: CommandType.StoredProcedure);
+
+
+
+        }
 
     }
 }

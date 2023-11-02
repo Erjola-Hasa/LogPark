@@ -18,6 +18,7 @@ namespace LogPark
         public SettingSupervizor()
         {
             InitializeComponent();
+            this.WindowState = (FormWindowState)FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Normal;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
@@ -83,6 +84,12 @@ namespace LogPark
             comboBox2.Items.Add("English");
             comboBox2.Items.Add("Albanian");
             //  comboBox2.SelectedIndex = 0;
+
+
+            LanguageService languageService = new LanguageService();
+            int Price = languageService.GetPrice();
+            textBox5.Text = Price.ToString();
+
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);

@@ -128,9 +128,6 @@
   <data name="textBox5.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="textBox5.Text" xml:space="preserve">
-    <value>100</value>
-  </data>
   <data name="&gt;&gt;textBox5.Name" xml:space="preserve">
     <value>textBox5</value>
   </data>

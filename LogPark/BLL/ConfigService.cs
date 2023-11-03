@@ -18,9 +18,17 @@ namespace LogPark.BLL
         {
 
            ConfigRepository _config= new ConfigRepository();
-            _config.ConnectDatabase(UserId,Password,ServerName,DatabaseName);
-             return true;
-           
+            bool IsConneted = _config.ConnectDatabase(UserId,Password,ServerName,DatabaseName);
+            if (IsConneted == true)
+            {
+
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
 
         }
@@ -29,9 +37,19 @@ namespace LogPark.BLL
         {
 
             ConfigRepository _config = new ConfigRepository();
-            _config.ConnectDatabase(UserId,Password,ServerName,DatabaseName); 
-            return true;
+             bool IsConneted=  _config.TestDatabase(UserId,Password,ServerName,DatabaseName);
+            if (IsConneted == true)
+            {
+
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
            
     }
 }

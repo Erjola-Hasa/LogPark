@@ -48,10 +48,7 @@ namespace LogPark
              int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
              
 
-            DialogResult result1 = MessageBox.Show("Are you sure you want to procced with the action?",
-                "Confirm Action",
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Question);
+            DialogResult result1 = MessageBox.Show("Are you sure you want to procced with the action?", "Confirm Action", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (result1 == DialogResult.OK)
             {
@@ -79,15 +76,10 @@ namespace LogPark
         public  void button2_Click(object sender, EventArgs e)
         {
             string barcode = textBox1.Text;
-
-           
-
             ParkingService parkingService = new ParkingService(new ParkingRepository());
-
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
        
-
             if (entryTime != DateTime.MinValue)
             {
                 label4.Text=label4.Text.Replace("Entry Time","")+$" {entryTime}";

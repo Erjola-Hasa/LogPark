@@ -142,4 +142,7 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Vende Te Lira</value>
   </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Dil</value>
+  </data>
 </root>

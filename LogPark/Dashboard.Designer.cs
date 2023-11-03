@@ -41,8 +41,8 @@
             // 
             // label1
             // 
-            this.label1.AllowDrop = true;
             resources.ApplyResources(this.label1, "label1");
+            this.label1.AllowDrop = true;
             this.label1.Name = "label1";
             this.label1.UseCompatibleTextRendering = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);

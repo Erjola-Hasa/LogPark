@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Smo.RegSvrEnum;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Collections.Generic;
 using System.Configuration;
@@ -86,6 +87,9 @@ namespace LogPark.DAL
             }
 
         }
+
+       
+        
     }
 }
 

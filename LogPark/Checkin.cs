@@ -20,7 +20,7 @@ namespace LogPark
         private ParkingService parkingService;
 
       
-        public Rectangle ClientArea { get; }
+       
 
         public Checkin()
         {

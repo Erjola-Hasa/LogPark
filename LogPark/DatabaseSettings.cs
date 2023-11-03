@@ -58,7 +58,7 @@ namespace LogPark
             bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
-                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 Login login = new Login();
                 login.ShowDialog();

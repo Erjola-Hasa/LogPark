@@ -35,8 +35,7 @@ namespace LogPark
         {
   
 
-        int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
-
+            int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
             string status = "Aktive";
             int reservedSpaces = parkingService.GetNumberOfReservedSpaces(status);
             int freeSpaces = totalParkingSpaces - reservedSpaces;

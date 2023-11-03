@@ -18,12 +18,12 @@ namespace LogPark
     public partial class DashboardAdmin : Form
     {
         private ParkingService parkingService;
-       
+
         public DashboardAdmin()
         {
             InitializeComponent();
             string SaveLanguage = Properties.Settings.Default.Language;
-           
+
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
             this.WindowState = FormWindowState.Normal;
@@ -34,16 +34,16 @@ namespace LogPark
 
 
             parkingService = new ParkingService(new ParkingRepository());
-           
+
         }
 
-       
+
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
             Check checkin = new Check();
             checkin.ShowDialog();
-           
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -64,54 +64,14 @@ namespace LogPark
 
         private void label4_Click(object sender, EventArgs e)
         {
-            
-            
-            //UserService userService = new UserService();
-
-            //Users user = userService.AuthenticateUsertest();
-
-            //if (user != null)
-            //{
 
 
-            //    if (user.Profile == "Supervizor")
-            //    {
-            //        this.Hide();
-            //        DashboardAdmin dashboard = new DashboardAdmin();
-            //        dashboard.ShowDialog();
-
-            //    }
-            //    else if (user.Profile == "Perdorues")
-            //    {
-
-            //        this.Hide();
-            //        Dashboard dashboard = new Dashboard();
-            //        dashboard.ShowDialog();
-            //        this.Close();
-
-            //    }
-            //    else if (user.Profile == "Admin")
-            //    {
-
-            //        this.Hide();
-            //        DashboardAdmin dashboard = new DashboardAdmin();
-            //        dashboard.ShowDialog();
-
-            //    }
-
-       // }
-
-
-
-               this.Hide();
-              SettingsAdmin settings = new SettingsAdmin();
          
-              settings.ShowDialog();
-         
-
+        }
     
-         
-    }
+
+
+
 
         private void DashboardAdmin_Load(object sender, EventArgs e)
         {
@@ -129,8 +89,6 @@ namespace LogPark
 
 
             label5.Text = label5.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
-
-
 
 
         }

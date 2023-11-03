@@ -64,7 +64,9 @@ namespace LogPark
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            SettingsAdmin settingsAdmin = new SettingsAdmin();
+            settingsAdmin.ShowDialog();
 
          
         }

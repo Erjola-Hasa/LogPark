@@ -1,6 +1,5 @@
 ﻿using Dapper;
-using Microsoft.SqlServer.Management.Smo;
-using Microsoft.VisualBasic.ApplicationServices;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace LogPark.DAL
     public class ParkingRepository
     {
         // MyConnection db = new MyConnection();
-        string ConnectionString = Properties.Settings.Default.Connection;
+        string ConnectionString = DataAccesLayer.Properties.Settings.Default.Connection;
 
         public int GetTotalParkingSpaces()
         {

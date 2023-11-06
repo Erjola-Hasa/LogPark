@@ -1,11 +1,4 @@
 ﻿using LogPark.DAL;
-using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogPark.BLL
@@ -41,10 +34,7 @@ namespace LogPark.BLL
 
                 
                 userRepository.InsertUser(user);
-                MessageBox.Show("Your Account is created ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                DashboardAdmin dashboardAdmin = new DashboardAdmin();
-                dashboardAdmin.Show();
+               
             }
         }
 

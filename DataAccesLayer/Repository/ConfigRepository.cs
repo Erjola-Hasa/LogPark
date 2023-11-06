@@ -28,8 +28,8 @@ namespace LogPark.DAL
                     }
                     else
                     {
-                        Properties.Settings.Default.Connection = ConnectionString;
-                        Properties.Settings.Default.Save();
+                        DataAccesLayer.Properties.Settings.Default.Connection = ConnectionString;
+                        DataAccesLayer.Properties.Settings.Default.Save();
 
                         con.Close();
                         return true;
@@ -63,7 +63,7 @@ namespace LogPark.DAL
                     }
                     else
                     {
-                        Properties.Settings.Default.Connection = ConnectionString;
+                        DataAccesLayer.Properties.Settings.Default.Connection = ConnectionString;
 
                         con.Close();
                         return true;

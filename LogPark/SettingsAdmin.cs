@@ -50,6 +50,10 @@ namespace LogPark
                 UserService userService = new UserService();
                
                 userService.InsertUser(firstName, lastName, userName, password, profile);
+                MessageBox.Show("Your Account is created ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DashboardAdmin dashboardAdmin = new DashboardAdmin();
+                dashboardAdmin.Show();
                 }
                  catch (Exception ex)
                 {

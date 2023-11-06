@@ -1,7 +1,5 @@
 ﻿using Dapper;
-using Microsoft.SqlServer.Management.Smo;
-using Microsoft.SqlServer.Management.Smo.RegSvrEnum;
-using Microsoft.VisualBasic.ApplicationServices;
+
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -9,7 +7,7 @@ using System.Data.SqlClient;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime;
-using System.Windows.Forms;
+
 
 namespace LogPark.DAL
 {
@@ -21,7 +19,7 @@ namespace LogPark.DAL
         //  MyConnection db = new MyConnection();
       //  Config df = new Config();
       
-       string ConnectionString=Properties.Settings.Default.Connection;
+       string ConnectionString= DataAccesLayer.Properties.Settings.Default.Connection;
 
 
        
@@ -47,11 +45,7 @@ namespace LogPark.DAL
 
         public Users GetUserByUserName(string userName, string Password)
         {
-            if(ConnectionString == null)
-            {
-                DatabaseSettings dbSetting = new DatabaseSettings();
-                dbSetting.ShowDialog();
-            }
+           
             using (var db = new SqlConnection(ConnectionString))
             {
                 db.Open();

@@ -23,7 +23,6 @@ namespace LogPark
         {
             InitializeComponent();
             string SaveLanguage = Properties.Settings.Default.Language;
-
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
             this.WindowState = FormWindowState.Normal;

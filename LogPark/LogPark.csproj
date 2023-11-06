@@ -353,10 +353,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ConfigService.cs" />
-    <Compile Include="BLL\LanguageService.cs" />
-    <Compile Include="BLL\ParkingService.cs" />
-    <Compile Include="BLL\UserService.cs" />
     <Compile Include="Check.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,17 +371,6 @@
     <Compile Include="CheckOut.Designer.cs">
       <DependentUpon>CheckOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAL\ConfigRepository.cs" />
-    <Compile Include="DAL\LanguageRepository.cs" />
-    <Compile Include="DAL\Model\Configuration.cs" />
-    <Compile Include="DAL\Model\Cryptography.cs" />
-    <Compile Include="DAL\Model\DatabaseSetting.cs" />
-    <Compile Include="DAL\Model\MyConnection.cs" />
-    <Compile Include="DAL\ParkingRepository.cs" />
-    <Compile Include="DAL\Model\ReportData.cs" />
-    <Compile Include="DAL\Model\Reservations.cs" />
-    <Compile Include="DAL\Model\User.cs" />
-    <Compile Include="DAL\UserRepository.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -551,6 +536,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLayer\BussinessLayer.csproj">
+      <Project>{1167bcc5-406a-4d47-b83b-ca673b5495ad}</Project>
+      <Name>BussinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccesLayer\DataAccesLayer.csproj">
+      <Project>{e6c0436d-c12c-48d8-b4e4-748befb7a619}</Project>
+      <Name>DataAccesLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

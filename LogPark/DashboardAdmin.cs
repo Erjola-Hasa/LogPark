@@ -85,7 +85,7 @@ namespace LogPark
 
             if (freeSpaces == totalParkingSpaces)
             {
-                MessageBox.Show("Full", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Full Parking ", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 

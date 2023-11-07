@@ -45,9 +45,6 @@ namespace LogPark.BLL
             return user;
 
         }
-
-     
-
       
     }
 

@@ -15,6 +15,8 @@ namespace LogPark
 {
     public partial class SettingSupervizor : Form
     {
+        public ConfigService configBLL = new ConfigService();
+        public LanguageService languageService = new LanguageService();
         public SettingSupervizor()
         {
             InitializeComponent();
@@ -86,7 +88,7 @@ namespace LogPark
             //  comboBox2.SelectedIndex = 0;
 
 
-            LanguageService languageService = new LanguageService();
+           
             int Price = languageService.GetPrice();
             textBox5.Text = Price.ToString();
 
@@ -101,7 +103,7 @@ namespace LogPark
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
-            LanguageService languageService = new LanguageService();
+          //  LanguageService languageService = new LanguageService();
             // int Price = Convert.ToInt32(textBox5.Text);
             int Price = Convert.ToInt32(textBox5.Text);
             languageService.UpdatePrice(Price);
@@ -120,10 +122,25 @@ namespace LogPark
             string DatabaseName = textBox2.Text;
 
 
-            ConfigService configBLL = new ConfigService();
-            configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
+           // ConfigService configBLL = new ConfigService();
+            bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                DatabaseSettings databaseSetting = new DatabaseSettings();
+                databaseSetting.Show();
+            }
 
         }
+
+    
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -132,8 +149,21 @@ namespace LogPark
             string Password = textBox3.Text;
             string DatabaseName = textBox2.Text;
 
-            ConfigService configBLL = new ConfigService();
-            configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+          //  ConfigService configBLL = new ConfigService();
+           bool IsConnected= configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DatabaseSettings databaseSetting = new DatabaseSettings();
+                databaseSetting.Show();
+            }
         }
     }
 }

@@ -155,7 +155,20 @@ namespace LogPark
 
 
             ConfigService configBLL = new ConfigService();
-            configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+          bool IsConnected=  configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DatabaseSettings databaseSetting = new DatabaseSettings();
+                databaseSetting.Show();
+            }
 
         }
 
@@ -167,7 +180,20 @@ namespace LogPark
             string Password = textBox8.Text;
 
             ConfigService configBLL = new ConfigService();
-            configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
+            bool IsConnected =configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                DatabaseSettings databaseSetting = new DatabaseSettings();
+                databaseSetting.Show();
+            }
 
         }
 

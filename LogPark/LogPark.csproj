@@ -538,11 +538,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinessLayer\BussinessLayer.csproj">
+    <ProjectReference Include="..\BussinessLayer\BusinessLayer.csproj">
       <Project>{1167bcc5-406a-4d47-b83b-ca673b5495ad}</Project>
       <Name>BussinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccesLayer\DataAccesLayer.csproj">
+    <ProjectReference Include="..\DataAccesLayer\DataAccessLayer.csproj">
       <Project>{e6c0436d-c12c-48d8-b4e4-748befb7a619}</Project>
       <Name>DataAccesLayer</Name>
     </ProjectReference>

@@ -6,13 +6,6 @@ namespace LogPark.BLL
 {
     public class ConfigService
     {
-       
-
-        public ConfigService()
-        {
-           
-        }
-
 
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {

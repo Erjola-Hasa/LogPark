@@ -97,7 +97,20 @@ namespace LogPark
             string DatabaseName = textBox2.Text;
 
             ConfigService configBLL = new ConfigService();
-            configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+           bool IsConnected= configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DatabaseSettings databaseSetting = new DatabaseSettings();
+                databaseSetting.Show();
+            }
 
         }
 

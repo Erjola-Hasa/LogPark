@@ -29,8 +29,7 @@ namespace LogPark
             else if (string.IsNullOrEmpty(Connection))
                 {
                     DatabaseSettings databaseSettings = new DatabaseSettings();
-                Properties.Settings.Default.Save();
-                databaseSettings.ShowDialog();
+                    databaseSettings.ShowDialog();
                 }
                 else
                 {

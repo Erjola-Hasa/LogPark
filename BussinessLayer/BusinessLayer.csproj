@@ -49,9 +49,9 @@
     <Compile Include="Service\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccesLayer\DataAccesLayer.csproj">
+    <ProjectReference Include="..\DataAccesLayer\DataAccessLayer.csproj">
       <Project>{e6c0436d-c12c-48d8-b4e4-748befb7a619}</Project>
-      <Name>DataAccesLayer</Name>
+      <Name>DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

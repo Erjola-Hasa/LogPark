@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Model\Configuration.cs" />
     <Compile Include="Model\Cryptography.cs" />
-    <Compile Include="Model\DatabaseSetting.cs" />
     <Compile Include="Model\ReportData.cs" />
     <Compile Include="Model\Reservations.cs" />
     <Compile Include="Model\User.cs" />

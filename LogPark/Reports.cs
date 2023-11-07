@@ -1,5 +1,6 @@
-﻿using LogPark.BLL;
-using LogPark.DAL;
+﻿using BusinessLayer;
+using DataAccesLayer;
+
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,6 +9,8 @@ namespace LogPark
 {
     public partial class Reports : Form
     {
+        public
+             ParkingService parkingService;
         public Reports()
         {
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace LogPark
             DateTime startDate = dateTimePicker1.Value;
             DateTime endDate = dateTimePicker2.Value;
 
-             ParkingService parkingService = new ParkingService(new ParkingRepository());
+             
 
              ReportData reportData = parkingService.GenerateReport(startDate, endDate);
 

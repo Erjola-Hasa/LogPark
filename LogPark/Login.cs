@@ -1,5 +1,4 @@
-﻿using LogPark.BLL;
-using LogPark.DAL;
+﻿
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -16,7 +15,8 @@ using Org.BouncyCastle.Tsp;
 using System.Globalization;
 using System.Threading;
 using Microsoft.IdentityModel.Tokens;
-
+using BusinessLayer;
+using DataAccesLayer;
 
 namespace LogPark
 {

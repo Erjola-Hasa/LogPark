@@ -1,8 +1,8 @@
 ﻿
-using LogPark.DAL;
+using DataAccesLayer;
 using System;
 
-namespace LogPark.BLL
+namespace BusinessLayer
 {
     public class ConfigService
     {

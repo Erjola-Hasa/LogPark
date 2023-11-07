@@ -1,4 +1,4 @@
-﻿using LogPark.BLL;
+﻿using BusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

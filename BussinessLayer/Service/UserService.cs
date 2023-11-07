@@ -1,8 +1,9 @@
-﻿using LogPark.DAL;
+﻿using DataAccesLayer;
+
 using System;
 using System.Windows.Forms;
 
-namespace LogPark.BLL
+namespace BusinessLayer
 {
     public class UserService
     {
@@ -37,6 +38,8 @@ namespace LogPark.BLL
 
 
                     userRepository.InsertUser(user);
+                    MessageBox.Show("Your Account is created ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                 }
             }

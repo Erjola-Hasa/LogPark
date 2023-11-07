@@ -1,14 +1,9 @@
-﻿using LogPark.DAL;
+﻿using DataAccesLayer;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace LogPark.BLL
+namespace BusinessLayer
 {
     public class ParkingService
     {

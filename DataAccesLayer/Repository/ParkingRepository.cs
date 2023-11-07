@@ -8,7 +8,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 
 
-namespace LogPark.DAL
+namespace DataAccesLayer
 {
     public class ParkingRepository
     {

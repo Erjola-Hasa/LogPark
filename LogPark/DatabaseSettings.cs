@@ -1,5 +1,5 @@
-﻿using LogPark.BLL;
-using LogPark.DAL;
+﻿
+using BusinessLayer;
 using System;
 using System.Windows.Forms;
 

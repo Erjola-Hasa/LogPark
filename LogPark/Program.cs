@@ -1,5 +1,4 @@
-﻿using LogPark.BLL;
-using LogPark.DAL;
+﻿
 using Microsoft.VisualBasic;
 using System;
 using System.Configuration;

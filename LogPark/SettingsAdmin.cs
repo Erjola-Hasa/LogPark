@@ -1,6 +1,5 @@
 ﻿
-using LogPark.BLL;
-using LogPark.DAL;
+using BusinessLayer;
 using Microsoft.Data.SqlClient;
 using System;
 using System.ComponentModel;
@@ -50,10 +49,9 @@ namespace LogPark
                 UserService userService = new UserService();
                
                 userService.InsertUser(firstName, lastName, userName, password, profile);
-                MessageBox.Show("Your Account is created ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                DashboardAdmin dashboardAdmin = new DashboardAdmin();
-                dashboardAdmin.Show();
+             
+                //DashboardAdmin dashboardAdmin = new DashboardAdmin();
+                //dashboardAdmin.Show();
                 }
                  catch (Exception ex)
                 {

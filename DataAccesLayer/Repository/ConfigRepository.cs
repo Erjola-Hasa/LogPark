@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
-namespace LogPark.DAL
+namespace DataAccesLayer
 {
     public class ConfigRepository
     {
@@ -25,6 +25,7 @@ namespace LogPark.DAL
                     if (string.IsNullOrWhiteSpace(ServerName) || string.IsNullOrWhiteSpace(DatabaseName) || string.IsNullOrWhiteSpace(UserId) || string.IsNullOrWhiteSpace(Password))
                     {
                         MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     }
                     else
                     {

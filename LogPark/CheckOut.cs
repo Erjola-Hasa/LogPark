@@ -1,22 +1,13 @@
-﻿using LogPark.BLL;
-using LogPark.DAL;
+﻿
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BusinessLayer;
 
 namespace LogPark
 {
     public partial class CheckOut : Form
     {
+        public ParkingService parkingService;
         public CheckOut()
         {
             InitializeComponent();
@@ -36,7 +27,6 @@ namespace LogPark
         {
              string barcode = textBox1.Text;
             
-            ParkingService parkingService = new ParkingService(new ParkingRepository());
 
 
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
@@ -76,7 +66,7 @@ namespace LogPark
         public  void button2_Click(object sender, EventArgs e)
         {
             string barcode = textBox1.Text;
-            ParkingService parkingService = new ParkingService(new ParkingRepository());
+           
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
        

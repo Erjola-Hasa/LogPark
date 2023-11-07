@@ -2,11 +2,12 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Globalization;
-using LogPark.BLL;
+
 using System.Threading;
-using LogPark.DAL;
+
 using Microsoft.VisualBasic;
 using System.Drawing;
+using BusinessLayer;
 
 namespace LogPark
 {

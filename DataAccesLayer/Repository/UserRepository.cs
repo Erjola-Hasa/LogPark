@@ -9,7 +9,7 @@ using System.Linq;
 using System.Runtime;
 
 
-namespace LogPark.DAL
+namespace DataAccesLayer
 {
 
     public class UserRepository

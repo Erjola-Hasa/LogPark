@@ -1,5 +1,6 @@
-﻿using LogPark.BLL;
-using LogPark.DAL;
+﻿using BusinessLayer;
+using DataAccesLayer;
+
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;

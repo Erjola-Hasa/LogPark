@@ -1,5 +1,5 @@
-﻿using LogPark.BLL;
-using LogPark.DAL;
+﻿using BusinessLayer;
+
 using System;
 using System.Windows.Forms;
 
@@ -21,7 +21,7 @@ namespace LogPark
             Resolution objFormResizer = new Resolution();
             objFormResizer.ResizeForm(this, screenHeight, screenWidth);
 
-            parkingService = new ParkingService(new ParkingRepository());
+           
 
         }
 

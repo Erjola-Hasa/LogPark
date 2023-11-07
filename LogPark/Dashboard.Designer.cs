@@ -41,8 +41,8 @@
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
             this.label1.AllowDrop = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             this.label1.UseCompatibleTextRendering = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -91,6 +91,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);

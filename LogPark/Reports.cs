@@ -42,5 +42,17 @@ namespace LogPark
             label8.Text =label8.Text.Replace("Avarage Stay","")+$" { reportData.AverageStay}";
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DashboardAdmin dashboardAdmin = new DashboardAdmin();
+            dashboardAdmin.Show();
+        }
     }
 }

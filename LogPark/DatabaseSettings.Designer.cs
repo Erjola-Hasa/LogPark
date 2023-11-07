@@ -81,6 +81,7 @@
             // 
             resources.ApplyResources(this.textBox4, "textBox4");
             this.textBox4.Name = "textBox4";
+            this.textBox4.UseSystemPasswordChar = true;
             // 
             // button1
             // 

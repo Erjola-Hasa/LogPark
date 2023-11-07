@@ -10,17 +10,18 @@ namespace LogPark.BLL
 {
     public  class LanguageService
     {
-        public LanguageService languageRepository = new LanguageService();
+       
 
         public void UpdatePrice(int Price)
         {
+            LanguageRepository languageRepository = new LanguageRepository();
             languageRepository.UpdatePrice(Price);
            
         }
         public int GetPrice()
         {
-           
-           return languageRepository.GetPrice();
+            LanguageRepository languageRepository = new LanguageRepository();
+            return languageRepository.GetPrice();
         }
     }
 

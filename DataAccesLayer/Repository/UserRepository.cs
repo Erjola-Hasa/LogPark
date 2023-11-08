@@ -19,7 +19,7 @@ namespace DataAccesLayer
         //  MyConnection db = new MyConnection();
       //  Config df = new Config();
       
-       string ConnectionString= DataAccesLayer.Properties.Settings.Default.Connection;
+       string ConnectionString= Properties.Settings.Default.Connection;
 
 
        

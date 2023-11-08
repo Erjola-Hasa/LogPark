@@ -29,8 +29,8 @@ namespace DataAccesLayer
                     }
                     else
                     {
-                        DataAccesLayer.Properties.Settings.Default.Connection = ConnectionString;
-                        DataAccesLayer.Properties.Settings.Default.Save();
+                       Properties.Settings.Default.Connection = ConnectionString;
+                       Properties.Settings.Default.Save();
 
                         con.Close();
                         return true;
@@ -64,7 +64,7 @@ namespace DataAccesLayer
                     }
                     else
                     {
-                        DataAccesLayer.Properties.Settings.Default.Connection = ConnectionString;
+                        Properties.Settings.Default.Connection = ConnectionString;
 
                         con.Close();
                         return true;

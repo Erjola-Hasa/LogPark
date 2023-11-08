@@ -13,7 +13,7 @@ namespace DataAccesLayer
     public class ParkingRepository
     {
         // MyConnection db = new MyConnection();
-        string ConnectionString = DataAccesLayer.Properties.Settings.Default.Connection;
+        string ConnectionString = Properties.Settings.Default.Connection;
 
         public int GetTotalParkingSpaces()
         {

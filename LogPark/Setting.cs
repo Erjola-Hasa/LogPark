@@ -13,7 +13,7 @@ namespace LogPark
 {
     public partial class Setting : Form
     {
-     
+
 
         public Setting()
         {
@@ -29,7 +29,7 @@ namespace LogPark
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-          
+
 
         }
 
@@ -60,7 +60,7 @@ namespace LogPark
                 CultureInfo cultureInfo = new CultureInfo(lang);
 
                 doRecursiveLoading(this, cultureInfo, resources);
-              
+
             }
         }
 
@@ -78,7 +78,7 @@ namespace LogPark
         private void Setting_Load(object sender, EventArgs e)
         {
             comboBox2.Items.Add("English");
-           comboBox2.Items.Add("Albanian");
+            comboBox2.Items.Add("Albanian");
             //  comboBox2.SelectedIndex = 0;
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
@@ -89,16 +89,84 @@ namespace LogPark
 
 
 
-        public void button3_Click(object sender, EventArgs e)
+   
+
+      
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
+            string SaveLanguage = Properties.Settings.Default.Language;
+            ChangeLanguage(SaveLanguage);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+            Properties.Settings.Default.Save();
+
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
+
+
+
+
+
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            textBox5.Enabled = false;
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             string ServerName = textBox6.Text;
-            string UserId = textBox1.Text;
-            string Password = textBox3.Text;
-            string DatabaseName = textBox2.Text;
+            string UserId = textBox4.Text;
+            string Password = textBox7.Text;
+            string DatabaseName = textBox1.Text;
+
 
             ConfigService configBLL = new ConfigService();
-           bool IsConnected= configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
+            if (IsConnected == true)
+            {
+                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            else
+            {
+                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                SettingsAdmin settingsAdmin = new SettingsAdmin();
+                settingsAdmin.Show();
+            }
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            string ServerName = textBox6.Text;
+            string UserId = textBox4.Text;
+            string Password = textBox7.Text;
+            string DatabaseName = textBox1.Text;
+
+            ConfigService configBLL = new ConfigService();
+            bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
                 MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -112,45 +180,6 @@ namespace LogPark
                 DatabaseSettings databaseSetting = new DatabaseSettings();
                 databaseSetting.Show();
             }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string ServerName = textBox6.Text;
-            string UserId = textBox1.Text;
-            string Password = textBox3.Text;
-            string DatabaseName = textBox2.Text;
-
-
-            ConfigService configBLL = new ConfigService();
-            configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
-           
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-             string SaveLanguage = Properties.Settings.Default.Language;
-             ChangeLanguage(SaveLanguage);
-             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-             Properties.Settings.Default.Save();
-
-            this.Hide();
-            Dashboard dashboard = new Dashboard();
-            dashboard.ShowDialog();
-          
-         
-
-          
-
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            textBox5.Enabled = false;
         }
     }
 
@@ -159,4 +188,3 @@ namespace LogPark
 }
 
 
-   

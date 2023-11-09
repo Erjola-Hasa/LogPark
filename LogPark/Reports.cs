@@ -20,29 +20,31 @@ namespace LogPark
             Resolution objFormResizer = new Resolution();
             objFormResizer.ResizeForm(this, screenHeight, screenWidth);
 
+            parkingService = new ParkingService(new ParkingRepository());
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime startDate = dateTimePicker1.Value;
-            DateTime endDate = dateTimePicker2.Value;
+            //DateTime startDate = dateTimePicker1.Value;
+            //DateTime endDate = dateTimePicker2.Value;
 
-             
 
-             ReportData reportData = parkingService.GenerateReport(startDate, endDate);
+
+            //ReportData reportData = parkingService.GenerateReport(startDate, endDate);
 
           
-             label5.Text = reportData.TotalCarsInParking.ToString();
+            // label6.Text =label11.Text.Replace("Total Cars","")+$"{ reportData.TotalCarsInParking}";
 
-            //   label1.Text = $"Total Cars:{reportData.TotalCarsInParking}";
-             label6.Text=label6.Text.Replace("Minimum Stay","")+$" { reportData.MinimumStayTime}";
 
-           
-            label7.Text = label7.Text.Replace("Maximum Stay", "") + $" {reportData.MaximumStayTime}";
+            ////   label1.Text = $"Total Cars:{reportData.TotalCarsInParking}";
+            // label5.Text=label5.Text.Replace("Minimum Stay","")+$" { reportData.MinimumStayTime}";
 
            
-            label8.Text =label8.Text.Replace("Avarage Stay","")+$" { reportData.AverageStay}";
+            //label7.Text = label7.Text.Replace("Maximum Stay", "") + $" {reportData.MaximumStayTime}";
+
+           
+            //label11.Text =label11.Text.Replace("Avarage Stay","")+$" { reportData.AverageStay}";
 
         }
 
@@ -56,6 +58,39 @@ namespace LogPark
             this.Hide();
             DashboardAdmin dashboardAdmin = new DashboardAdmin();
             dashboardAdmin.Show();
+        }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DateTime startDate = dateTimePicker1.Value;
+            DateTime endDate = dateTimePicker2.Value;
+
+
+
+            ReportData reportData = parkingService.GenerateReport(startDate, endDate);
+
+
+         //   label6.Text = label1.Text.Replace("Total Cars", "") + $"{reportData.TotalCarsInParking}";
+            label1.Text = reportData.TotalCarsInParking.ToString();
+
+            //   label1.Text = $"Total Cars:{reportData.TotalCarsInParking}";
+            label8.Text = label8.Text.Replace("Minimum Stay", " ") +  $" {reportData.MinimumStayTime}";
+
+
+            label5.Text = label5.Text.Replace("Maximum Stay", " ") +  $" {reportData.MaximumStayTime}";
+
+
+            label9.Text = label9.Text.Replace("Avarage Stay", " ") +  $" {reportData.AverageStay}";
         }
     }
 }

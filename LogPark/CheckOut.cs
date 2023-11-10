@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using BusinessLayer;
+using DataAccesLayer;
 
 namespace LogPark
 {
@@ -11,23 +12,13 @@ namespace LogPark
         public CheckOut()
         {
             InitializeComponent();
-
-            this.WindowState = FormWindowState.Normal;
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            Resolution objFormResizer = new Resolution();
-            objFormResizer.ResizeForm(this, screenHeight, screenWidth);
-
-
-
+            parkingService = new ParkingService(new ParkingRepository());
 
         }
 
         public void button1_Click(object sender, EventArgs e)
         {
-             string barcode = textBox1.Text;
-            
-
+             string barcode = textBox2.Text;
 
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
             DateTime exitTime = DateTime.Now;
@@ -61,40 +52,45 @@ namespace LogPark
 
 
         }
-
-
-        public  void button2_Click(object sender, EventArgs e)
+    
+        private void CheckOut_Load(object sender, EventArgs e)
         {
-            string barcode = textBox1.Text;
-           
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string barcode = textBox2.Text;
+
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
-       
+
             if (entryTime != DateTime.MinValue)
             {
-                label4.Text=label4.Text.Replace("Entry Time","")+$" {entryTime}";
-              //  label1.Text = $"Entry Time: {entryTime}";
+                label4.Text = label4.Text.Replace("Entry Time", "") + $" {entryTime}";
+                //  label1.Text = $"Entry Time: {entryTime}";
 
-               
-                DateTime exitTime = DateTime.Now; 
-              
-                label5.Text = label5.Text.Replace("Exit Time","") + $" {exitTime}";
+
+                DateTime exitTime = DateTime.Now;
+
+                label5.Text = label5.Text.Replace("Exit Time", "") + $" {exitTime}";
 
                 decimal price = parkingService.CalculatePrice(entryTime, exitTime);
-              
+
                 label6.Text = label6.Text.Replace("Price", "") + $" {price}";
 
-            
+
             }
             else
             {
                 MessageBox.Show("Invalid barcode or code not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
-     
-        
-       
-        }
 
+        }
     }
 }

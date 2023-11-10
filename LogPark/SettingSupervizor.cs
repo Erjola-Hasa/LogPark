@@ -20,36 +20,14 @@ namespace LogPark
         public SettingSupervizor()
         {
             InitializeComponent();
-            this.WindowState = (FormWindowState)FormStartPosition.CenterScreen;
-            this.WindowState = FormWindowState.Normal;
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            Resolution objFormResizer = new Resolution();
-            objFormResizer.ResizeForm(this, screenHeight, screenWidth);
-
+         
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox2.SelectedItem.ToString() == "Albanian")
-            {
-                ChangeLanguage("sq-AL");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
-                Properties.Settings.Default.Language = "sq-AL";
-            }
-
-            else
-            {
-                ChangeLanguage("en");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-                Properties.Settings.Default.Language = "en";
-            }
-            Properties.Settings.Default.Save();
-        }
+        
 
         private void ChangeLanguage(string lang)
         {
@@ -73,13 +51,7 @@ namespace LogPark
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-
-        }
+        
 
         private void SettingSupervizor_Load(object sender, EventArgs e)
         {
@@ -90,39 +62,47 @@ namespace LogPark
 
            
             int Price = languageService.GetPrice();
-            textBox5.Text = Price.ToString();
+            textBox2.Text = Price.ToString();
 
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+ 
+       
+
+ 
+
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+            if (comboBox2.SelectedItem.ToString() == "Albanian")
+            {
+                ChangeLanguage("sq-AL");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
+                Properties.Settings.Default.Language = "sq-AL";
+            }
 
-          //  LanguageService languageService = new LanguageService();
-            // int Price = Convert.ToInt32(textBox5.Text);
-            int Price = Convert.ToInt32(textBox5.Text);
-            languageService.UpdatePrice(Price);
-            this.Hide();
-            DashboardSupervizor dshs = new DashboardSupervizor();
-            dshs.ShowDialog();
-
+            else
+            {
+                ChangeLanguage("en");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+                Properties.Settings.Default.Language = "en";
+            }
+            Properties.Settings.Default.Save();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string ServerName = textBox6.Text;
-            string UserId = textBox1.Text;
-            string Password = textBox3.Text;
-            string DatabaseName = textBox2.Text;
+            string UserId = textBox4.Text;
+            string Password = textBox7.Text;
+            string DatabaseName = textBox1.Text;
 
 
-           // ConfigService configBLL = new ConfigService();
+            // ConfigService configBLL = new ConfigService();
             bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
@@ -137,20 +117,18 @@ namespace LogPark
                 SettingSupervizor settingSupervizor = new SettingSupervizor();
                 settingSupervizor.Show();
             }
-
         }
-
-    
 
         private void button3_Click(object sender, EventArgs e)
         {
             string ServerName = textBox6.Text;
-            string UserId = textBox1.Text;
-            string Password = textBox3.Text;
-            string DatabaseName = textBox2.Text;
+            string UserId = textBox4.Text;
+            string Password = textBox7.Text;
+            string DatabaseName = textBox1.Text;
 
-          //  ConfigService configBLL = new ConfigService();
-           bool IsConnected= configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+
+            //  ConfigService configBLL = new ConfigService();
+            bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
                 MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -164,6 +142,36 @@ namespace LogPark
                 SettingSupervizor settingSupervizor = new SettingSupervizor();
                 settingSupervizor.Show();
             }
+        }
+
+        private void tabPage1_Click_1(object sender, EventArgs e)
+        {
+            string SaveLanguage = Properties.Settings.Default.Language;
+            ChangeLanguage(SaveLanguage);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string SaveLanguage = Properties.Settings.Default.Language;
+            ChangeLanguage(SaveLanguage);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+
+            LanguageService languageService = new LanguageService();
+            // int Price = Convert.ToInt32(textBox5.Text);
+            int Price = Convert.ToInt32(textBox2.Text);
+            languageService.UpdatePrice(Price);
+            textBox2.Text = Price.ToString();
+            this.Hide();
+            DashboardSupervizor dsha = new DashboardSupervizor();
+            dsha.ShowDialog();
+        }
+
+       
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

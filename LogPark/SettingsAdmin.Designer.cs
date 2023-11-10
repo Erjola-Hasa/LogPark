@@ -73,10 +73,10 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
@@ -142,13 +142,13 @@
             this.tableLayoutPanel3.Controls.Add(this.textBox7, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox6, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.button3, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.textBox6, 1, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
             // textBox7
@@ -296,7 +296,6 @@
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.tabControl1);
             this.Name = "SettingsAdmin";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SettingsAdmin_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

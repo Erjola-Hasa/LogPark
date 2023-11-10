@@ -296,6 +296,7 @@
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.tabControl1);
             this.Name = "SettingsAdmin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SettingsAdmin_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

@@ -112,6 +112,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Name = "Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

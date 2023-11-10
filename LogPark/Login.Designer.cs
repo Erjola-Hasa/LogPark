@@ -84,6 +84,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

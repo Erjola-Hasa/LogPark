@@ -178,6 +178,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
             this.Name = "Reports";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Reports_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

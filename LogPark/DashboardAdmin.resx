@@ -145,7 +145,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 88</value>
+    <value>159, 83</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 16</value>
@@ -178,7 +178,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 88</value>
+    <value>534, 83</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 16</value>
@@ -211,7 +211,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>575, 214</value>
+    <value>541, 207</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 16</value>
@@ -244,7 +244,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>742, 426</value>
+    <value>697, 419</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 16</value>
@@ -280,7 +280,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 214</value>
+    <value>162, 207</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 16</value>
@@ -310,7 +310,7 @@
     <value>4</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>805, 442</value>
+    <value>760, 435</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -340,7 +340,7 @@
     <value>3, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>799, 37</value>
+    <value>754, 35</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -367,7 +367,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>809, 448</value>
+    <value>766, 439</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -73,7 +73,7 @@
             this.tabPage1.Controls.Add(this.tableLayoutPanel2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+         //   this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -84,7 +84,7 @@
             this.tableLayoutPanel2.Controls.Add(this.textBox5, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+         //   this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // button2
             // 
@@ -111,7 +111,7 @@
             resources.ApplyResources(this.textBox5, "textBox5");
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+          //  this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label1
             // 
@@ -139,7 +139,7 @@
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.button3, 1, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+         //   this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // textBox7
             // 

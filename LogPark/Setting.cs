@@ -27,12 +27,6 @@ namespace LogPark
 
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -87,12 +81,6 @@ namespace LogPark
 
         }
 
-
-
-   
-
-      
-
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -104,33 +92,9 @@ namespace LogPark
             this.Hide();
             Dashboard dashboard = new Dashboard();
             dashboard.ShowDialog();
-
-
-
-
-
-
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            textBox5.Enabled = false;
-        }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {

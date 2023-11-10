@@ -11,12 +11,7 @@ namespace LogPark
         public DatabaseSettings()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Normal;
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            Resolution objFormResizer = new Resolution();
-            objFormResizer.ResizeForm(this, screenHeight, screenWidth);
-
+   
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

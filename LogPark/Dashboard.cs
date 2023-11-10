@@ -52,9 +52,9 @@ namespace LogPark
 
             private void label1_Click(object sender, EventArgs e)
             {
-            this.Hide();
-            Check check = new Check();
-            check.ShowDialog();
+              this.Hide();
+              Checkin check = new Checkin();
+              check.ShowDialog();
             
              }
 

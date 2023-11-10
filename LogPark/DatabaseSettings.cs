@@ -1,5 +1,6 @@
 ﻿
 using BusinessLayer;
+using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -47,7 +48,7 @@ namespace LogPark
             string ServerName = textBox1.Text;
             string DatabaseName = textBox2.Text;
             string UserId = textBox3.Text;
-            string Password = textBox4.Text;
+            string Password =textBox4.Text;
 
             ConfigService configBLL = new ConfigService();
             bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);

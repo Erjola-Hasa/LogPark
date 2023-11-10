@@ -20,11 +20,7 @@ namespace LogPark
         public DashboardSupervizor()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Normal;
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            Resolution objFormResizer = new Resolution();
-            objFormResizer.ResizeForm(this, screenHeight, screenWidth);
+          
 
             string SaveLanguage = Properties.Settings.Default.Language;
 

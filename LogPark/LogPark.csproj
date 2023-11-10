@@ -461,6 +461,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardSupervizor.resx">
       <DependentUpon>DashboardSupervizor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardSupervizor.sq.resx">
       <DependentUpon>DashboardSupervizor.cs</DependentUpon>
@@ -479,6 +480,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resource.al-AL.resx" />
     <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.sq-AL.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports.sq.resx">

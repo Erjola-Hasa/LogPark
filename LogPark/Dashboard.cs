@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DataAccesLayer;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -26,8 +27,9 @@ namespace LogPark
 
             string SaveLanguage = Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+            parkingService = new ParkingService(new ParkingRepository());
 
-      
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace LogPark
             this.Hide();
             Check check = new Check();
             check.ShowDialog();
-            this.Hide();
+            
              }
 
         private void label3_Click(object sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace LogPark
             this.Hide();
             CheckOut checkOut = new CheckOut();
             checkOut.ShowDialog();
-            this.Hide();
+           
 
         }
 

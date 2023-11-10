@@ -126,104 +126,59 @@
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Perdoruesi</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Cmimi/Ore</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Gjuha</value>
-  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Ruaj</value>
   </data>
-  <data name="button5.Text" xml:space="preserve">
-    <value>Ruaj</value>
-  </data>
-  <data name="button4.Text" xml:space="preserve">
-    <value>Testo</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Fjalekalimi</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Emri Databases</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Emri Loguar</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Emri Serverit</value>
-  </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 186</value>
-  </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>513, 52</value>
-  </data>
-  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>513, 186</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 299</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Profili</value>
-  </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 291</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 193</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Fjalekalimi</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Emri Perdoruesit</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 193</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+    <value>56, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Mbiemri</value>
+    <value>Cmimi/Ore</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
+    <value>35, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Emri</value>
+    <value>Gjuha</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Emri Serverit</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Fjalekalimi</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Emri Databases</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Perdoruesi</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Krijo Perdorues</value>
+    <value>Testo</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>Ruaj</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Emri</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Mbiemri</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Perdoruesi</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Fjalekalimi</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Roli</value>
+  </data>
+  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 42</value>
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>Krijo Perdoruesin</value>
   </data>
 </root>

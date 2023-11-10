@@ -30,72 +30,16 @@ namespace LogPark
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-
+           // Rectangle resolution = Screen.PrimaryScreen.Bounds;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-
-
-            string username = textBox1.Text;
-            string password = textBox2.Text;
-
-
-            UserService userService = new UserService();
-
-
-            Users user = userService.AuthenticateUser(username, password);
-
-
-            if (user != null)
-            {
-
-
-                if (user.Profile == "Supervizor")
-                {
-                    this.Hide();
-                    DashboardSupervizor dashboard = new DashboardSupervizor();
-                   
-               
-                    dashboard.ShowDialog();
-
-
-                }
-                else if (user.Profile == "Perdorues")
-                {
-
-                    this.Hide();
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.ShowDialog();
-                    this.Close();
-
-                }
-                else if (user.Profile == "Admin")
-                {
-
-                    this.Hide();
-                    DashboardAdmin dashboard = new DashboardAdmin();
-                    dashboard.ShowDialog();
-
-                }
-
-
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
-                
-
-            }
-
-
-        }
+        
 
         private void Login_Load(object sender, EventArgs e)
         {
-           
 
+            //  Rectangle resolution = Screen.PrimaryScreen.Bounds; 
+            string screenWidth = Screen.PrimaryScreen.Bounds.Width.ToString();
+            string screenHeight = Screen.PrimaryScreen.Bounds.Height.ToString();
 
         }
         public void ChangeLanguage(string lang)

@@ -23,6 +23,8 @@ namespace LogPark
         public DashboardAdmin()
         {
             InitializeComponent();
+        
+
             string SaveLanguage = Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
             parkingService = new ParkingService(new ParkingRepository());
@@ -32,6 +34,8 @@ namespace LogPark
 
         private void DashboardAdmin_Load(object sender, EventArgs e)
         {
+            string screenWidth = Screen.PrimaryScreen.Bounds.Width.ToString();
+            string screenHeight = Screen.PrimaryScreen.Bounds.Height.ToString();
 
             string status = "Aktive";
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();

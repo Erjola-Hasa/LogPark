@@ -292,8 +292,8 @@
             // 
             // SettingsAdmin
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.tabControl1);
             this.Name = "SettingsAdmin";
             this.Load += new System.EventHandler(this.SettingsAdmin_Load);

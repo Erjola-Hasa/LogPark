@@ -128,6 +128,9 @@
   <data name="tableLayoutPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="tableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -142,7 +145,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 137</value>
+    <value>171, 88</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 16</value>
@@ -175,7 +178,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>489, 137</value>
+    <value>568, 88</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 16</value>
@@ -208,7 +211,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 242</value>
+    <value>575, 214</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 16</value>
@@ -232,7 +235,7 @@
     <value>3</value>
   </data>
   <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,10 +244,10 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>359, 303</value>
+    <value>742, 426</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 106</value>
+    <value>60, 16</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -277,7 +280,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 242</value>
+    <value>173, 214</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 16</value>
@@ -301,13 +304,13 @@
     <value>5</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 21</value>
+    <value>3, 3</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>701, 409</value>
+    <value>805, 442</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -325,7 +328,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50.82125,Percent,49.17875" /&gt;&lt;Rows Styles="Percent,47.82609,Percent,52.17391,Absolute,106,Absolute,105" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50.82125,Percent,49.17875" /&gt;&lt;Rows Styles="Percent,23.96313,Percent,76.03687,Absolute,134,Absolute,152" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
@@ -337,7 +340,7 @@
     <value>3, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>695, 94</value>
+    <value>799, 37</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -363,11 +366,8 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>714, 431</value>
+    <value>809, 448</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

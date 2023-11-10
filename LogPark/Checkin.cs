@@ -1,5 +1,5 @@
 ﻿using BusinessLayer;
-
+using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -15,13 +15,7 @@ namespace LogPark
         public Checkin()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Normal;
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            Resolution objFormResizer = new Resolution();
-            objFormResizer.ResizeForm(this, screenHeight, screenWidth);
-
-           
+            parkingService = new ParkingService(new ParkingRepository());
 
         }
 
@@ -68,6 +62,10 @@ namespace LogPark
             return randomNumber.ToString();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

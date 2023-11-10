@@ -90,7 +90,17 @@ namespace LogPark
             label5.Text = label5.Text.Replace("Maximum Stay", " ") +  $" {reportData.MaximumStayTime}";
 
 
-            label9.Text = label9.Text.Replace("Avarage Stay", " ") +  $" {reportData.AverageStay}";
+            label12.Text = label12.Text.Replace("Avarage Stay", " ") +  $" {reportData.AverageStay}";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

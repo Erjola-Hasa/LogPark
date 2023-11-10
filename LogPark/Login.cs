@@ -31,15 +31,6 @@ namespace LogPark
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
-            this.WindowState = FormWindowState.Normal;
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            Resolution objFormResizer = new Resolution();
-            objFormResizer.ResizeForm(this, screenHeight, screenWidth);
-
-
-
-
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -123,66 +114,10 @@ namespace LogPark
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            string username = textBox1.Text;
-            string password = textBox2.Text;
+    
 
+        
 
-            UserService userService = new UserService();
-
-
-            Users user = userService.AuthenticateUser(username, password);
-
-
-            if (user != null)
-            {
-
-
-                if (user.Profile == "Supervizor")
-                {
-                    this.Hide();
-                    DashboardSupervizor dashboard = new DashboardSupervizor();
-
-
-                    dashboard.ShowDialog();
-
-
-                }
-                else if (user.Profile == "Perdorues")
-                {
-
-                    this.Hide();
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.ShowDialog();
-                    this.Close();
-
-                }
-                else if (user.Profile == "Admin")
-                {
-
-                    this.Hide();
-                    DashboardAdmin dashboard = new DashboardAdmin();
-                    dashboard.ShowDialog();
-
-                }
-
-
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-
-            }
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click_2(object sender, EventArgs e)
         {
@@ -240,15 +175,6 @@ namespace LogPark
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-          
-
-        }
+      
     }
 }

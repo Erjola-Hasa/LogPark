@@ -51,10 +51,10 @@
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label4, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label5, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label6, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // label2

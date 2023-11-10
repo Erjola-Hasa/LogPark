@@ -65,7 +65,6 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-          //  this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -76,7 +75,6 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-           // this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // Login
             // 

@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Cilesimet</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Databasa</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Ruaj</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
@@ -136,37 +133,28 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Gjuha</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Ruaj</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Testo</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Fjalekalimi</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Emri Databases</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 13</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Emri Perdoruesit</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Cilesimet</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Emri Serverit</value>
   </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Fjalekalimi</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Emri Databases</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Emri Perdoruesit</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
   <data name="button3.Text" xml:space="preserve">
     <value>Ruaj</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Databasa</value>
   </data>
 </root>

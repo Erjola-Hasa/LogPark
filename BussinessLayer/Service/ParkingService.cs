@@ -110,7 +110,7 @@ namespace BusinessLayer
             foreach (var reservation in reservations)
             {
                 TimeSpan stayTime = reservation.EndDateTime - reservation.StartDateTime;
-                int stayTimeHours =(int) stayTime.TotalMinutes; 
+                int stayTimeHours =(int) stayTime.TotalHours; 
 
                 if (!hasValidStayTimes || stayTimeHours < minimumStayTime)
                 {

@@ -7,8 +7,6 @@ namespace DataAccesLayer
 {
     public class ConfigRepository
     {
-
-      //  public string connectionString;
         public ConfigRepository()
         {
             // string ConnectionString = Properties.Settings.Default.ConnectionString;

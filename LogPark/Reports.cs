@@ -58,7 +58,7 @@ namespace LogPark
 
         private void Reports_Load(object sender, EventArgs e)
         {
-
+            label2.Visible = false;
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)

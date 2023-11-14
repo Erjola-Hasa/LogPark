@@ -1,14 +1,8 @@
 ﻿using BusinessLayer;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -55,8 +49,8 @@ namespace LogPark
 
         private void SettingSupervizor_Load(object sender, EventArgs e)
         {
-            comboBox2.Items.Add("English");
-            comboBox2.Items.Add("Albanian");
+            //comboBox2.Items.Add("English");
+            //comboBox2.Items.Add("Albanian");
             //  comboBox2.SelectedIndex = 0;
 
 
@@ -146,9 +140,9 @@ namespace LogPark
 
         private void tabPage1_Click_1(object sender, EventArgs e)
         {
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+            //string SaveLanguage = Properties.Settings.Default.Language;
+            //ChangeLanguage(SaveLanguage);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
         }
 
         private void button2_Click(object sender, EventArgs e)

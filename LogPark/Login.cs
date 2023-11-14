@@ -108,17 +108,23 @@ namespace LogPark
                 }
 
 
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+                 else if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
+                 {
 
+                   MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                  }
 
-            }
+                 else
+                  {
+
+                      MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  }
+
 
         }
+         
 
-      
     }
 }

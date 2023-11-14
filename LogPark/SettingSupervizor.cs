@@ -49,8 +49,8 @@ namespace LogPark
 
         private void SettingSupervizor_Load(object sender, EventArgs e)
         {
-            //comboBox2.Items.Add("English");
-            //comboBox2.Items.Add("Albanian");
+            comboBox2.Items.Add("English");
+            comboBox2.Items.Add("Albanian");
             //  comboBox2.SelectedIndex = 0;
 
 

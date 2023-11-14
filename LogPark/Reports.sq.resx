@@ -139,14 +139,14 @@
   <data name="label7.Text" xml:space="preserve">
     <value>Koha Maksimale/ore</value>
   </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Koha Minimale/ore</value>
+  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Makina Totale</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Koha Mesatare/ore</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Koha Minimale/ore</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Gjenero</value>
@@ -156,9 +156,5 @@
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Data Mbarimit</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>

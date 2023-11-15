@@ -23,7 +23,7 @@ namespace LogPark
         public DashboardAdmin()
         {
             InitializeComponent();
-        
+
 
             string SaveLanguage = Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
@@ -53,8 +53,8 @@ namespace LogPark
 
 
         }
-     
-      
+
+
         private void label1_Click_1(object sender, EventArgs e)
         {
 

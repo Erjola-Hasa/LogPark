@@ -7,7 +7,7 @@ namespace BusinessLayer
 {
     public class UserService
     {
-        
+
         public void InsertUser(string firstName, string lastName, string userName, string password, string profile)
         {
             try
@@ -51,13 +51,21 @@ namespace BusinessLayer
 
         public Users AuthenticateUser(string userName, string password)
         {
-            UserRepository userRepository = new UserRepository();
-            Users user = userRepository.GetUserByUserName(userName, password);
+            try
+            {
 
-            return user;
+                UserRepository userRepository = new UserRepository();
+                Users user = userRepository.GetUserByUserName(userName, password);
+                return user;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return null;
 
         }
-      
+
     }
 
 }

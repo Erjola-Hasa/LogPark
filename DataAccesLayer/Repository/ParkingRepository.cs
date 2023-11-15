@@ -21,7 +21,6 @@ namespace DataAccesLayer
             {
                 db.Open();
                 db.Close();
-
                 return db.ExecuteScalar<int>("TotalParkingSpaces", commandType: CommandType.StoredProcedure);
 
             }
@@ -54,8 +53,6 @@ namespace DataAccesLayer
 
 
                 db.Open();
-
-
                 var parameters = new
                 {
                     RezervationCode = barcode,
@@ -76,7 +73,6 @@ namespace DataAccesLayer
             {
 
                 db.Open();
-
                 var parameters = new
                 {
                     ReservationID = reservationID,

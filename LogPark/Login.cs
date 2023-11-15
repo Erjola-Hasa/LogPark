@@ -27,20 +27,16 @@ namespace LogPark
         public Login()
         {
             InitializeComponent();
+
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-           // Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            // Rectangle resolution = Screen.PrimaryScreen.Bounds;
         }
-        
+
 
         private void Login_Load(object sender, EventArgs e)
         {
-
-            //  Rectangle resolution = Screen.PrimaryScreen.Bounds; 
-            string screenWidth = Screen.PrimaryScreen.Bounds.Width.ToString();
-            string screenHeight = Screen.PrimaryScreen.Bounds.Height.ToString();
-
         }
         public void ChangeLanguage(string lang)
         {
@@ -57,10 +53,6 @@ namespace LogPark
         {
 
         }
-
-    
-
-        
 
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -108,23 +100,23 @@ namespace LogPark
                 }
 
 
-             }
-                 else if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
-                 {
+            }
+            else if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
+            {
 
-                   MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                  }
+            }
 
-                 else
-                  {
+            else
+            {
 
-                      MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                  }
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
-         
+
 
     }
 }

@@ -14,39 +14,15 @@ namespace LogPark
         public Reports()
         {
             InitializeComponent();
-            
+
 
             parkingService = new ParkingService(new ParkingRepository());
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //DateTime startDate = dateTimePicker1.Value;
-            //DateTime endDate = dateTimePicker2.Value;
-
-
-
-            //ReportData reportData = parkingService.GenerateReport(startDate, endDate);
-
-          
-            // label6.Text =label11.Text.Replace("Total Cars","")+$"{ reportData.TotalCarsInParking}";
-
-
-            ////   label1.Text = $"Total Cars:{reportData.TotalCarsInParking}";
-            // label5.Text=label5.Text.Replace("Minimum Stay","")+$" { reportData.MinimumStayTime}";
-
-           
-            //label7.Text = label7.Text.Replace("Maximum Stay", "") + $" {reportData.MaximumStayTime}";
-
-           
-            //label11.Text =label11.Text.Replace("Avarage Stay","")+$" { reportData.AverageStay}";
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,17 +52,17 @@ namespace LogPark
             ReportData reportData = parkingService.GenerateReport(startDate, endDate);
 
 
-         //   label6.Text = label1.Text.Replace("Total Cars", "") + $"{reportData.TotalCarsInParking}";
+            //   label6.Text = label1.Text.Replace("Total Cars", "") + $"{reportData.TotalCarsInParking}";
             label1.Text = reportData.TotalCarsInParking.ToString();
 
             //   label1.Text = $"Total Cars:{reportData.TotalCarsInParking}";
-            label8.Text = label8.Text.Replace("Minimum Stay", " ") +  $" {reportData.MinimumStayTime}";
+            label8.Text = label8.Text.Replace("Minimum Stay", " ") + $" {reportData.MinimumStayTime}";
 
 
-            label5.Text = label5.Text.Replace("Maximum Stay", " ") +  $" {reportData.MaximumStayTime}";
+            label5.Text = label5.Text.Replace("Maximum Stay", " ") + $" {reportData.MaximumStayTime}";
 
 
-            label12.Text = label12.Text.Replace("Avarage Stay", " ") +  $" {reportData.AverageStay}";
+            label12.Text = label12.Text.Replace("Avarage Stay", " ") + $" {reportData.AverageStay}";
         }
 
         private void button2_Click_1(object sender, EventArgs e)

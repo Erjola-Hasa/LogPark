@@ -1,12 +1,7 @@
 ﻿using Dapper;
-
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Runtime;
+
 
 
 namespace DataAccesLayer
@@ -14,38 +9,33 @@ namespace DataAccesLayer
 
     public class UserRepository
     {
-       // private string ConnectionString;
+        // private string ConnectionString;
 
         //  MyConnection db = new MyConnection();
-      //  Config df = new Config();
-      
-       string ConnectionString= Properties.Settings.Default.Connection;
+        //  Config df = new Config();
 
-
-       
-
+        string ConnectionString = Properties.Settings.Default.Connection;
 
         public void InsertUser(Users user)
         {
-           
-                using (var db = new SqlConnection(ConnectionString))
-                {
-                    db.Open();
 
-
-
-                    db.Execute("InsertUser", user, commandType: CommandType.StoredProcedure);
-
-                    db.Close();
-                }
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                db.Open();
+                db.Execute("InsertUser", user, commandType: CommandType.StoredProcedure);
+                db.Close();
+            }
 
         }
-        
+
 
 
         public Users GetUserByUserName(string userName, string Password)
         {
-           
+            ///<summary>
+            /// Select User by UserName and password
+            ///</summary>
+
             using (var db = new SqlConnection(ConnectionString))
             {
                 db.Open();
@@ -70,11 +60,8 @@ namespace DataAccesLayer
                         db.Close();
                         return users;
                     }
-                    
+
                 }
-
-
-
                 return null;
 
 
@@ -83,13 +70,13 @@ namespace DataAccesLayer
 
         }
 
-       
-        
+
+
     }
 }
 
-       
- 
+
+
 
 
 

@@ -9,9 +9,6 @@ namespace LogPark
     {
         private ParkingService parkingService;
 
-      
-       
-
         public Checkin()
         {
             InitializeComponent();

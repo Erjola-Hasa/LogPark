@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace BusinessLayer
 {
@@ -29,13 +30,19 @@ namespace BusinessLayer
         }
         public void CheckIn(string barcode, DateTime checkInDateTime)
         {
-            
-
-            if (IsValidBarcode(barcode) || IsValidCheckInDateTime(checkInDateTime))
-
+            try
             {
-              parkingDAL.InsertCheckIn(barcode, checkInDateTime);
 
+                if (IsValidBarcode(barcode) || IsValidCheckInDateTime(checkInDateTime))
+
+                {
+                    parkingDAL.InsertCheckIn(barcode, checkInDateTime);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -58,13 +65,14 @@ namespace BusinessLayer
 
         public int CalculatePrice(DateTime entryTime, DateTime exitTime)
         {
-             int  pricePerHour= parkingDAL.GetPricePerHours();
-            TimeSpan duration = exitTime - entryTime;
-            int  hours =(int)duration.TotalHours;
+        
+                int pricePerHour = parkingDAL.GetPricePerHours();
+                TimeSpan duration = exitTime - entryTime;
+                int hours = (int)duration.TotalHours;
 
-            int totalPrice = (int)hours * pricePerHour;
-
-            return totalPrice;
+                int totalPrice = (int)hours * pricePerHour;
+                return totalPrice;
+           
         }
         public DateTime GetEntryTimeFromDatabase(string barcode)
         {
@@ -82,69 +90,79 @@ namespace BusinessLayer
         }
         public ReportData GenerateReport(DateTime startDate, DateTime endDate)
         {
-            List<Reservations> reservations = parkingDAL.GetReservationsInPeriod(startDate, endDate);
-
-            DateTime startTime;
-            DateTime endTime;
-
-            if (reservations.Any())
+            try
             {
-                startTime = reservations.Min(reservation => reservation.StartDateTime);
-                endTime = reservations.Max(reservation => reservation.EndDateTime);
-            }
-            else
-            {
-                
-                startTime = DateTime.MinValue; 
-                endTime = DateTime.MinValue;  
-            }
-            
-            int minimumStayTime = 0;
-            int maximumStayTime= 0;
-            int averageStay = 0;
 
-            bool hasValidStayTimes = false;
+                List<Reservations> reservations = parkingDAL.GetReservationsInPeriod(startDate, endDate);
 
-            int totalStayTime = 0; 
+                DateTime startTime;
+                DateTime endTime;
 
-            foreach (var reservation in reservations)
-            {
-                TimeSpan stayTime = reservation.EndDateTime - reservation.StartDateTime;
-                int stayTimeHours =(int) stayTime.TotalHours; 
-
-                if (!hasValidStayTimes || stayTimeHours < minimumStayTime)
+                if (reservations.Any())
                 {
-                    minimumStayTime = stayTimeHours;
-                    hasValidStayTimes = true;
+                    startTime = reservations.Min(reservation => reservation.StartDateTime);
+                    endTime = reservations.Max(reservation => reservation.EndDateTime);
+                }
+                else
+                {
+
+                    startTime = DateTime.MinValue;
+                    endTime = DateTime.MinValue;
                 }
 
-                if (!hasValidStayTimes || stayTimeHours > maximumStayTime)
+                int minimumStayTime = 0;
+                int maximumStayTime = 0;
+                int averageStay = 0;
+
+                bool hasValidStayTimes = false;
+
+                int totalStayTime = 0;
+
+                foreach (var reservation in reservations)
                 {
-                    maximumStayTime = stayTimeHours;
-                    hasValidStayTimes = true;
+                    TimeSpan stayTime = reservation.EndDateTime - reservation.StartDateTime;
+                    int stayTimeHours = (int)stayTime.TotalHours;
+
+                    if (!hasValidStayTimes || stayTimeHours < minimumStayTime)
+                    {
+                        minimumStayTime = stayTimeHours;
+                        hasValidStayTimes = true;
+                    }
+
+                    if (!hasValidStayTimes || stayTimeHours > maximumStayTime)
+                    {
+                        maximumStayTime = stayTimeHours;
+                        hasValidStayTimes = true;
+                    }
+
+
+                    totalStayTime += stayTimeHours;
                 }
 
-                
-                totalStayTime += stayTimeHours;
+                int totalCarsInParking = reservations.Count;
+
+
+                if (totalCarsInParking > 0)
+                {
+                    averageStay = totalStayTime / totalCarsInParking;
+                }
+
+                ReportData reportData = new ReportData
+                {
+                    TotalCarsInParking = totalCarsInParking,
+                    MinimumStayTime = hasValidStayTimes ? minimumStayTime : 0,
+                    MaximumStayTime = hasValidStayTimes ? maximumStayTime : 0,
+                    AverageStay = (int)averageStay
+                };
+
+                return reportData;
             }
-
-            int totalCarsInParking = reservations.Count;
-
-           
-            if (totalCarsInParking > 0)
+             catch(Exception ex)
             {
-                averageStay = totalStayTime / totalCarsInParking;
+                MessageBox.Show(ex.ToString());
             }
-
-            ReportData reportData = new ReportData
-            {
-                TotalCarsInParking = totalCarsInParking,
-                MinimumStayTime = hasValidStayTimes ? minimumStayTime : 0,
-                MaximumStayTime = hasValidStayTimes ? maximumStayTime : 0,
-                AverageStay = (int)averageStay
-            };
-            return reportData;
-        }
+            return null;
+            }
 
 
     }

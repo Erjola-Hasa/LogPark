@@ -1,6 +1,8 @@
 ﻿
 using DataAccesLayer;
 using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace BusinessLayer
 {
@@ -9,38 +11,49 @@ namespace BusinessLayer
 
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
-
-           ConfigRepository _config= new ConfigRepository();
-            bool IsConneted = _config.ConnectDatabase(UserId,Password,ServerName,DatabaseName);
-            if (IsConneted == true)
+            try
             {
+                ConfigRepository _config = new ConfigRepository();
+                bool IsConneted = _config.ConnectDatabase(UserId, Password, ServerName, DatabaseName);
+                if (IsConneted == true)
+                {
 
 
-                return true;
+                    return true;
+                }
+               
             }
-            else
+              catch (Exception ex) 
             {
-                return false;
+               MessageBox.Show(ex.ToString());
+    
             }
+
+            return false;
 
 
         }
 
         public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
-
-            ConfigRepository _config = new ConfigRepository();
-             bool IsConneted=  _config.TestDatabase(UserId,Password,ServerName,DatabaseName);
-            if (IsConneted == true)
+            try
             {
+                ConfigRepository _config = new ConfigRepository();
+                bool IsConneted = _config.TestDatabase(UserId, Password, ServerName, DatabaseName);
+                if (IsConneted == true)
+                {
 
 
-                return true;
+                    return true;
+                }
             }
-            else
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
+            }
+           
                 return false;
-            }
+            
         }
 
            

@@ -14,14 +14,14 @@ namespace LogPark
         public SettingSupervizor()
         {
             InitializeComponent();
-         
+
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
         }
 
-        
+
 
         private void ChangeLanguage(string lang)
         {
@@ -45,7 +45,7 @@ namespace LogPark
             }
         }
 
-        
+
 
         private void SettingSupervizor_Load(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace LogPark
             //  comboBox2.SelectedIndex = 0;
 
 
-           
+
             int Price = languageService.GetPrice();
             textBox2.Text = Price.ToString();
 
@@ -63,10 +63,10 @@ namespace LogPark
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
         }
 
- 
-       
 
- 
+
+
+
 
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace LogPark
             dsha.ShowDialog();
         }
 
-       
+
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {

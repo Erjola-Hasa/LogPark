@@ -11,7 +11,7 @@ namespace LogPark
 {
     public partial class SettingsAdmin : Form
     {
-       
+
         public SettingsAdmin()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace LogPark
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
         }
-        public  void ChangeLanguage(string lang)
+        public void ChangeLanguage(string lang)
         {
             foreach (Control c in this.Controls)
             {
@@ -31,15 +31,15 @@ namespace LogPark
             }
         }
 
-            private void doRecursiveLoading(Control parent, CultureInfo cultureInfo, ComponentResourceManager resources)
+        private void doRecursiveLoading(Control parent, CultureInfo cultureInfo, ComponentResourceManager resources)
+        {
+            foreach (Control c in parent.Controls)
             {
-                foreach (Control c in parent.Controls)
-                {
-                    resources.ApplyResources(c, c.Name, cultureInfo);
-                    if (c.Controls.Count > 0)
-                        doRecursiveLoading(c, cultureInfo, resources);
-                }
+                resources.ApplyResources(c, c.Name, cultureInfo);
+                if (c.Controls.Count > 0)
+                    doRecursiveLoading(c, cultureInfo, resources);
             }
+        }
 
 
         private void SettingsAdmin_Load(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace LogPark
             comboBox2.Items.Add("English");
             comboBox2.Items.Add("Albanian");
             //comboBox2.SelectedIndex = 1;
-            
+
 
             LanguageService languageService = new LanguageService();
             int Price = languageService.GetPrice();
@@ -195,4 +195,4 @@ namespace LogPark
 
 }
 
-    
+

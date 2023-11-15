@@ -27,8 +27,8 @@ namespace DataAccesLayer
                     }
                     else
                     {
-                       Properties.Settings.Default.Connection = ConnectionString;
-                       Properties.Settings.Default.Save();
+                        Properties.Settings.Default.Connection = ConnectionString;
+                        Properties.Settings.Default.Save();
 
                         con.Close();
                         return true;
@@ -85,5 +85,5 @@ namespace DataAccesLayer
 
 
     }
-    
+
 }

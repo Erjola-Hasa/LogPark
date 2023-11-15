@@ -1,9 +1,5 @@
 ﻿using DataAccesLayer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BusinessLayer
@@ -14,8 +10,15 @@ namespace BusinessLayer
 
         public void UpdatePrice(int Price)
         {
-            LanguageRepository languageRepository = new LanguageRepository();
-            languageRepository.UpdatePrice(Price);
+            try
+            {
+                LanguageRepository languageRepository = new LanguageRepository();
+                languageRepository.UpdatePrice(Price);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
            
         }
         public int GetPrice()

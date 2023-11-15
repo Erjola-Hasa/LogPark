@@ -11,16 +11,13 @@ namespace LogPark
 {
     public partial class Dashboard : Form
     {
-        
-        private ParkingService parkingService;
-       
 
-        public Dashboard( )
+        private ParkingService parkingService;
+
+
+        public Dashboard()
         {
             InitializeComponent();
-
-           
-
             string SaveLanguage = Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
             parkingService = new ParkingService(new ParkingRepository());
@@ -30,7 +27,7 @@ namespace LogPark
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-  
+
 
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
             string status = "Aktive";
@@ -46,28 +43,28 @@ namespace LogPark
             // label5.Text = $"Free Space : {freeSpaces} /  {totalParkingSpaces}";
 
         }
-        
-        
 
 
-            private void label1_Click(object sender, EventArgs e)
-            {
-              this.Hide();
-              Checkin check = new Checkin();
-              check.ShowDialog();
-            
-             }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Checkin check = new Checkin();
+            check.ShowDialog();
+
+        }
 
         private void label3_Click(object sender, EventArgs e)
         {
             this.Hide();
             CheckOut checkOut = new CheckOut();
             checkOut.ShowDialog();
-           
+
 
         }
 
-       
+
 
         private void label4_Click(object sender, EventArgs e)
         {

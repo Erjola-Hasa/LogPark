@@ -20,7 +20,7 @@ namespace LogPark
         public DashboardSupervizor()
         {
             InitializeComponent();
-          
+
 
             string SaveLanguage = Properties.Settings.Default.Language;
 
@@ -49,7 +49,7 @@ namespace LogPark
 
 
 
-        
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -67,7 +67,8 @@ namespace LogPark
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {    this.Hide();
+        {
+            this.Hide();
             Reports reports = new Reports();
             reports.Show();
         }
@@ -75,7 +76,7 @@ namespace LogPark
         private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SettingSupervizor setting = new SettingSupervizor();    
+            SettingSupervizor setting = new SettingSupervizor();
             setting.Show();
         }
 

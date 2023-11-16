@@ -23,12 +23,6 @@ namespace LogPark
             string status = "Aktive";
             int reservedSpaces = parkingService.GetNumberOfReservedSpaces(status);
             int freeSpaces = totalParkingSpaces - reservedSpaces;
-
-
-            if (freeSpaces == totalParkingSpaces)
-            {
-                MessageBox.Show("Full", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         
             label2.Text =label2.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}"; 
         }

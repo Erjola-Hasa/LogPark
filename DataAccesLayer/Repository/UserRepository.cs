@@ -9,13 +9,22 @@ namespace DataAccesLayer
 
     public class UserRepository
     {
-        // private string ConnectionString;
-
-        //  MyConnection db = new MyConnection();
-        //  Config df = new Config();
-
+        
+        /// <summary>
+        /// ConnectionString 
+        /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
 
+
+
+
+
+
+
+        /// <summary>
+        /// Add a new User
+        /// </summary>
+        /// <param name="user"></param>
         public void InsertUser(Users user)
         {
 
@@ -30,12 +39,19 @@ namespace DataAccesLayer
 
 
 
+
+
+
+        /// <summary>
+        /// Method to select user by  name and password if are correct or no
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+
         public Users GetUserByUserName(string userName, string Password)
         {
-            ///<summary>
-            /// Select User by UserName and password
-            ///</summary>
-
+          
             using (var db = new SqlConnection(ConnectionString))
             {
                 db.Open();
@@ -45,8 +61,6 @@ namespace DataAccesLayer
                     UserName = userName,
                     password = Password
                 };
-
-                // string query = "SELECT UserName, Password, Profile FROM Users WHERE UserName=@UserName";
                 var result = db.ExecuteReader("SelectUserName", parameters, commandType: CommandType.StoredProcedure);
                 {
                     while (result.Read())

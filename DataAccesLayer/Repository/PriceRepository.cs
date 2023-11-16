@@ -1,22 +1,21 @@
 ﻿using Dapper;
-
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccesLayer
 {
     public class PriceRepository
     {
-        //  MyConnection db = new MyConnection();
+       /// <summary>
+       /// Take ConnectionString
+       /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
 
 
-
+        /// <summary>
+        /// Method to Update Price/Hour In parking
+        /// </summary>
+        /// <param name="PricePerHour"></param>
         public void UpdatePrice(int PricePerHour)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
@@ -36,6 +35,14 @@ namespace DataAccesLayer
                 db.Close();
             }
         }
+
+
+
+
+        /// <summary>
+        /// Select the price of the parking
+        /// </summary>
+        /// <returns></returns>
         public  int GetPrice()
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))

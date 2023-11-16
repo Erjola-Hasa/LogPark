@@ -1,10 +1,7 @@
 ﻿using Dapper;
-
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 
 
@@ -12,9 +9,16 @@ namespace DataAccesLayer
 {
     public class ParkingRepository
     {
-        // MyConnection db = new MyConnection();
+        /// <summary>
+        /// Take ConnectionString
+        /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
 
+
+        /// <summary>
+        /// Select all the parking Space 
+        /// </summary>
+        /// <returns></returns>
         public int GetTotalParkingSpaces()
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -27,6 +31,15 @@ namespace DataAccesLayer
         }
 
 
+
+
+
+
+        /// <summary>
+        /// Select all Parking Space who has the Status ="Aktive"
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public int GetReservationsFromDatabase(string status)
 
         {
@@ -45,7 +58,17 @@ namespace DataAccesLayer
 
             }
         }
-         
+
+
+
+
+
+         /// <summary>
+         /// Method to checkin in parking and generate barcode and datetime 
+         /// </summary>
+         /// <param name="barcode"></param>
+         /// <param name="checkInDateTime"></param>
+         /// 
         public void InsertCheckIn(string barcode, DateTime checkInDateTime)
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -67,6 +90,17 @@ namespace DataAccesLayer
             }
             
         }
+
+
+
+
+
+        /// <summary>
+        /// Method to update rezervation when do check-out and give datime and price
+        /// </summary>
+        /// <param name="reservationID"></param>
+        /// <param name="exitTime"></param>
+        /// <param name="price"></param>
         public void UpdateReservation(int reservationID, DateTime exitTime, decimal price)
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -85,6 +119,14 @@ namespace DataAccesLayer
                 db.Close();
             }
         }
+
+
+
+        /// <summary>
+        /// Select entry time about the specifik barcode
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
         public DateTime GetEntryTimeFromDatabase(string barcode)
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -112,11 +154,15 @@ namespace DataAccesLayer
            
         }
 
-    
 
 
 
-    
+        /// <summary>
+        ///  Method to give us the RezervationiD  of specifik Barcode 
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
+
         public int GetReservationIDFromDatabase(string barcode)
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -147,7 +193,12 @@ namespace DataAccesLayer
 
 
 
-
+        /// <summary>
+        /// Select the start time and end time and give us the minimal time,totalCars ,maximalTime and AvarageTime
+        /// </summary>
+        /// <param name="StartDateTime"></param>
+        /// <param name="EndDateTime"></param>
+        /// <returns></returns>
 
         public List<Reservations> GetReservationsInPeriod(DateTime StartDateTime, DateTime EndDateTime)
         {
@@ -192,26 +243,13 @@ namespace DataAccesLayer
 
 
 
+        /// <summary>
+        /// Method to give us the status of specifik Barcode
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
 
-
-        //public int GetPricePerHours()
-        //{
-        //    using (var db = new SqlConnection(ConnectionString))
-        //    {
-
-        //        // db.con.Open();
-
-        //        return db.ExecuteScalar<int>("PricePerHour", commandType: CommandType.StoredProcedure);
-
-        //    }
-
-        //  //  string query = "SELECT PricePerHour FROM Configuration";
-
-        //    //using (var command = new SqlCommand(query, db.con))
-        //    //{
-        //    //    return (int)command.ExecuteScalar();
-        //    //}
-        //}
+     
         public string GetStatusDFromDatabase(string barcode)
         {
             using (var db = new SqlConnection(ConnectionString))

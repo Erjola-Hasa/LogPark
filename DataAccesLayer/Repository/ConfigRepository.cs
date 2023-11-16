@@ -7,10 +7,14 @@ namespace DataAccesLayer
 {
     public class ConfigRepository
     {
-        public ConfigRepository()
-        {
-            // string ConnectionString = Properties.Settings.Default.ConnectionString;
-        }
+      /// <summary>
+      /// Method to Save the ConnectionString 
+      /// </summary>
+      /// <param name="UserId"></param>
+      /// <param name="Password"></param>
+      /// <param name="ServerName"></param>
+      /// <param name="DatabaseName"></param>
+      /// <returns></returns>
 
         public bool ConnectDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
@@ -48,6 +52,24 @@ namespace DataAccesLayer
 
 
         }
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Method to Test the ConnestionString if  UserId,Password,ServerName,DatabaseName are correct
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <param name="Password"></param>
+        /// <param name="ServerName"></param>
+        /// <param name="DatabaseName"></param>
+        /// <returns></returns>
+
+
         public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
             string ConnectionString = $"Data Source={ServerName};Initial Catalog={DatabaseName};User Id ={UserId};Password={Password} Trusted_Connection=true; MultipleActiveResultSets=true;Integrated Security=True;TrustServerCertificate=Yes";

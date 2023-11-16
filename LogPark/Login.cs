@@ -50,46 +50,50 @@ namespace LogPark
             if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
             {
 
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
-
-
-
-            else if (user.Profile == "Supervizor")
-            {
-                this.Hide();
-                DashboardSupervizor dashboard = new DashboardSupervizor();
-
-
-                dashboard.ShowDialog();
-
-
-            }
-            else if (user.Profile == "Perdorues")
+            else if (user !=null)
             {
 
-                this.Hide();
-                Dashboard dashboard = new Dashboard();
-                dashboard.ShowDialog();
-                this.Close();
 
-            }
-            else if (user.Profile == "Admin")
-            {
 
-                this.Hide();
-                DashboardAdmin dashboard = new DashboardAdmin();
-                dashboard.ShowDialog();
+                if (user.Profile == "Supervizor")
+                {
+                    this.Hide();
+                    DashboardSupervizor dashboard = new DashboardSupervizor();
 
+
+                    dashboard.ShowDialog();
+
+
+                }
+                else if (user.Profile == "Perdorues")
+                {
+
+                    this.Hide();
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.ShowDialog();
+                    this.Close();
+
+                }
+                else if (user.Profile == "Admin")
+                {
+
+                    this.Hide();
+                    DashboardAdmin dashboard = new DashboardAdmin();
+                    dashboard.ShowDialog();
+
+                }
             }
 
             else
             {
 
 
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -97,7 +101,7 @@ namespace LogPark
 
 
 
-      
+
 
 
 

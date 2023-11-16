@@ -80,7 +80,14 @@ namespace BusinessLayer
             try
             {
                 Users user = userRepository.GetUserByUserName(userName, password);
-                return user;
+                if (user !=null)
+                {
+                    return user;
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception ex)
             {

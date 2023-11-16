@@ -15,7 +15,11 @@ namespace LogPark
 
         }
 
-
+        /// <summary>
+        /// Activate Enter Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Login_Load(object sender, EventArgs e)
         {
 
@@ -23,11 +27,13 @@ namespace LogPark
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+      
+        
+        /// <summary>
+        /// Login form with UserName and Password
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void button1_Click_2(object sender, EventArgs e)
         {
@@ -44,7 +50,7 @@ namespace LogPark
             if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
             {
 
-                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
@@ -79,10 +85,6 @@ namespace LogPark
 
             }
 
-
-
-
-
             else
             {
 
@@ -93,10 +95,16 @@ namespace LogPark
 
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
+
+      
+
+
+
+        /// <summary>
+        /// Close the program 
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);

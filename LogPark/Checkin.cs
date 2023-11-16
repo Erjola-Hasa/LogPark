@@ -38,6 +38,9 @@ namespace LogPark
                 DateTime checkInDateTime = DateTime.Now;
                 parkingService.CheckIn(barcode,checkInDateTime);
                 MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                DashboardAdmin dashboardAdmin = new DashboardAdmin();
+                dashboardAdmin.Show();
             }
             else  
             {

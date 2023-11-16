@@ -4,15 +4,15 @@ using System.Windows.Forms;
 
 namespace BusinessLayer
 {
-    public  class LanguageService
+    public  class PriceService
     {
-       
+        PriceRepository languageRepository = new PriceRepository();
 
         public void UpdatePrice(int Price)
         {
             try
             {
-                LanguageRepository languageRepository = new LanguageRepository();
+             
                 languageRepository.UpdatePrice(Price);
             }
             catch (Exception ex)
@@ -23,7 +23,7 @@ namespace BusinessLayer
         }
         public int GetPrice()
         {
-            LanguageRepository languageRepository = new LanguageRepository();
+            
             return languageRepository.GetPrice();
         }
     }

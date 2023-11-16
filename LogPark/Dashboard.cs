@@ -18,8 +18,6 @@ namespace LogPark
         public Dashboard()
         {
             InitializeComponent();
-            string SaveLanguage = Properties.Settings.Default.Language;
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
             parkingService = new ParkingService(new ParkingRepository());
 
 
@@ -34,7 +32,11 @@ namespace LogPark
             int reservedSpaces = parkingService.GetNumberOfReservedSpaces(status);
             int freeSpaces = totalParkingSpaces - reservedSpaces;
 
-           
+            if (freeSpaces == 0)
+            {
+                MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             label5.Text = label5.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
             // label5.Text = $"Free Space : {freeSpaces} /  {totalParkingSpaces}";
 

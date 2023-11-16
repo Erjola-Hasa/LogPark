@@ -67,6 +67,17 @@ namespace LogPark
         {
             string barcode = textBox2.Text;
 
+            string Status = parkingService.GetStatus(barcode);
+            if (Status == "Pasive")
+            {
+                MessageBox.Show("Invalid barcode.Please enter the correct Barcode ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                CheckOut checkOut = new CheckOut();
+                checkOut.Show();
+
+            }
+
+
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
 

@@ -1,42 +1,27 @@
-﻿
-using Microsoft.VisualBasic;
+﻿using BusinessLayer;
+using DataAccesLayer;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using System.Xml.Linq;
-using Org.BouncyCastle.Tsp;
 using System.Globalization;
 using System.Threading;
-using Microsoft.IdentityModel.Tokens;
-using BusinessLayer;
-using DataAccesLayer;
+using System.Windows.Forms;
 
 namespace LogPark
 {
     public partial class Login : Form
     {
-
+       
 
         public Login()
         {
             InitializeComponent();
-
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-            // Rectangle resolution = Screen.PrimaryScreen.Bounds;
         }
 
 
         private void Login_Load(object sender, EventArgs e)
         {
+         
+            this.AcceptButton = button1;
         }
         public void ChangeLanguage(string lang)
         {
@@ -57,21 +42,26 @@ namespace LogPark
 
         private void button1_Click_2(object sender, EventArgs e)
         {
+            this.AcceptButton = button1;
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-
+            
             UserService userService = new UserService();
 
 
             Users user = userService.AuthenticateUser(username, password);
 
-
-            if (user != null)
+            if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
             {
 
+                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                if (user.Profile == "Supervizor")
+            }
+           
+
+
+               else if (user.Profile == "Supervizor")
                 {
                     this.Hide();
                     DashboardSupervizor dashboard = new DashboardSupervizor();
@@ -100,23 +90,22 @@ namespace LogPark
                 }
 
 
-            }
-            else if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
-            {
-
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            
+           
 
             else
             {
 
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
         }
 
-
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+          
+        }
     }
 }

@@ -8,7 +8,9 @@ namespace BusinessLayer
 {
     public class ParkingService
     {
-        private ParkingRepository parkingDAL;
+        private ParkingRepository parkingDAL= new ParkingRepository();
+        PriceRepository languageRepository = new PriceRepository();
+
 
         public ParkingService(ParkingRepository parkingDAL)
         {
@@ -65,8 +67,8 @@ namespace BusinessLayer
 
         public int CalculatePrice(DateTime entryTime, DateTime exitTime)
         {
-        
-                int pricePerHour = parkingDAL.GetPricePerHours();
+               
+            int pricePerHour = languageRepository.GetPrice();
                 TimeSpan duration = exitTime - entryTime;
                 int hours = (int)duration.TotalHours;
 
@@ -83,6 +85,10 @@ namespace BusinessLayer
             return parkingDAL.GetReservationIDFromDatabase(barcode);
 
 
+        }
+        public string GetStatus(string barcode)
+        {
+            return parkingDAL.GetStatusDFromDatabase(barcode);
         }
         public void UpdateReservation(int reservationID, DateTime exitTime, decimal price)
         {

@@ -35,6 +35,7 @@ namespace LogPark
         private void Reports_Load(object sender, EventArgs e)
         {
             label2.Visible = false;
+            this.AcceptButton = button1;
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -47,7 +48,7 @@ namespace LogPark
             DateTime startDate = dateTimePicker1.Value;
             DateTime endDate = dateTimePicker2.Value;
 
-
+           
 
             ReportData reportData = parkingService.GenerateReport(startDate, endDate);
 

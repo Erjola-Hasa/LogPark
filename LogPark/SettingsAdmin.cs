@@ -15,9 +15,7 @@ namespace LogPark
         public SettingsAdmin()
         {
             InitializeComponent();
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+   
 
         }
         public void ChangeLanguage(string lang)
@@ -50,17 +48,9 @@ namespace LogPark
             //comboBox2.SelectedIndex = 1;
 
 
-            LanguageService languageService = new LanguageService();
+            PriceService languageService = new PriceService();
             int Price = languageService.GetPrice();
             textBox5.Text = Price.ToString();
-
-
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-
-
-
 
         }
 
@@ -75,7 +65,7 @@ namespace LogPark
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
-            LanguageService languageService = new LanguageService();
+            PriceService languageService = new PriceService();
             // int Price = Convert.ToInt32(textBox5.Text);
             int Price = Convert.ToInt32(textBox5.Text);
             languageService.UpdatePrice(Price);
@@ -186,10 +176,7 @@ namespace LogPark
         private void tabPage1_Click_1(object sender, EventArgs e)
         {
 
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-
+           
         }
     }
 

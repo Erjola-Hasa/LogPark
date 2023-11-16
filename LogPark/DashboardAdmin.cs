@@ -1,17 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
-
-using Microsoft.AspNetCore.Authorization;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -25,8 +14,7 @@ namespace LogPark
             InitializeComponent();
 
 
-            string SaveLanguage = Properties.Settings.Default.Language;
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+           
             parkingService = new ParkingService(new ParkingRepository());
 
         }
@@ -34,14 +22,19 @@ namespace LogPark
 
         private void DashboardAdmin_Load(object sender, EventArgs e)
         {
-            string screenWidth = Screen.PrimaryScreen.Bounds.Width.ToString();
-            string screenHeight = Screen.PrimaryScreen.Bounds.Height.ToString();
+         
 
             string status = "Aktive";
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
 
             int reservedSpaces = parkingService.GetNumberOfReservedSpaces(status);
             int freeSpaces = totalParkingSpaces - reservedSpaces;
+            if (freeSpaces == 0)
+            {
+                MessageBox.Show("Full Parking","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+
+            }
             label1.Text = label1.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
 
 

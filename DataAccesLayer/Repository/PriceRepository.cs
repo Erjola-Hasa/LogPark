@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccesLayer
 {
-    public class LanguageRepository
+    public class PriceRepository
     {
         //  MyConnection db = new MyConnection();
         string ConnectionString = Properties.Settings.Default.Connection;

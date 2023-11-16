@@ -68,9 +68,9 @@ namespace LogPark
             comboBox2.Items.Add("English");
             comboBox2.Items.Add("Albanian");
             //  comboBox2.SelectedIndex = 0;
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+            //string SaveLanguage = Properties.Settings.Default.Language;
+            //ChangeLanguage(SaveLanguage);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
 
         }

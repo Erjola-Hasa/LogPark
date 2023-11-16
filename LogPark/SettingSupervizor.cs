@@ -10,14 +10,12 @@ namespace LogPark
     public partial class SettingSupervizor : Form
     {
         public ConfigService configBLL = new ConfigService();
-        public LanguageService languageService = new LanguageService();
+        public PriceService languageService = new PriceService();
+
         public SettingSupervizor()
         {
             InitializeComponent();
 
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
         }
 
@@ -57,10 +55,6 @@ namespace LogPark
 
             int Price = languageService.GetPrice();
             textBox2.Text = Price.ToString();
-
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
         }
 
 
@@ -151,7 +145,7 @@ namespace LogPark
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
-            LanguageService languageService = new LanguageService();
+            PriceService languageService = new PriceService();
             // int Price = Convert.ToInt32(textBox5.Text);
             int Price = Convert.ToInt32(textBox2.Text);
             languageService.UpdatePrice(Price);

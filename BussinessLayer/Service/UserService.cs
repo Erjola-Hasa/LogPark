@@ -7,12 +7,12 @@ namespace BusinessLayer
 {
     public class UserService
     {
-
+        UserRepository userRepository = new UserRepository();
         public void InsertUser(string firstName, string lastName, string userName, string password, string profile)
         {
             try
             {
-                UserRepository userRepository = new UserRepository();
+              
                 Users existingUser = userRepository.GetUserByUserName(userName, password);
                 if (existingUser != null)
                 {
@@ -54,7 +54,7 @@ namespace BusinessLayer
             try
             {
 
-                UserRepository userRepository = new UserRepository();
+               
                 Users user = userRepository.GetUserByUserName(userName, password);
                 return user;
             }

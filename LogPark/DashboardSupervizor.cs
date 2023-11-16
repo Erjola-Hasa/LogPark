@@ -1,15 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -22,9 +13,7 @@ namespace LogPark
             InitializeComponent();
 
 
-            string SaveLanguage = Properties.Settings.Default.Language;
-
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+         
 
             parkingService = new ParkingService(new ParkingRepository());
 
@@ -37,6 +26,10 @@ namespace LogPark
 
             int reservedSpaces = parkingService.GetNumberOfReservedSpaces(status);
             int freeSpaces = totalParkingSpaces - reservedSpaces;
+            if (freeSpaces == 0)
+            {
+                MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             label5.Text = label5.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
 
 

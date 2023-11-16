@@ -1,7 +1,6 @@
-﻿
-using Microsoft.VisualBasic;
-using System;
-using System.Configuration;
+﻿using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -15,8 +14,10 @@ namespace LogPark
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           string Connection = Properties.Settings.Default.Connection;
-            
+            string Connection = Properties.Settings.Default.Connection;
+            string SaveLanguage = Properties.Settings.Default.Language;
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
+
 
             if ((bool)Properties.Settings.Default["FirstRun"] == true)
             {

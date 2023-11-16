@@ -8,12 +8,13 @@ namespace BusinessLayer
 {
     public class ConfigService
     {
+        ConfigRepository _config = new ConfigRepository();
 
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
             try
             {
-                ConfigRepository _config = new ConfigRepository();
+               
                 bool IsConneted = _config.ConnectDatabase(UserId, Password, ServerName, DatabaseName);
                 if (IsConneted == true)
                 {
@@ -38,7 +39,6 @@ namespace BusinessLayer
         {
             try
             {
-                ConfigRepository _config = new ConfigRepository();
                 bool IsConneted = _config.TestDatabase(UserId, Password, ServerName, DatabaseName);
                 if (IsConneted == true)
                 {

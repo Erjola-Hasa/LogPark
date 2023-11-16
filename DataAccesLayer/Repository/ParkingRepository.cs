@@ -190,29 +190,56 @@ namespace DataAccesLayer
             }
         }
 
-    
-            
 
-     
-        public int GetPricePerHours()
+
+
+
+        //public int GetPricePerHours()
+        //{
+        //    using (var db = new SqlConnection(ConnectionString))
+        //    {
+
+        //        // db.con.Open();
+
+        //        return db.ExecuteScalar<int>("PricePerHour", commandType: CommandType.StoredProcedure);
+
+        //    }
+
+        //  //  string query = "SELECT PricePerHour FROM Configuration";
+
+        //    //using (var command = new SqlCommand(query, db.con))
+        //    //{
+        //    //    return (int)command.ExecuteScalar();
+        //    //}
+        //}
+        public string GetStatusDFromDatabase(string barcode)
         {
             using (var db = new SqlConnection(ConnectionString))
             {
 
-                // db.con.Open();
+                db.Open();
+                string Status = "";
 
-                return db.ExecuteScalar<int>("PricePerHour", commandType: CommandType.StoredProcedure);
+                var parameters = new
+                {
+                    RezervationCode = barcode,
 
+                };
+
+                object result = db.ExecuteScalar("SelectRezervationID1", parameters, commandType: CommandType.StoredProcedure);
+                {
+
+                    Reservations reservations = new Reservations();
+                    {
+                        reservations.Status = (string)result;
+                    }
+
+                    db.Close();
+
+                    return (string)result;
+                }
             }
-
-          //  string query = "SELECT PricePerHour FROM Configuration";
-
-            //using (var command = new SqlCommand(query, db.con))
-            //{
-            //    return (int)command.ExecuteScalar();
-            //}
         }
-
     }
 
 }

@@ -8,7 +8,13 @@ namespace BusinessLayer
 {
     public class ConfigService
     {
+
+        /// <summary>
+        /// Dipendecy Injection ConfigRepository
+        /// </summary>
         ConfigRepository _config = new ConfigRepository();
+
+
 
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
@@ -34,6 +40,12 @@ namespace BusinessLayer
 
 
         }
+
+
+
+
+
+
 
         public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {

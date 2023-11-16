@@ -9,12 +9,13 @@ namespace LogPark
 {
     public partial class Reports : Form
     {
-        public
-             ParkingService parkingService;
+        public ParkingService parkingService;
         public Reports()
         {
             InitializeComponent();
 
+        
+            
 
             parkingService = new ParkingService(new ParkingRepository());
         }
@@ -34,8 +35,10 @@ namespace LogPark
 
         private void Reports_Load(object sender, EventArgs e)
         {
-            label2.Visible = false;
+              label2.Visible = false;
              this.AcceptButton = button1;
+            
+           
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -79,6 +82,27 @@ namespace LogPark
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+           if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            // Confirm user wants to close
+            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                  DashboardAdmin dashboardAdmin = new DashboardAdmin();
+                    dashboardAdmin.Show();
+                    break;
+                   
+
+                    
+            }
         }
     }
 }

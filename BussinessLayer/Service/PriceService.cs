@@ -6,14 +6,24 @@ namespace BusinessLayer
 {
     public  class PriceService
     {
-        PriceRepository languageRepository = new PriceRepository();
+        /// <summary>
+        /// Call the PriceRepository
+        /// </summary>
+        PriceRepository PriceRepository = new PriceRepository();
 
+
+
+
+        /// <summary>
+        /// Service Method for UpdatePrice 
+        /// </summary>
+        /// <param name="Price"></param>
         public void UpdatePrice(int Price)
         {
             try
             {
-             
-                languageRepository.UpdatePrice(Price);
+
+                PriceRepository.UpdatePrice(Price);
             }
             catch (Exception ex)
             {
@@ -21,10 +31,19 @@ namespace BusinessLayer
             }
            
         }
+
+
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int GetPrice()
         {
             
-            return languageRepository.GetPrice();
+            return PriceRepository.GetPrice();
         }
     }
 

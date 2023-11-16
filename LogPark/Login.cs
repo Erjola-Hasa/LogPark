@@ -1,9 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
 using System;
-using System.ComponentModel;
-using System.Globalization;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -15,24 +12,16 @@ namespace LogPark
         public Login()
         {
             InitializeComponent();
+
         }
 
 
         private void Login_Load(object sender, EventArgs e)
         {
-         
+
             this.AcceptButton = button1;
         }
-        public void ChangeLanguage(string lang)
-        {
-            foreach (Control c in this.Controls)
-            {
-                ComponentResourceManager resources = new ComponentResourceManager(typeof(SettingsAdmin));
-                CultureInfo cultureInfo = new CultureInfo(lang);
 
-
-            }
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -46,7 +35,7 @@ namespace LogPark
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            
+
             UserService userService = new UserService();
 
 
@@ -55,48 +44,49 @@ namespace LogPark
             if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
             {
 
-                MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             }
-           
 
 
-               else if (user.Profile == "Supervizor")
-                {
-                    this.Hide();
-                    DashboardSupervizor dashboard = new DashboardSupervizor();
+
+            else if (user.Profile == "Supervizor")
+            {
+                this.Hide();
+                DashboardSupervizor dashboard = new DashboardSupervizor();
 
 
-                    dashboard.ShowDialog();
+                dashboard.ShowDialog();
 
 
-                }
-                else if (user.Profile == "Perdorues")
-                {
+            }
+            else if (user.Profile == "Perdorues")
+            {
 
-                    this.Hide();
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.ShowDialog();
-                    this.Close();
+                this.Hide();
+                Dashboard dashboard = new Dashboard();
+                dashboard.ShowDialog();
+                this.Close();
 
-                }
-                else if (user.Profile == "Admin")
-                {
+            }
+            else if (user.Profile == "Admin")
+            {
 
-                    this.Hide();
-                    DashboardAdmin dashboard = new DashboardAdmin();
-                    dashboard.ShowDialog();
+                this.Hide();
+                DashboardAdmin dashboard = new DashboardAdmin();
+                dashboard.ShowDialog();
 
-                }
+            }
 
 
-            
-           
+
+
 
             else
             {
 
-               
+
                 MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -105,7 +95,27 @@ namespace LogPark
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
-          
+
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            // Confirm user wants to close
+            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    e.Cancel = false;
+                    break;
+
+
+
+            }
         }
     }
 }

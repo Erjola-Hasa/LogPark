@@ -1,5 +1,4 @@
 ﻿using DataAccesLayer;
-
 using System;
 using System.Windows.Forms;
 
@@ -7,7 +6,23 @@ namespace BusinessLayer
 {
     public class UserService
     {
+        
+        /// <summary>
+    /// Dipendency Injection UserRepostiory
+    /// </summary>
         UserRepository userRepository = new UserRepository();
+
+
+
+
+        /// <summary>
+        /// Method to insert User an take Validation about User
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <param name="profile"></param>
         public void InsertUser(string firstName, string lastName, string userName, string password, string profile)
         {
             try
@@ -49,12 +64,21 @@ namespace BusinessLayer
             }
         }
 
+
+
+
+
+
+        /// <summary>
+        /// Method to Authenticake Users and call the repository method "GetUserByUserName"
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Users AuthenticateUser(string userName, string password)
         {
             try
             {
-
-               
                 Users user = userRepository.GetUserByUserName(userName, password);
                 return user;
             }

@@ -1,6 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
-
+using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -35,7 +35,7 @@ namespace LogPark
         private void Reports_Load(object sender, EventArgs e)
         {
             label2.Visible = false;
-            this.AcceptButton = button1;
+             this.AcceptButton = button1;
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -45,10 +45,15 @@ namespace LogPark
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+
+           
+
             DateTime startDate = dateTimePicker1.Value;
             DateTime endDate = dateTimePicker2.Value;
 
            
+            
 
             ReportData reportData = parkingService.GenerateReport(startDate, endDate);
 

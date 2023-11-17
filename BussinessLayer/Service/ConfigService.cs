@@ -1,6 +1,7 @@
 ﻿
 using DataAccesLayer;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BusinessLayer
@@ -74,7 +75,9 @@ namespace BusinessLayer
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please verify you credintial.");
+                //MessageBox.Show(ex.ToString());
             }
            
                 return false;

@@ -93,7 +93,7 @@ namespace LogPark
 
             else
             {
-                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              //  MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Hide();
                 SettingsAdmin settingsAdmin = new SettingsAdmin();
                 settingsAdmin.Show();

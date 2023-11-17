@@ -1,18 +1,27 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace LogPark
 {
     public partial class Login : Form
     {
-       
+        private EventLog eventLog;
 
         public Login()
         {
             InitializeComponent();
+            this.FormClosing += Form1_FormClosing;
+            eventLog = new EventLog();
+            eventLog.Source = "LogPark";
 
+        }
+        private void LogMessage(string message, EventLogEntryType entryType)
+        {
+            // Log the message with the specified entry type
+            eventLog.WriteEntry(message, entryType);
         }
 
         /// <summary>
@@ -24,13 +33,15 @@ namespace LogPark
         {
 
             this.AcceptButton = button1;
+           
+
         }
 
 
-      
-        
+
+
         /// <summary>
-        /// Login form with UserName and Password
+        /// Enter in the application with UserName and Password and validate them
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -51,7 +62,8 @@ namespace LogPark
             {
 
 
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LogMessage("Informational message logged.", EventLogEntryType.Information);
 
 
             }
@@ -101,32 +113,30 @@ namespace LogPark
 
 
 
-
-
-
-
         /// <summary>
-        /// Close the program 
+        /// Override the Close Form event
         /// </summary>
+        /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
+            //In case windows is trying to shut down, don't hold the process up
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
 
-            // Confirm user wants to close
-            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (this.DialogResult == DialogResult.Cancel)
             {
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    e.Cancel = false;
-                    break;
-
-
-
+                // Assume that X has been clicked and act accordingly.
+                // Confirm user wants to close
+                switch (MessageBox.Show(this, "Are you sure?", "Do you still want ... ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    //Stay on this form
+                    case DialogResult.No:
+                        e.Cancel = true;
+                        break;
+                    default:
+                        Environment.Exit(10);
+                        break;
+                }
             }
         }
     }

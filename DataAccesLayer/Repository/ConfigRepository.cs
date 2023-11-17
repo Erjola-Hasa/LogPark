@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -26,6 +27,7 @@ namespace DataAccesLayer
                     con.Open();
                     if (string.IsNullOrWhiteSpace(ServerName) || string.IsNullOrWhiteSpace(DatabaseName) || string.IsNullOrWhiteSpace(UserId) || string.IsNullOrWhiteSpace(Password))
                     {
+                       
                         MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
@@ -96,7 +98,9 @@ namespace DataAccesLayer
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    File.AppendAllText("error.log", ex.ToString());
+                    MessageBox.Show("An error has occurred. Please try again later.");
+                  //  MessageBox.Show(ex.ToString());
                 }
                 return false;
             }

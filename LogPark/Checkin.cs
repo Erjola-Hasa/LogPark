@@ -9,6 +9,9 @@ namespace LogPark
     {
         private ParkingService parkingService;
 
+        /// <summary>
+        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// </summary>
         public Checkin()
         {
             InitializeComponent();
@@ -16,6 +19,12 @@ namespace LogPark
 
         }
 
+
+        /// <summary>
+        /// Generate the Randon number for Barcode and dateTime now
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Checkin_Load(object sender, EventArgs e)
         {
          
@@ -27,6 +36,13 @@ namespace LogPark
 
         }
 
+
+
+        /// <summary>
+        /// Confirm Button and proceed with checkin in parking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void button1_Click(object sender, EventArgs e)
         {
 
@@ -54,6 +70,14 @@ namespace LogPark
 
 
         }
+
+
+
+
+        /// <summary>
+        /// Method to generate the random number
+        /// </summary>
+        /// <returns></returns>
         private   string GenerateRandomBarcode()
         {
             
@@ -62,10 +86,7 @@ namespace LogPark
             return randomNumber.ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
 

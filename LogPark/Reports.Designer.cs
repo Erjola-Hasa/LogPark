@@ -48,6 +48,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +79,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label11, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // label7
@@ -130,7 +132,6 @@
             this.tableLayoutPanel3.Controls.Add(this.label14, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.dateTimePicker2, 1, 1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // button1
             // 
@@ -145,7 +146,6 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label13
             // 
@@ -168,6 +168,13 @@
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Reports
             // 
@@ -210,5 +217,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button button2;
     }
 }

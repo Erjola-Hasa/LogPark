@@ -1,8 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
-using Org.BouncyCastle.Asn1.X509;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -10,29 +8,21 @@ namespace LogPark
     public partial class Reports : Form
     {
         public ParkingService parkingService;
+        /// <summary>
+        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// </summary>
         public Reports()
         {
             InitializeComponent();
-
-        
-            
-
             parkingService = new ParkingService(new ParkingRepository());
         }
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DashboardAdmin dashboardAdmin = new DashboardAdmin();
-            dashboardAdmin.Show();
-        }
-
+       
+        /// <summary>
+        /// Activate the generate button with enter Tab
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Reports_Load(object sender, EventArgs e)
         {
               label2.Visible = false;
@@ -41,68 +31,57 @@ namespace LogPark
            
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+      
+        /// <summary>
+        /// Fill the Start Date and End Date and generate the information about Total Cars ,Minimun stay,Maximum stay and Avarage stay
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-
-           
 
             DateTime startDate = dateTimePicker1.Value;
             DateTime endDate = dateTimePicker2.Value;
 
-           
-            
+            if (startDate >= endDate)
+            {
+                MessageBox.Show("Start Date must be less than or equal to today's date.Please fill in the correct way!", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                this.Hide();
+                Reports reports = new Reports();
+                reports.Show();
 
-            ReportData reportData = parkingService.GenerateReport(startDate, endDate);
-
-
-            //   label6.Text = label1.Text.Replace("Total Cars", "") + $"{reportData.TotalCarsInParking}";
-            label1.Text = reportData.TotalCarsInParking.ToString();
-
-            //   label1.Text = $"Total Cars:{reportData.TotalCarsInParking}";
-            label8.Text = label8.Text.Replace("Minimum Stay", " ") + $" {reportData.MinimumStayTime}";
-
-
-            label5.Text = label5.Text.Replace("Maximum Stay", " ") + $" {reportData.MaximumStayTime}";
+               
+            }
+            else
+            {
 
 
-            label12.Text = label12.Text.Replace("Avarage Stay", " ") + $" {reportData.AverageStay}";
+                ReportData reportData = parkingService.GenerateReport(startDate, endDate);
+               
+                label1.Text = reportData.TotalCarsInParking.ToString();
+
+                label8.Text = label8.Text.Replace("Minimum Stay", " ") + $" {reportData.MinimumStayTime}";
+
+                label5.Text = label5.Text.Replace("Maximum Stay", " ") + $" {reportData.MaximumStayTime}";
+
+                label12.Text = label12.Text.Replace("Avarage Stay", " ") + $" {reportData.AverageStay}";
+            }
         }
 
+
+
+
+        /// <summary>
+        /// Exit button 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
+            DashboardAdmin dashboardAdmin = new DashboardAdmin();
+            dashboardAdmin.Show();
 
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-
-           if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-            // Confirm user wants to close
-            switch (MessageBox.Show(this, "Are you sure you want to close?", "Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                  DashboardAdmin dashboardAdmin = new DashboardAdmin();
-                    dashboardAdmin.Show();
-                    break;
-                   
-
-                    
-            }
         }
     }
 }

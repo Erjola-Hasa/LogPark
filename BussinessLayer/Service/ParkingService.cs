@@ -1,6 +1,7 @@
 ﻿using DataAccesLayer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -263,7 +264,9 @@ namespace BusinessLayer
             }
              catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+               // MessageBox.Show(ex.ToString());
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please try again.");
             }
             return null;
             }

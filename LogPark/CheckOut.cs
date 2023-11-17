@@ -9,6 +9,9 @@ namespace LogPark
     public partial class CheckOut : Form
     {
         public ParkingService parkingService;
+        /// <summary>
+        ///  Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// </summary>
         public CheckOut()
         {
             InitializeComponent();
@@ -16,6 +19,12 @@ namespace LogPark
 
         }
 
+
+        /// <summary>
+        /// Confirm Button if we want to checkOut by the parking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void button1_Click(object sender, EventArgs e)
         {
              string barcode = textBox2.Text;
@@ -53,15 +62,13 @@ namespace LogPark
 
         }
     
-        private void CheckOut_Load(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       /// <summary>
+       /// Search Barcode Button and display the Entry time,ExitTime and the Price of parking 
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -84,9 +91,6 @@ namespace LogPark
             if (entryTime != DateTime.MinValue)
             {
                 label4.Text = label4.Text.Replace("Entry Time", "") + $" {entryTime}";
-                //  label1.Text = $"Entry Time: {entryTime}";
-
-
                 DateTime exitTime = DateTime.Now;
 
                 label5.Text = label5.Text.Replace("Exit Time", "") + $" {exitTime}";
@@ -99,7 +103,7 @@ namespace LogPark
             }
             else
             {
-                MessageBox.Show("Invalid barcode or code not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please Enter the Barcode.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

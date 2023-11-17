@@ -5,20 +5,24 @@ using System.Windows.Forms;
 
 namespace LogPark
 {
+    #region Menu of Supervizor
     public partial class DashboardSupervizor : Form
     {
         private ParkingService parkingService;
+        /// <summary>
+        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// </summary>
         public DashboardSupervizor()
         {
             InitializeComponent();
-
-
-         
-
             parkingService = new ParkingService(new ParkingRepository());
-
         }
 
+        /// <summary>
+        /// Retrive Real Time free Space in parking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DashboardSupervizor_Load(object sender, EventArgs e)
         {
             string status = "Aktive";
@@ -38,44 +42,75 @@ namespace LogPark
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+
+        /// <summary>
+        /// Checkin  button who directs us in the checkin menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
             Check check = new Check();
             check.Show();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        /// <summary>
+        /// CheckOut button who directs us in the checkOut menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
             CheckOut check = new CheckOut();
             check.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+
+
+
+        /// <summary>
+        /// Reports button button who directs us in the reports menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
             Reports reports = new Reports();
             reports.Show();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+
+
+
+        /// <summary>
+        /// Settings Supervizor button who directs us in the  SettingSupervizor menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
             SettingSupervizor setting = new SettingSupervizor();
             setting.Show();
         }
 
+
+
+        /// <summary>
+        /// LogOut  button who directs us in the Login menu 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();
             login.Show();
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+#endregion

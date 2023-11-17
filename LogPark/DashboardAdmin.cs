@@ -5,28 +5,33 @@ using System.Windows.Forms;
 
 namespace LogPark
 {
+    #region Menu Admin
     public partial class DashboardAdmin : Form
     {
         private ParkingService parkingService;
 
+        /// <summary>
+        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// </summary>
         public DashboardAdmin()
         {
             InitializeComponent();
-
-
-           
             parkingService = new ParkingService(new ParkingRepository());
 
         }
 
 
+        /// <summary>
+        /// Give the Real Time about Free Space in the parking 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DashboardAdmin_Load(object sender, EventArgs e)
         {
          
 
             string status = "Aktive";
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
-
             int reservedSpaces = parkingService.GetNumberOfReservedSpaces(status);
             int freeSpaces = totalParkingSpaces - reservedSpaces;
             if (freeSpaces == 0)
@@ -40,45 +45,76 @@ namespace LogPark
 
         }
 
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+    
 
 
-
-        private void label2_Click(object sender, EventArgs e)
+        /// <summary>
+        ///  Check button who directs us in the Check menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             Check checkin = new Check();
             checkin.ShowDialog();
-
         }
 
-        private void label4_Click(object sender, EventArgs e)
+
+
+
+        /// <summary>
+        /// CheckOut button who directs us in the Checkout menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
             CheckOut checkOut = new CheckOut();
             checkOut.ShowDialog();
-
         }
 
-        private void label3_Click(object sender, EventArgs e)
+
+
+
+        /// <summary>
+        /// Reports  button who directs us in the Reports menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
             Reports reports = new Reports();
             reports.ShowDialog();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
+
+
+
+        /// <summary>
+        ///  SettingsAdmin  button who directs us in the SettingsAdmin menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
             this.Hide();
             SettingsAdmin settingsAdmin = new SettingsAdmin();
             settingsAdmin.ShowDialog();
         }
 
+
+
+
+
+        /// <summary>
+        /// Exit button who directs us in the login menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void label6_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -87,3 +123,4 @@ namespace LogPark
         }
     }
 }
+#endregion

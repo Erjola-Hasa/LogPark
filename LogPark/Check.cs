@@ -55,7 +55,7 @@ namespace LogPark
         {
             Checkin checkin = new Checkin();
             checkin.Show();
-            this.Hide();
+           
 
         }
     }

@@ -44,7 +44,6 @@
             resources.ApplyResources(this.label5, "label5");
             this.tableLayoutPanel1.SetColumnSpan(this.label5, 2);
             this.label5.Name = "label5";
-          //  this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // button1
             // 

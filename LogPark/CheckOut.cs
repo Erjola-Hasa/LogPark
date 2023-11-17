@@ -46,7 +46,7 @@ namespace LogPark
                 this.Hide();
                 MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dashboard dashboard = new Dashboard();
-                dashboard.Show();
+                dashboard.ShowDialog();
 
                
             }

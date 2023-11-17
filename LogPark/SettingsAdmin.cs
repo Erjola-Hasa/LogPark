@@ -9,8 +9,10 @@ using System.Windows.Forms;
 
 namespace LogPark
 {
+    #region Admin Menu
     public partial class SettingsAdmin : Form
     {
+       
 
         public SettingsAdmin()
         {
@@ -18,6 +20,12 @@ namespace LogPark
    
 
         }
+
+
+        /// <summary>
+        /// Method to change language 
+        /// </summary>
+        /// <param name="lang"></param>
         public void ChangeLanguage(string lang)
         {
             foreach (Control c in this.Controls)
@@ -29,6 +37,14 @@ namespace LogPark
             }
         }
 
+
+
+        /// <summary>
+        /// Recursive Method to change language in all  controls and sub controls.
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="cultureInfo"></param>
+        /// <param name="resources"></param>
         private void doRecursiveLoading(Control parent, CultureInfo cultureInfo, ComponentResourceManager resources)
         {
             foreach (Control c in parent.Controls)
@@ -40,35 +56,52 @@ namespace LogPark
         }
 
 
+
+
+
+        /// <summary>
+        /// Get the price/hour 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsAdmin_Load(object sender, EventArgs e)
         {
 
-            comboBox2.Items.Add("English");
-            comboBox2.Items.Add("Albanian");
-            //comboBox2.SelectedIndex = 1;
-
-
-            PriceService languageService = new PriceService();
-            int Price = languageService.GetPrice();
+            PriceService priceService = new PriceService();
+            int Price = priceService.GetPrice();
             textBox5.Text = Price.ToString();
 
         }
 
+
+
+        /// <summary>
+        /// Price is enable and we can change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox5_TextChanged_1(object sender, EventArgs e)
         {
             textBox5.Enabled = true;
         }
 
+
+
+
+        /// <summary>
+        /// Save button to change the language and price of the parking
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
-            PriceService languageService = new PriceService();
-            // int Price = Convert.ToInt32(textBox5.Text);
+            PriceService priceService = new PriceService();
             int Price = Convert.ToInt32(textBox5.Text);
-            languageService.UpdatePrice(Price);
+            priceService.UpdatePrice(Price);
             textBox5.Text = Price.ToString();
             this.Hide();
             DashboardAdmin dsha = new DashboardAdmin();
@@ -76,6 +109,13 @@ namespace LogPark
 
         }
 
+
+
+        /// <summary>
+        /// Test Button about the configuration of database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
             string ServerName = textBox6.Text;
@@ -93,13 +133,19 @@ namespace LogPark
 
             else
             {
-              //  MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Hide();
                 SettingsAdmin settingsAdmin = new SettingsAdmin();
                 settingsAdmin.Show();
             }
         }
 
+
+
+        /// <summary>
+        /// Save button of Connection of Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             string ServerName = textBox6.Text;
@@ -120,12 +166,20 @@ namespace LogPark
             }
             else
             {
-                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
                 SettingsAdmin settingsAdmin = new SettingsAdmin();
                 settingsAdmin.Show();
             }
         }
 
+
+
+
+        /// <summary>
+        /// Create button of the users in base of role 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             try
@@ -137,15 +191,10 @@ namespace LogPark
                 string password = textBox9.Text;
                 string profile = comboBox1.Text;
 
-
-
-
                 UserService userService = new UserService();
 
                 userService.InsertUser(firstName, lastName, userName, password, profile);
 
-                //DashboardAdmin dashboardAdmin = new DashboardAdmin();
-                //dashboardAdmin.Show();
             }
             catch (Exception ex)
             {
@@ -154,6 +203,13 @@ namespace LogPark
             }
         }
 
+
+
+        /// <summary>
+        /// Dropdown list with language we want to change 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (comboBox2.SelectedItem.ToString() == "Albanian")
@@ -173,13 +229,8 @@ namespace LogPark
 
         }
 
-        private void tabPage1_Click_1(object sender, EventArgs e)
-        {
-
-           
-        }
+    
     }
 
 }
-
-
+#endregion

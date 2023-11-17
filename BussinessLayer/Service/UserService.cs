@@ -1,6 +1,9 @@
 ﻿using DataAccesLayer;
 using System;
+using System.Diagnostics.Eventing.Reader;
+using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BusinessLayer
 {
@@ -79,19 +82,30 @@ namespace BusinessLayer
         {
             try
             {
+                
                 Users user = userRepository.GetUserByUserName(userName, password);
-                if (user !=null)
+                if (user != null)
                 {
-                    return user;
+                    if(user.UserName == userName && user.Password == password) 
+                    {
+                        return user;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                  
+
+                
+               
                 }
-                else
-                {
-                    return null;
-                }
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+              //  MessageBox.Show(ex.ToString());
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please verify you credintial.");
             }
             return null;
 

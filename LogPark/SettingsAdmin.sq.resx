@@ -126,6 +126,12 @@
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Perdoruesi</value>
   </data>
+  <data name="comboBox2.Items" xml:space="preserve">
+    <value>Anglish</value>
+  </data>
+  <data name="comboBox2.Items1" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Ruaj</value>
   </data>
@@ -151,14 +157,14 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Emri Databases</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Perdoruesi</value>
-  </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Testo</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
     <value>Ruaj</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Perdoruesi</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Emri</value>

@@ -117,22 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Hyrja</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Dalja</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Raportime</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Cilesime</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Hapsire e Lire</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Dil</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Hapsire e Lire</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Hyrja</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>Dalja</value>
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>Raporti</value>
+  </data>
+  <data name="button5.Text" xml:space="preserve">
+    <value>Cilesimet</value>
   </data>
 </root>

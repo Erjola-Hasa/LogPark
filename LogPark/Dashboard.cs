@@ -46,10 +46,11 @@ namespace LogPark
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            label5.Text = label5.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
+            label1.Text = label1.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
 
 
         }
+
 
 
 
@@ -58,45 +59,12 @@ namespace LogPark
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Checkin check = new Checkin();
+            Check check = new Check();
             check.ShowDialog();
-
         }
-
-
-
-
-        /// <summary>
-        /// CheckOut button who directs us in the CheckOut menu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CheckOut checkOut = new CheckOut();
-            checkOut.ShowDialog();
-        }
-
-
-
-
-
-        /// <summary>
-        /// Settings button who directs us in the settings menu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Setting settings = new Setting();
-            settings.ShowDialog();
-        }
-
 
 
 
@@ -105,13 +73,41 @@ namespace LogPark
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();
             login.ShowDialog();
         }
 
+        /// <summary>
+        /// CheckOut button who directs us in the CheckOut menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+                CheckOut checkOut = new CheckOut();
+                checkOut.ShowDialog();
+         }
+
+
+        /// <summary>
+        /// Settings button who directs us in the settings menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+                Setting settings = new Setting();
+                settings.ShowDialog();
+            }
+
+       
+       
     }
 }
 #endregion

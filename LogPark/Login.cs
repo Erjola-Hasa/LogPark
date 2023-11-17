@@ -8,21 +8,16 @@ namespace LogPark
 {
     public partial class Login : Form
     {
-        private EventLog eventLog;
+      
 
         public Login()
         {
             InitializeComponent();
             this.FormClosing += Form1_FormClosing;
-            eventLog = new EventLog();
-            eventLog.Source = "LogPark";
+            
 
         }
-        private void LogMessage(string message, EventLogEntryType entryType)
-        {
-            // Log the message with the specified entry type
-            eventLog.WriteEntry(message, entryType);
-        }
+       
 
         /// <summary>
         /// Activate Enter Button
@@ -49,9 +44,10 @@ namespace LogPark
         private void button1_Click_2(object sender, EventArgs e)
         {
             this.AcceptButton = button1;
+
             string username = textBox1.Text;
             string password = textBox2.Text;
-
+          
 
             UserService userService = new UserService();
 
@@ -62,12 +58,12 @@ namespace LogPark
             {
 
 
-               // MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LogMessage("Informational message logged.", EventLogEntryType.Information);
+                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
 
             }
-            else if (user !=null)
+            else   if (user != null)
             {
 
 
@@ -101,15 +97,18 @@ namespace LogPark
                 }
             }
 
+
+
             else
             {
 
-
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-
-
         }
+
+
+        
 
 
 

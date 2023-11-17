@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace LogPark
 {
+    #region Supervizor Menu
     public partial class SettingSupervizor : Form
     {
         public ConfigService configBLL = new ConfigService();
@@ -20,6 +21,10 @@ namespace LogPark
         }
 
 
+        /// <summary>
+        /// Method to change the language 
+        /// </summary>
+        /// <param name="lang"></param>
 
         private void ChangeLanguage(string lang)
         {
@@ -33,6 +38,14 @@ namespace LogPark
             }
         }
 
+
+
+        /// <summary>
+        /// Recursive Method to change language in all  controls and sub controls.
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="cultureInfo"></param>
+        /// <param name="resources"></param>
         private void doRecursiveLoading(Control parent, CultureInfo cultureInfo, ComponentResourceManager resources)
         {
             foreach (Control c in parent.Controls)
@@ -45,13 +58,16 @@ namespace LogPark
 
 
 
+
+
+        /// <summary>
+        /// Retrive the price of the parking in the menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingSupervizor_Load(object sender, EventArgs e)
         {
-            comboBox2.Items.Add("English");
-            comboBox2.Items.Add("Albanian");
-            //  comboBox2.SelectedIndex = 0;
-
-
+         
 
             int Price = languageService.GetPrice();
             textBox2.Text = Price.ToString();
@@ -62,7 +78,11 @@ namespace LogPark
 
 
 
-
+        /// <summary>
+        /// Dropdown list with language we want to change 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.SelectedItem.ToString() == "Albanian")
@@ -82,6 +102,12 @@ namespace LogPark
 
         }
 
+
+        /// <summary>
+        /// Test Button to test the configuration of the Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string ServerName = textBox6.Text;
@@ -106,6 +132,14 @@ namespace LogPark
                 settingSupervizor.Show();
             }
         }
+
+
+
+        /// <summary>
+        /// Test Button to Coonect the configuration of the Database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -132,13 +166,14 @@ namespace LogPark
             }
         }
 
-        private void tabPage1_Click_1(object sender, EventArgs e)
-        {
-            //string SaveLanguage = Properties.Settings.Default.Language;
-            //ChangeLanguage(SaveLanguage);
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-        }
+       
 
+
+        /// <summary>
+        /// Save button of the language we change and price if we change it 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             string SaveLanguage = Properties.Settings.Default.Language;
@@ -156,11 +191,8 @@ namespace LogPark
         }
 
 
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }
 
+#endregion

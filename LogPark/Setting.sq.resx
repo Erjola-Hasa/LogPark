@@ -123,6 +123,12 @@
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Databasa</value>
   </data>
+  <data name="comboBox2.Items" xml:space="preserve">
+    <value>Anglish</value>
+  </data>
+  <data name="comboBox2.Items1" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Ruaj</value>
   </data>

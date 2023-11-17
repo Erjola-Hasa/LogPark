@@ -7,6 +7,8 @@ namespace LogPark
 {
     public partial class Checkin : Form
     {
+
+      
         private ParkingService parkingService;
 
         /// <summary>
@@ -45,6 +47,9 @@ namespace LogPark
         /// <param name="e"></param>
         public void button1_Click(object sender, EventArgs e)
         {
+            
+
+
 
             DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
           
@@ -55,8 +60,9 @@ namespace LogPark
                 parkingService.CheckIn(barcode,checkInDateTime);
                 MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                DashboardAdmin dashboardAdmin = new DashboardAdmin();
-                dashboardAdmin.Show();
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.ShowDialog();
+                
             }
             else  
             {
@@ -70,8 +76,6 @@ namespace LogPark
 
 
         }
-
-
 
 
         /// <summary>

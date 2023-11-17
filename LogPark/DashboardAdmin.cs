@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -28,7 +29,7 @@ namespace LogPark
         /// <param name="e"></param>
         private void DashboardAdmin_Load(object sender, EventArgs e)
         {
-         
+
 
             string status = "Aktive";
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
@@ -36,8 +37,8 @@ namespace LogPark
             int freeSpaces = totalParkingSpaces - reservedSpaces;
             if (freeSpaces == 0)
             {
-                MessageBox.Show("Full Parking","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             }
             label1.Text = label1.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
@@ -45,7 +46,7 @@ namespace LogPark
 
         }
 
-    
+
 
 
         /// <summary>
@@ -121,6 +122,18 @@ namespace LogPark
             Login Login = new Login();
             Login.ShowDialog();
         }
+
+
+
+
+        /// <summary>
+        /// Close the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+      
+
+
     }
 }
 #endregion

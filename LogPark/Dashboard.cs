@@ -106,8 +106,13 @@ namespace LogPark
                 settings.ShowDialog();
             }
 
-       
-       
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+           
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+        }
+
     }
 }
 #endregion

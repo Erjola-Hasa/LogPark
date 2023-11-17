@@ -111,6 +111,14 @@ namespace LogPark
             Login login = new Login();
             login.Show();
         }
+
+
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+        }
     }
 }
 #endregion

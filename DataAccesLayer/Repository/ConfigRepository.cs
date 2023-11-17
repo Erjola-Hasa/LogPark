@@ -36,10 +36,12 @@ namespace DataAccesLayer
                         Properties.Settings.Default.Connection = ConnectionString;
                         Properties.Settings.Default.Save();
 
-                        con.Close();
+                      
                         return true;
+                       
 
                     }
+                    con.Close();
 
                 }
 

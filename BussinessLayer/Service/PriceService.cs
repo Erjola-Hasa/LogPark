@@ -7,7 +7,7 @@ namespace BusinessLayer
     public  class PriceService
     {
         /// <summary>
-        /// Call the PriceRepository
+        ///  Initializes a new instance of the PriceRepository class 
         /// </summary>
         PriceRepository PriceRepository = new PriceRepository();
 
@@ -15,7 +15,7 @@ namespace BusinessLayer
 
 
         /// <summary>
-        /// Service Method for UpdatePrice 
+        /// Updates the Price record in the database with the provided Price
         /// </summary>
         /// <param name="Price"></param>
         public void UpdatePrice(int Price)
@@ -37,7 +37,7 @@ namespace BusinessLayer
 
 
         /// <summary>
-        /// 
+        /// Retrive the Price  from datbase 
         /// </summary>
         /// <returns></returns>
         public int GetPrice()

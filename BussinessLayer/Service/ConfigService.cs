@@ -1,7 +1,6 @@
 ﻿
 using DataAccesLayer;
 using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace BusinessLayer
@@ -10,12 +9,19 @@ namespace BusinessLayer
     {
 
         /// <summary>
-        /// Dipendecy Injection ConfigRepository
+        /// Initializes a new instance of the ConfigRepository class 
         /// </summary>
         ConfigRepository _config = new ConfigRepository();
 
 
-
+        /// <summary>
+        /// Connect with Database with specifik ServerName,DatabaseName,UserId and Password
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <param name="Password"></param>
+        /// <param name="ServerName"></param>
+        /// <param name="DatabaseName"></param>
+        /// <returns></returns>
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
             try
@@ -46,7 +52,14 @@ namespace BusinessLayer
 
 
 
-
+        /// <summary>
+        /// Method to Test if CoonectionString  is correct or not 
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <param name="Password"></param>
+        /// <param name="ServerName"></param>
+        /// <param name="DatabaseName"></param>
+        /// <returns></returns>
         public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
             try

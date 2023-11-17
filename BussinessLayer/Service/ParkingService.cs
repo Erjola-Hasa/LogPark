@@ -11,16 +11,34 @@ namespace BusinessLayer
         private ParkingRepository parkingDAL= new ParkingRepository();
         PriceRepository languageRepository = new PriceRepository();
 
-
+        /// <summary>
+        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// </summary>
+        /// <param name="parkingDAL"></param>
         public ParkingService(ParkingRepository parkingDAL)
         {
             this.parkingDAL = parkingDAL;
         }
 
+
+
+        /// <summary>
+        /// Retrieves the total number of parking spaces 
+        /// </summary>
+        /// <returns></returns>
         public int GetTotalParkingSpaces()
         {
             return parkingDAL.GetTotalParkingSpaces();
         }
+
+
+
+
+        /// <summary>
+        /// Retrieves the number of reserved parking spaces based on the provided reservation status.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public int GetNumberOfReservedSpaces(string status)
         {
            
@@ -30,6 +48,14 @@ namespace BusinessLayer
 
             return reservedSpaces;
         }
+
+
+
+        /// <summary>
+        /// Inserts a check-in record into the parking system with the given barcode and check-in date/time.
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <param name="checkInDateTime"></param>
         public void CheckIn(string barcode, DateTime checkInDateTime)
         {
             try
@@ -48,27 +74,56 @@ namespace BusinessLayer
             }
         }
 
+
+        /// <summary>
+        /// Validates if the provided check-in date/time is equal to the current date/time.
+        /// </summary>
+        /// <param name="checkInDateTime"></param>
+        /// <returns></returns>
         private bool IsValidCheckInDateTime(DateTime checkInDateTime)
         {
           
             return checkInDateTime == DateTime.Now;
         }
 
+
+        /// <summary>
+        /// Validates if the provided barcode is not null or empty.
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
         private bool IsValidBarcode(string barcode)
         {
             
             return !string.IsNullOrEmpty(barcode);
         }
 
+
+
+
+        /// <summary>
+        /// Calculates the current exit time for a vehicle that entered the parking lot at the specified entry time.
+        /// </summary>
+        /// <param name="entryTime"></param>
+        /// <returns></returns>
         public DateTime CalculateExitTime(DateTime entryTime)
         {
             return DateTime.Now; 
         }
 
+
+
+
+        /// <summary>
+        /// Calculates the parking price based on the provided entry and exit times.
+        /// </summary>
+        /// <param name="entryTime"></param>
+        /// <param name="exitTime"></param>
+        /// <returns></returns>
         public int CalculatePrice(DateTime entryTime, DateTime exitTime)
         {
                
-            int pricePerHour = languageRepository.GetPrice();
+                int pricePerHour = languageRepository.GetPrice();
                 TimeSpan duration = exitTime - entryTime;
                 int hours = (int)duration.TotalHours;
 
@@ -76,24 +131,67 @@ namespace BusinessLayer
                 return totalPrice;
            
         }
+
+
+
+
+        /// <summary>
+        /// Retrieves the entry time for a vehicle with the given barcode from the database.
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
         public DateTime GetEntryTimeFromDatabase(string barcode)
         {
             return parkingDAL.GetEntryTimeFromDatabase(barcode);
         }
+
+
+
+        /// <summary>
+        /// Retrieves the reservation ID for a vehicle with the given barcode from the database.
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
         public int GetReservationIDFromDatabase(string barcode)
         {
             return parkingDAL.GetReservationIDFromDatabase(barcode);
 
 
         }
+
+
+
+        /// <summary>
+        /// Retrieves the status (e.g., reserved, checked-in) for a vehicle with the given barcode from the database.
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
         public string GetStatus(string barcode)
         {
             return parkingDAL.GetStatusDFromDatabase(barcode);
         }
+
+
+        /// <summary>
+        /// Updates the reservation record in the database with the provided reservation ID, exit time, and price.
+        /// </summary>
+        /// <param name="reservationID"></param>
+        /// <param name="exitTime"></param>
+        /// <param name="price"></param>
         public void UpdateReservation(int reservationID, DateTime exitTime, decimal price)
         {
             parkingDAL.UpdateReservation(reservationID, exitTime, price);
         }
+
+
+
+        /// <summary>
+        /// Generates a parking report for the specified period, including statistics such as the total number of cars,
+        /// minimum and maximum stay times, and average stay time. The report is returned as a ReportData object.
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
         public ReportData GenerateReport(DateTime startDate, DateTime endDate)
         {
             try

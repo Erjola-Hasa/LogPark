@@ -6,17 +6,17 @@ namespace BusinessLayer
 {
     public class UserService
     {
-        
+
         /// <summary>
-    /// Dipendency Injection UserRepostiory
-    /// </summary>
+        /// Initializes a new instance of the UserRepository class
+        /// </summary>
         UserRepository userRepository = new UserRepository();
 
 
 
 
         /// <summary>
-        /// Method to insert User an take Validation about User
+        /// Insert the User in the database with the provided firstname,lastname,userName,password and role
         /// </summary>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
@@ -70,7 +70,7 @@ namespace BusinessLayer
 
 
         /// <summary>
-        /// Method to Authenticake Users and call the repository method "GetUserByUserName"
+        /// Retrive the users by username and password  from database  and validate if exist in database or not
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>

@@ -30,7 +30,7 @@ namespace BusinessLayer
         {
             try
             {
-              
+
                 Users existingUser = userRepository.GetUserByUserName(userName, password);
                 if (existingUser != null)
                 {
@@ -82,35 +82,25 @@ namespace BusinessLayer
         {
             try
             {
-                
                 Users user = userRepository.GetUserByUserName(userName, password);
                 if (user != null)
                 {
-                    if(user.UserName == userName && user.Password == password) 
+                    if(user.UserName== userName && user.Password==password) 
                     {
                         return user;
                     }
-                    else
-                    {
-                        return null;
-                    }
-                  
+                
 
-                
-               
+                        return null;
+                    
                 }
-                
             }
             catch (Exception ex)
             {
-              //  MessageBox.Show(ex.ToString());
                 File.AppendAllText("error.log", ex.ToString());
-                MessageBox.Show("An error has occurred. Please verify you credintial.");
+                MessageBox.Show("An error has occurred. Please verify your credentials.");
             }
             return null;
-
         }
-
     }
-
 }

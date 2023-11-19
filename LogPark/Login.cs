@@ -47,7 +47,9 @@ namespace LogPark
 
             string username = textBox1.Text;
             string password = textBox2.Text;
+            password = Cryptography.Encrypt(password);
           
+
 
             UserService userService = new UserService();
 
@@ -66,7 +68,7 @@ namespace LogPark
             else   if (user != null)
             {
 
-
+                AuthHelper.SetLoggedInUserRole(user.Profile);
 
                 if (user.Profile == "Supervizor")
                 {

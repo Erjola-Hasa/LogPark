@@ -357,6 +357,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthHelper.cs" />
     <Compile Include="Check.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -495,6 +496,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsAdmin.resx">
       <DependentUpon>SettingsAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>

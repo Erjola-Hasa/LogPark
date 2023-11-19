@@ -45,12 +45,29 @@ namespace LogPark
                 parkingService.UpdateReservation(reservationID, exitTime, price);
                 this.Hide();
                 MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Dashboard dashboard = new Dashboard();
-                dashboard.ShowDialog();
 
-               
+                if (AuthHelper.GetLoggedInUserRole() == "Admin")
+                {
+                    DashboardAdmin dashboard2 = new DashboardAdmin();
+                    dashboard2.ShowDialog();
+
+                }
+                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor")
+                {
+                    DashboardSupervizor dashboard1 = new DashboardSupervizor();
+                    dashboard1.ShowDialog();
+
+                }
+
+                else
+                {
+                    this.Hide();
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.ShowDialog();
+                }
             }
-         
+
+
             else
             {
                 this.Hide();

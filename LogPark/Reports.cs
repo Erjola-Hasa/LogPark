@@ -46,9 +46,9 @@ namespace LogPark
             if (startDate >= endDate)
             {
                 MessageBox.Show("Start Date must be less than or equal to today's date.Please fill in the correct way!", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                this.Hide();
+               
                 Reports reports = new Reports();
-                reports.Show();
+                reports.ShowDialog();
 
                
             }
@@ -78,9 +78,25 @@ namespace LogPark
         /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            DashboardAdmin dashboardAdmin = new DashboardAdmin();
-            dashboardAdmin.Show();
+            if (AuthHelper.GetLoggedInUserRole() == "Admin")
+            {
+                DashboardAdmin dashboard2 = new DashboardAdmin();
+                dashboard2.ShowDialog();
+
+            }
+            else if (AuthHelper.GetLoggedInUserRole() == "Supervizor")
+            {
+                DashboardSupervizor dashboard1 = new DashboardSupervizor();
+                dashboard1.ShowDialog();
+
+            }
+
+            else
+            {
+                this.Hide();
+                Dashboard dashboard = new Dashboard();
+                dashboard.ShowDialog();
+            }
 
         }
     }

@@ -59,7 +59,7 @@ namespace DataAccesLayer
                 var parameters = new
                 {
                     UserName = userName,
-                    password = Password
+                    Password =Password
                 };
                 var result = db.ExecuteReader("SelectUserName", parameters, commandType: CommandType.StoredProcedure);
                 {

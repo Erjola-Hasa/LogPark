@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
 using System;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -8,7 +9,7 @@ namespace LogPark
     public partial class Checkin : Form
     {
 
-      
+       
         private ParkingService parkingService;
 
         /// <summary>
@@ -47,35 +48,46 @@ namespace LogPark
         /// <param name="e"></param>
         public void button1_Click(object sender, EventArgs e)
         {
-            
 
 
 
-            DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-          
+
+            DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
             if (result1 == DialogResult.OK)
             {
                 string barcode = label3.Text;
                 DateTime checkInDateTime = DateTime.Now;
-                parkingService.CheckIn(barcode,checkInDateTime);
+                parkingService.CheckIn(barcode, checkInDateTime);
                 MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
+
+                if (AuthHelper.GetLoggedInUserRole() == "Admin")
+                {
+                    this.Hide();
+                    DashboardAdmin dashboard2 = new DashboardAdmin();
+                    dashboard2.ShowDialog();
+
+                }
+                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor")
+                {
+                    this.Hide();
+                    DashboardSupervizor dashboard1 = new DashboardSupervizor();
+                    dashboard1.ShowDialog();
+
+                }
+
+                else
+                {
+                    this.Hide();
                     Dashboard dashboard = new Dashboard();
                     dashboard.ShowDialog();
-                
+                }
             }
-            else  
-            {
-                this.Hide();
-                Dashboard dashboard = new Dashboard();
-                dashboard.ShowDialog();
-
-            
-            }
-
-
-
         }
+
+
+
+    
 
 
         /// <summary>

@@ -72,7 +72,7 @@ namespace LogPark
             {
                 this.Hide();
                 CheckOut checkOut = new CheckOut();
-                checkOut.Show();
+                checkOut.ShowDialog();
             }
 
 

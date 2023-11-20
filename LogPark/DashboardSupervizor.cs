@@ -53,7 +53,7 @@ namespace LogPark
         {
             this.Hide();
             Check check = new Check();
-            check.Show();
+            check.ShowDialog();
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace LogPark
         {
             this.Hide();
             CheckOut check = new CheckOut();
-            check.Show();
+            check.ShowDialog();
         }
 
 
@@ -80,7 +80,7 @@ namespace LogPark
         {
             this.Hide();
             Reports reports = new Reports();
-            reports.Show();
+            reports.ShowDialog();
         }
 
 
@@ -95,7 +95,7 @@ namespace LogPark
         {
             this.Hide();
             SettingSupervizor setting = new SettingSupervizor();
-            setting.Show();
+            setting.ShowDialog();
         }
 
 
@@ -109,16 +109,11 @@ namespace LogPark
         {
             this.Hide();
             Login login = new Login();
-            login.Show();
+            login.ShowDialog();
         }
 
 
-        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
-        {
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-        }
+       
     }
 }
 #endregion

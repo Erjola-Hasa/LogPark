@@ -282,6 +282,7 @@
             // 
             resources.ApplyResources(this.textBox9, "textBox9");
             this.textBox9.Name = "textBox9";
+            this.textBox9.UseSystemPasswordChar = true;
             // 
             // comboBox1
             // 

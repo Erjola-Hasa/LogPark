@@ -12,7 +12,7 @@ namespace LogPark
         public Login()
         {
             InitializeComponent();
-            this.FormClosing += Form1_FormClosing;
+         
             
 
         }
@@ -121,7 +121,7 @@ namespace LogPark
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
            
-           Environment.Exit(0);
+           System.Environment.Exit(0);
         }
     }
 }

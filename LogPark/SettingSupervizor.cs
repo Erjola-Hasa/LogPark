@@ -129,7 +129,7 @@ namespace LogPark
                 MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Hide();
                 SettingSupervizor settingSupervizor = new SettingSupervizor();
-                settingSupervizor.Show();
+                settingSupervizor.ShowDialog();
             }
         }
 
@@ -162,7 +162,7 @@ namespace LogPark
             {
                 MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SettingSupervizor settingSupervizor = new SettingSupervizor();
-                settingSupervizor.Show();
+                settingSupervizor.ShowDialog();
             }
         }
 

@@ -134,7 +134,7 @@ namespace LogPark
             {
                 this.Hide();
                 SettingsAdmin settingsAdmin = new SettingsAdmin();
-                settingsAdmin.Show();
+                settingsAdmin.ShowDialog();
             }
         }
 
@@ -193,6 +193,7 @@ namespace LogPark
                 UserService userService = new UserService();
 
                 userService.InsertUser(firstName, lastName, userName, password, profile);
+               
 
             }
             catch (Exception ex)
@@ -224,7 +225,7 @@ namespace LogPark
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
                 Properties.Settings.Default.Language = "en";
             }
-            Properties.Settings.Default.Save();
+           Properties.Settings.Default.Save();
 
         }
 

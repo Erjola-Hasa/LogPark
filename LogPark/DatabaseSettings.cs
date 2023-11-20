@@ -37,7 +37,7 @@ namespace LogPark
                 MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Hide();
                 DatabaseSettings databaseSetting = new DatabaseSettings();
-                databaseSetting.Show();
+                databaseSetting.ShowDialog();
             }
         }
 
@@ -61,7 +61,7 @@ namespace LogPark
             {
                 MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DatabaseSettings databaseSetting = new DatabaseSettings();
-                databaseSetting.Show();
+                databaseSetting.ShowDialog();
             }
 
         }

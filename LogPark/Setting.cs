@@ -26,7 +26,7 @@ namespace LogPark
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (comboBox2.SelectedItem.ToString() == "Albanian")
+            if (comboBox2.SelectedItem.ToString() == "Albanian"|| comboBox2.SelectedItem.ToString() == "Shqip")
             {
                 ChangeLanguage("sq-AL");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");

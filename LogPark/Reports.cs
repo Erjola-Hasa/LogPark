@@ -46,9 +46,8 @@ namespace LogPark
             if (startDate >= endDate)
             {
                 MessageBox.Show("Start Date must be less than or equal to today's date.Please fill in the correct way!", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-               
-                Reports reports = new Reports();
-                reports.ShowDialog();
+                
+                
 
                
             }

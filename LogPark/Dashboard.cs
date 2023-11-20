@@ -101,7 +101,7 @@ namespace LogPark
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+                this.Hide();
                 Setting settings = new Setting();
                 settings.ShowDialog();
             }

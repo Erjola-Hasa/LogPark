@@ -77,7 +77,7 @@ namespace BusinessLayer
             catch(Exception ex)
             {
                 File.AppendAllText("error.log", ex.ToString());
-                MessageBox.Show("An error has occurred. Please verify you credintial.");
+                MessageBox.Show("An error has occurred. Please verify you credintial.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 //MessageBox.Show(ex.ToString());
             }
            

@@ -71,7 +71,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please verify your Data.");
             }
         }
 

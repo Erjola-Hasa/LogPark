@@ -57,7 +57,7 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="barcode"></param>
         /// <param name="checkInDateTime"></param>
-        public void CheckIn(string barcode, DateTime checkInDateTime)
+        public string CheckIn(string barcode, DateTime checkInDateTime)
         {
             try
             {
@@ -66,14 +66,17 @@ namespace BusinessLayer
 
                 {
                     parkingDAL.InsertCheckIn(barcode, checkInDateTime);
-
+                    
+                    return parkingDAL.ToString();
                 }
             }
             catch (Exception ex)
             {
                 File.AppendAllText("error.log", ex.ToString());
                 MessageBox.Show("An error has occurred. Please verify your Data.");
+               return null;
             }
+            return null;
         }
 
 

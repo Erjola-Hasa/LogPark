@@ -19,7 +19,7 @@ namespace LogPark
 
 
         /// <summary>
-        /// Dropdown list to change the language english or albanian
+        /// Dropdown list to change the language to  English or Albanian
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

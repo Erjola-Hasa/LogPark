@@ -70,24 +70,34 @@ namespace DataAccesLayer
         /// <param name="barcode"></param>
         /// <param name="checkInDateTime"></param>
         /// 
-        public void InsertCheckIn(string barcode, DateTime checkInDateTime)
-        {
-            using (var db = new SqlConnection(ConnectionString))
+        public string InsertCheckIn(string barcode, DateTime checkInDateTime)
+        { try
             {
-
-
-                db.Open();
-                var parameters = new
+                using (var db = new SqlConnection(ConnectionString))
                 {
-                    RezervationCode = barcode,
-                    StartDateTime = checkInDateTime,
 
 
-                };
+                    db.Open();
+                    var parameters = new
+                    {
+                        RezervationCode = barcode,
+                        StartDateTime = checkInDateTime,
 
-                db.Execute("InsertReservation", parameters, commandType: CommandType.StoredProcedure);
 
-                db.Close();
+                    };
+
+                    var result = db.Execute("InsertReservation", parameters, commandType: CommandType.StoredProcedure);
+
+                    db.Close();
+                    return result.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+
             }
 
         }

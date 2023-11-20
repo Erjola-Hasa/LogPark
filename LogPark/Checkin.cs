@@ -1,6 +1,5 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
-using Microsoft.VisualBasic;
 using System;
 using System.Windows.Forms;
 
@@ -9,7 +8,7 @@ namespace LogPark
     public partial class Checkin : Form
     {
 
-       
+
         private ParkingService parkingService;
 
         /// <summary>
@@ -30,12 +29,12 @@ namespace LogPark
         /// <param name="e"></param>
         public void Checkin_Load(object sender, EventArgs e)
         {
-         
+
             DateTime checkInDateTime = DateTime.Now;
             label3.Text = GenerateRandomBarcode();
             label4.Text = checkInDateTime.ToString();
 
-            
+
 
         }
 
@@ -48,18 +47,17 @@ namespace LogPark
         /// <param name="e"></param>
         public void button1_Click(object sender, EventArgs e)
         {
-
-
-
-
-            DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            if (result1 == DialogResult.OK)
+            string barcode = label3.Text;
+            DateTime checkInDateTime =DateTime.Now;
+            parkingService.CheckIn(barcode, checkInDateTime);
+            if (parkingService != null)
             {
-                string barcode = label3.Text;
-                DateTime checkInDateTime = DateTime.Now;
-                parkingService.CheckIn(barcode, checkInDateTime);
-                MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result1 == DialogResult.OK)
+                   
+                    MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
                 if (AuthHelper.GetLoggedInUserRole() == "Admin")
@@ -70,7 +68,7 @@ namespace LogPark
                 }
                 else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
                 {
-                   
+
                     DashboardSupervizor dashboard1 = new DashboardSupervizor();
                     dashboard1.ShowDialog();
 
@@ -81,6 +79,14 @@ namespace LogPark
                     Dashboard dashboard = new Dashboard();
                     dashboard.ShowDialog();
                 }
+            }
+        
+    
+            else
+            {
+                this.Hide();
+                Checkin checkin = new Checkin();
+                checkin.ShowDialog();
             }
         }
 

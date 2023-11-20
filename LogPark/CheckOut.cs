@@ -120,7 +120,7 @@ namespace LogPark
             }
             else
             {
-                MessageBox.Show("Please Enter the Barcode.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please Enter the correct Barcode.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

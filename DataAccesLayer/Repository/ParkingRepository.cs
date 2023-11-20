@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.IO;
+using System.Windows.Forms;
 
 namespace DataAccesLayer
 {
@@ -63,12 +64,12 @@ namespace DataAccesLayer
 
 
 
-         /// <summary>
-         /// Method to checkin in parking and generate barcode and datetime 
-         /// </summary>
-         /// <param name="barcode"></param>
-         /// <param name="checkInDateTime"></param>
-         /// 
+        /// <summary>
+        /// Method to checkin in parking and generate barcode and datetime 
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <param name="checkInDateTime"></param>
+        /// 
         public void InsertCheckIn(string barcode, DateTime checkInDateTime)
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -88,7 +89,7 @@ namespace DataAccesLayer
 
                 db.Close();
             }
-            
+
         }
 
 
@@ -129,6 +130,7 @@ namespace DataAccesLayer
         /// <returns></returns>
         public DateTime GetEntryTimeFromDatabase(string barcode)
         {
+
             using (var db = new SqlConnection(ConnectionString))
             {
 
@@ -151,7 +153,8 @@ namespace DataAccesLayer
                 }
                 return entryTime;
             }
-           
+
+
         }
 
 
@@ -165,6 +168,8 @@ namespace DataAccesLayer
 
         public int GetReservationIDFromDatabase(string barcode)
         {
+
+
             using (var db = new SqlConnection(ConnectionString))
             {
 
@@ -187,7 +192,10 @@ namespace DataAccesLayer
                 return reservationID;
             }
         }
-       
+
+    
+
+
 
 
 
@@ -202,43 +210,52 @@ namespace DataAccesLayer
 
         public List<Reservations> GetReservationsInPeriod(DateTime StartDateTime, DateTime EndDateTime)
         {
-            using (var db = new SqlConnection(ConnectionString))
+            try
             {
-
-                List<Reservations> reservations = new List<Reservations>();
-
-                try
+                using (var db = new SqlConnection(ConnectionString))
                 {
-                    db.Open();
-                    var parameters = new
-                    {
-                        StartDateTime = StartDateTime,
-                        EndDateTime = EndDateTime
-                    };
-                    var reader = db.ExecuteReader("ReservationsInPeriod", parameters, commandType: CommandType.StoredProcedure);
 
+                    List<Reservations> reservations = new List<Reservations>();
+
+                    try
                     {
-                        while (reader.Read())
+                        db.Open();
+                        var parameters = new
                         {
-                            Reservations reservation = new Reservations
+                            StartDateTime = StartDateTime,
+                            EndDateTime = EndDateTime
+                        };
+                        var reader = db.ExecuteReader("ReservationsInPeriod", parameters, commandType: CommandType.StoredProcedure);
+
+                        {
+                            while (reader.Read())
                             {
-                                ReservationID = (int)reader["ReservationID"],
-                                StartDateTime = reader.GetDateTime(reader.GetOrdinal("StartDateTime")),
-                                EndDateTime = reader.GetDateTime(reader.GetOrdinal("EndDateTime")),
+                                Reservations reservation = new Reservations
+                                {
+                                    ReservationID = (int)reader["ReservationID"],
+                                    StartDateTime = reader.GetDateTime(reader.GetOrdinal("StartDateTime")),
+                                    EndDateTime = reader.GetDateTime(reader.GetOrdinal("EndDateTime")),
 
 
-                            };
-                            reservations.Add(reservation);
+                                };
+                                reservations.Add(reservation);
+                            }
                         }
                     }
-                }
-                finally
-                {
-                    db.Close();
-                }
+                    finally
+                    {
+                        db.Close();
+                    }
 
-                return reservations;
+                    return reservations;
+                }
+            }catch(Exception ex)
+            {
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
+
         }
 
 
@@ -249,37 +266,50 @@ namespace DataAccesLayer
         /// <param name="barcode"></param>
         /// <returns></returns>
 
-     
+
         public string GetStatusDFromDatabase(string barcode)
         {
-            using (var db = new SqlConnection(ConnectionString))
+            try
             {
 
-                db.Open();
-                string Status = "";
 
-                var parameters = new
-                {
-                    RezervationCode = barcode,
-
-                };
-
-                object result = db.ExecuteScalar("SelectRezervationID1", parameters, commandType: CommandType.StoredProcedure);
+                using (var db = new SqlConnection(ConnectionString))
                 {
 
-                    Reservations reservations = new Reservations();
+                    db.Open();
+                    var parameters = new
                     {
-                        reservations.Status = (string)result;
+                        RezervationCode = barcode,
+
+                    };
+
+                    object result = db.ExecuteScalar("SelectRezervationstatus", parameters, commandType: CommandType.StoredProcedure);
+                    {
+
+
+                        Reservations reservations = new Reservations();
+                        {
+                            reservations.Status = (string)result;
+                        }
+
+                        db.Close();
+
+                        return (string)result;
                     }
 
-                    db.Close();
-
-                    return (string)result;
                 }
             }
+            catch (Exception ex)
+            {
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+
+            }
+           // return null;
+
         }
     }
-
 }
 
 

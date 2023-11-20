@@ -88,7 +88,7 @@ namespace LogPark
         private void button2_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
+                 this.Hide();
                 CheckOut checkOut = new CheckOut();
                 checkOut.ShowDialog();
          }
@@ -106,12 +106,7 @@ namespace LogPark
                 settings.ShowDialog();
             }
 
-        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
-        {
-           
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-        }
+       
 
     }
 }

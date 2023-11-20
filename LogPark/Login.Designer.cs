@@ -75,7 +75,6 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-          
             // 
             // Login
             // 
@@ -85,6 +84,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

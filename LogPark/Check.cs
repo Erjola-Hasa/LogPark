@@ -53,9 +53,54 @@ namespace LogPark
         /// <param name="e"></param>
         private void button1_Click_2(object sender, EventArgs e)
         {
+            this.Hide();
             Checkin checkin = new Checkin();
-            checkin.Show();
+            checkin.ShowDialog();
            
+
+        }
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Override the Close Form event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            if (AuthHelper.GetLoggedInUserRole() == "Admin")
+            {
+                
+                DashboardAdmin dashboard2 = new DashboardAdmin();
+                dashboard2.ShowDialog();
+
+            }
+            else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
+            {
+                
+                DashboardSupervizor dashboard1 = new DashboardSupervizor();
+                dashboard1.ShowDialog();
+
+            }
+
+            else
+            {
+                
+                Dashboard dashboard = new Dashboard();
+                dashboard.ShowDialog();
+            }
+
+
+
+
+
 
         }
     }

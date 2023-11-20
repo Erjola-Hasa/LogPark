@@ -78,13 +78,14 @@ namespace LogPark
         /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
             if (AuthHelper.GetLoggedInUserRole() == "Admin")
             {
                 DashboardAdmin dashboard2 = new DashboardAdmin();
                 dashboard2.ShowDialog();
 
             }
-            else if (AuthHelper.GetLoggedInUserRole() == "Supervizor")
+            else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
             {
                 DashboardSupervizor dashboard1 = new DashboardSupervizor();
                 dashboard1.ShowDialog();
@@ -93,7 +94,7 @@ namespace LogPark
 
             else
             {
-                this.Hide();
+              
                 Dashboard dashboard = new Dashboard();
                 dashboard.ShowDialog();
             }

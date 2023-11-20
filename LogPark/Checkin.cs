@@ -61,16 +61,16 @@ namespace LogPark
                 parkingService.CheckIn(barcode, checkInDateTime);
                 MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                this.Hide();
                 if (AuthHelper.GetLoggedInUserRole() == "Admin")
                 {
-                    this.Hide();
                     DashboardAdmin dashboard2 = new DashboardAdmin();
                     dashboard2.ShowDialog();
 
                 }
-                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor")
+                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
                 {
-                    this.Hide();
+                   
                     DashboardSupervizor dashboard1 = new DashboardSupervizor();
                     dashboard1.ShowDialog();
 
@@ -78,7 +78,6 @@ namespace LogPark
 
                 else
                 {
-                    this.Hide();
                     Dashboard dashboard = new Dashboard();
                     dashboard.ShowDialog();
                 }
@@ -87,14 +86,37 @@ namespace LogPark
 
 
 
-    
+
 
 
         /// <summary>
-        /// Method to generate the random number
+        /// Override the Close Form event
         /// </summary>
-        /// <returns></returns>
-        private   string GenerateRandomBarcode()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+            {
+                this.Hide();
+               Check check = new Check();
+               check.ShowDialog();
+
+
+
+
+            }
+
+
+
+
+
+
+            /// <summary>
+            /// Method to generate the random number
+            /// </summary>
+            /// <returns></returns>
+            private   string GenerateRandomBarcode()
         {
             
             Random random = new Random();

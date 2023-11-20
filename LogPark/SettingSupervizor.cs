@@ -191,7 +191,25 @@ namespace LogPark
         }
 
 
-       
+
+
+
+        /// <summary>
+        /// Override the Close Form event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            DashboardSupervizor dashboard = new DashboardSupervizor();
+            dashboard.ShowDialog();
+
+
+
+
+        }
+
     }
 }
 

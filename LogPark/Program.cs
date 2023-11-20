@@ -1,13 +1,16 @@
-﻿using System;
+﻿
+using System;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+
 
 namespace LogPark
 {
     internal static class Program
     {
-        public static string Connection { get; private set; }
+     
+     
 
         [STAThread]
         static void Main()
@@ -15,25 +18,24 @@ namespace LogPark
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-           string Connection = Properties.Settings.Default.Connection;
-            string SaveLanguage = Properties.Settings.Default.Language;
+            string Connection =DataAccesLayer.Properties.Settings.Default.Connection;
+            string SaveLanguage =Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
 
-            if ((bool)Properties.Settings.Default["FirstRun"] == true)
+            if ((bool)DataAccesLayer.Properties.Settings.Default["FirstRun"] == true)
             {
-                Properties.Settings.Default["FirstRun"] = false;
-                Properties.Settings.Default.Save();
+                DataAccesLayer.Properties.Settings.Default["FirstRun"] = false;
+                DataAccesLayer.Properties.Settings.Default.Save();
                 DatabaseSettings databaseSettings = new DatabaseSettings();
                 databaseSettings.ShowDialog();
             }
             else if (string.IsNullOrEmpty(Connection))
-                {
+            {
            
                     DatabaseSettings databaseSettings = new DatabaseSettings();
                     databaseSettings.ShowDialog();
-                 
+                  
             }
                 else
                 {

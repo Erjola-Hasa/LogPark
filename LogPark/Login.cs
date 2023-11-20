@@ -70,7 +70,7 @@ namespace LogPark
 
                 AuthHelper.SetLoggedInUserRole(user.Profile);
 
-                if (user.Profile == "Supervizor")
+                if (user.Profile == "Supervizor" || user.Profile=="Supervisor")
                 {
                     this.Hide();
                     DashboardSupervizor dashboard = new DashboardSupervizor();
@@ -80,7 +80,7 @@ namespace LogPark
 
 
                 }
-                else if (user.Profile == "Perdorues")
+                else if (user.Profile == "Users" || user.Profile=="Perdorues")
                 {
 
                     this.Hide();
@@ -121,24 +121,8 @@ namespace LogPark
         /// <param name="e"></param>
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
-            //In case windows is trying to shut down, don't hold the process up
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-            if (this.DialogResult == DialogResult.Cancel)
-            {
-                // Assume that X has been clicked and act accordingly.
-                // Confirm user wants to close
-                switch (MessageBox.Show(this, "Are you sure?", "Do you still want ... ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    //Stay on this form
-                    case DialogResult.No:
-                        e.Cancel = true;
-                        break;
-                    default:
-                        Environment.Exit(10);
-                        break;
-                }
-            }
+           
+           Environment.Exit(0);
         }
     }
 }

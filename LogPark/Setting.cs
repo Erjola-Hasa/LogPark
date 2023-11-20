@@ -122,7 +122,7 @@ namespace LogPark
 
             else
             {
-              //  MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //  MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Hide();
                 Setting settingsAdmin = new Setting();
                 settingsAdmin.Show();
@@ -160,10 +160,25 @@ namespace LogPark
                 databaseSetting.Show();
             }
         }
+
+
+
+
+        /// <summary>
+        /// Override the Close Form event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
+
+
+
+
+        }
+
     }
-
-
-
 }
-
-

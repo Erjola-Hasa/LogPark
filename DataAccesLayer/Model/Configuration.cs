@@ -1,12 +1,9 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccesLayer
+﻿namespace DataAccesLayer
 {
+
+    /// <summary>
+    /// Model about Price of Parking
+    /// </summary>
     public class Configuration
     {
         public int Id { get; set; }

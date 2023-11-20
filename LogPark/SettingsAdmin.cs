@@ -1,5 +1,4 @@
-﻿
-using BusinessLayer;
+﻿using BusinessLayer;
 using System;
 using System.ComponentModel;
 using System.Globalization;

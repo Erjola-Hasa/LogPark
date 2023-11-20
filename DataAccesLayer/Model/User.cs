@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataAccesLayer
+﻿namespace DataAccesLayer
 {
+    /// <summary>
+    /// Model anout Users
+    /// </summary>
     public class Users
     {
        

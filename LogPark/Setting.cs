@@ -1,13 +1,9 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.ComponentModel;
-using System.Windows.Forms;
 using System.Globalization;
-
 using System.Threading;
-
-using Microsoft.VisualBasic;
-using System.Drawing;
-using BusinessLayer;
+using System.Windows.Forms;
 
 namespace LogPark
 {

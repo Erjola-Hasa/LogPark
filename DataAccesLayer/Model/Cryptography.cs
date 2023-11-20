@@ -1,15 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccesLayer
 {
+
+
+    /// <summary>
+    /// Method about Cryptography (Encrypt and Decrypt)
+    /// </summary>
     public  class Cryptography
     {
+
+        /// <summary>
+        ///   Method about Encrypt of Password
+        /// </summary>
+        /// <param name="encryptString"></param>
+        /// <returns></returns>
         public static string Encrypt(string encryptString)
         {
             string EncryptionKey = "jola@1234xxxxxxxxxxtttttuuuuuiiiiio";
@@ -34,6 +42,13 @@ namespace DataAccesLayer
             return encryptString;
         }
 
+
+
+        /// <summary>
+        /// Method about Decrypt of Password
+        /// </summary>
+        /// <param name="cipherText"></param>
+        /// <returns></returns>
         public static string Decrypt(string cipherText)
         {
             string EncryptionKey = "jola@1234xxxxxxxxxxtttttuuuuuiiiiio";

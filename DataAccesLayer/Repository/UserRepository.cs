@@ -1,8 +1,9 @@
 ﻿using Dapper;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-
-
+using System.IO;
+using System.Windows.Forms;
 
 namespace DataAccesLayer
 {
@@ -11,7 +12,7 @@ namespace DataAccesLayer
     {
         
         /// <summary>
-        /// ConnectionString 
+        ///   ConnectionString 
         /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
 
@@ -27,12 +28,19 @@ namespace DataAccesLayer
         /// <param name="user"></param>
         public void InsertUser(Users user)
         {
-
-            using (var db = new SqlConnection(ConnectionString))
+            try
             {
-                db.Open();
-                db.Execute("InsertUser", user, commandType: CommandType.StoredProcedure);
-                db.Close();
+                using (var db = new SqlConnection(ConnectionString))
+                {
+                    db.Open();
+                    db.Execute("InsertUser", user, commandType: CommandType.StoredProcedure);
+                    db.Close();
+                }
+            }
+            catch ( Exception ex )
+            {
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -51,36 +59,44 @@ namespace DataAccesLayer
 
         public Users GetUserByUserName(string userName, string Password)
         {
-          
-            using (var db = new SqlConnection(ConnectionString))
+            try
             {
-                db.Open();
+                using (var db = new SqlConnection(ConnectionString))
+                {
+                    db.Open();
 
-                var parameters = new
-                {
-                    UserName = userName,
-                    Password =Password
-                };
-                var result = db.ExecuteReader("SelectUserName", parameters, commandType: CommandType.StoredProcedure);
-                {
-                    while (result.Read())
+                    var parameters = new
                     {
-                        Users users = new Users();
+                        UserName = userName,
+                        Password = Password
+                    };
+                    var result = db.ExecuteReader("SelectUserName", parameters, commandType: CommandType.StoredProcedure);
+                    {
+                        while (result.Read())
                         {
-                            users.UserName = userName;
-                            users.Password = Password;
-                            users.Profile = result.GetString(4);
-                        };
-                        db.Close();
-                        return users;
+                            Users users = new Users();
+                            {
+                                users.UserName = userName;
+                                users.Password = Password;
+                                users.Profile = result.GetString(4);
+                            };
+                            db.Close();
+                            return users;
+                        }
+
                     }
+                 
+
+
 
                 }
-                return null;
-
-
-
             }
+            catch (Exception ex)
+            {
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return null;
 
         }
 

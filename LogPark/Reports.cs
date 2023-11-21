@@ -7,14 +7,16 @@ namespace LogPark
 {
     public partial class Reports : Form
     {
-        public ParkingService parkingService;
+
         /// <summary>
-        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// Initializes a new instance of the ParkingService class 
         /// </summary>
+        public ParkingService parkingService= new ParkingService();
+        
         public Reports()
         {
             InitializeComponent();
-            parkingService = new ParkingService(new ParkingRepository());
+           
         }
 
        

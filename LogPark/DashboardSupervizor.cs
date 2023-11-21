@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -8,14 +7,16 @@ namespace LogPark
     #region Menu of Supervizor
     public partial class DashboardSupervizor : Form
     {
-        private ParkingService parkingService;
+
         /// <summary>
-        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// Initializes a new instance of the ParkingService class
         /// </summary>
+        private ParkingService parkingService= new ParkingService();
+       
         public DashboardSupervizor()
         {
             InitializeComponent();
-            parkingService = new ParkingService(new ParkingRepository());
+            
         }
 
         /// <summary>
@@ -33,6 +34,9 @@ namespace LogPark
             if (freeSpaces == 0)
             {
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                DashboardSupervizor dashboardSupervizor = new DashboardSupervizor();
+                dashboardSupervizor.ShowDialog();
             }
             label5.Text = label5.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
 

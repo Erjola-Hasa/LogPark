@@ -21,6 +21,10 @@ namespace BusinessLayer
             this.parkingDAL = parkingDAL;
         }
 
+        public ParkingService()
+        {
+        }
+
 
 
         /// <summary>

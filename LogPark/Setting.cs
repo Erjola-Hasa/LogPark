@@ -9,7 +9,10 @@ namespace LogPark
 {
     public partial class Setting : Form
     {
-
+        /// <summary>
+        /// Initializes a new instance of the ConfigService 
+        /// </summary>
+        ConfigService configBLL = new ConfigService();
 
         public Setting()
         {
@@ -83,7 +86,7 @@ namespace LogPark
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.AcceptButton = button2;
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
@@ -108,7 +111,7 @@ namespace LogPark
             string DatabaseName = textBox1.Text;
 
 
-            ConfigService configBLL = new ConfigService();
+           
             bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
@@ -118,10 +121,9 @@ namespace LogPark
 
             else
             {
-                //  MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Hide();
-                Setting settingsAdmin = new Setting();
-                settingsAdmin.ShowDialog();
+                Setting setting = new Setting();
+                setting.ShowDialog();
             }
 
         }
@@ -140,20 +142,20 @@ namespace LogPark
             string Password = textBox7.Text;
             string DatabaseName = textBox1.Text;
 
-            ConfigService configBLL = new ConfigService();
+          
             bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
                 MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                Dashboard login = new Dashboard();
-                login.ShowDialog();
+                Dashboard dsh = new Dashboard();
+                dsh.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Setting databaseSetting = new Setting();
-                databaseSetting.ShowDialog();
+               
+                Setting Setting = new Setting();
+                Setting.ShowDialog();
             }
         }
 

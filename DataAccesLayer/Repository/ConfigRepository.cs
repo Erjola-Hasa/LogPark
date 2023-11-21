@@ -49,7 +49,7 @@ namespace DataAccesLayer
                 catch (Exception ex)
                 {
                     File.AppendAllText("error.log", ex.ToString());
-                    MessageBox.Show("An error has occurred.Please verify you credintial");
+                    MessageBox.Show("An error has occurred.Please verify you credintial", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 return false;
             }
@@ -102,7 +102,7 @@ namespace DataAccesLayer
                 catch (Exception ex)
                 {
                     File.AppendAllText("error.log", ex.ToString());
-                    MessageBox.Show("An error has occurred. Please try again later.");
+                    MessageBox.Show("An error has occurred. Please try again later.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                   //  MessageBox.Show(ex.ToString());
                 }
                 return false;

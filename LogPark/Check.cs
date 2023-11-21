@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -7,17 +6,14 @@ namespace LogPark
 {
     public partial class Check : Form
     {
-       private   ParkingService parkingService;
-
-
-
         /// <summary>
-        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// Initializes a new instance of the ParkingService 
         /// </summary>
+        private ParkingService parkingService= new ParkingService();
+
         public Check()
         {
             InitializeComponent();
-            parkingService = new ParkingService(new ParkingRepository());
 
 
         }
@@ -31,6 +27,9 @@ namespace LogPark
         /// <param name="e"></param>
         private void Check_Load(object sender, EventArgs e)
         {
+
+            this.AcceptButton = button1;
+
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
 
             string status = "Aktive";

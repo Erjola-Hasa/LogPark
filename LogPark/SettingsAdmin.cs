@@ -11,8 +11,12 @@ namespace LogPark
     #region Admin Menu
     public partial class SettingsAdmin : Form
     {
-
-
+        /// <summary>
+        /// Initializes a new instance of the PriceServie,ConfigService and UserService
+        /// </summary>
+        PriceService priceService = new PriceService();
+        ConfigService configBLL = new ConfigService();
+        UserService userService = new UserService();
         public SettingsAdmin()
         {
             InitializeComponent();
@@ -66,7 +70,7 @@ namespace LogPark
         private void SettingsAdmin_Load(object sender, EventArgs e)
         {
 
-            PriceService priceService = new PriceService();
+           
             int Price = priceService.GetPrice();
             textBox5.Text = Price.ToString();
 
@@ -94,11 +98,12 @@ namespace LogPark
         /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
+            this.AcceptButton = button2;
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
-            PriceService priceService = new PriceService();
+        
             int Price = Convert.ToInt32(textBox5.Text);
             priceService.UpdatePrice(Price);
             textBox5.Text = Price.ToString();
@@ -122,7 +127,7 @@ namespace LogPark
             string UserId = textBox4.Text;
             string Password = textBox7.Text;
 
-            ConfigService configBLL = new ConfigService();
+            
             bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
@@ -167,7 +172,7 @@ namespace LogPark
             {
 
                 SettingsAdmin settingsAdmin = new SettingsAdmin();
-                settingsAdmin.Show();
+                settingsAdmin.ShowDialog();
             }
         }
 
@@ -190,7 +195,7 @@ namespace LogPark
                 string password = textBox9.Text;
                 string profile = comboBox1.Text;
 
-                UserService userService = new UserService();
+              
 
                 userService.InsertUser(firstName, lastName, userName, password, profile);
                

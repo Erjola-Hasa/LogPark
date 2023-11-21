@@ -8,14 +8,15 @@ namespace LogPark
 {
     public partial class CheckOut : Form
     {
-        public ParkingService parkingService;
         /// <summary>
-        ///  Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        ///  Initializes a new instance of the ParkingService 
         /// </summary>
+        public ParkingService parkingService=new ParkingService();
+       
         public CheckOut()
         {
             InitializeComponent();
-            parkingService = new ParkingService(new ParkingRepository());
+          
 
         }
 
@@ -89,6 +90,8 @@ namespace LogPark
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            
+
             string barcode = textBox2.Text;
 
             string Status = parkingService.GetStatus(barcode);
@@ -164,6 +167,19 @@ namespace LogPark
 
 
 
+        }
+
+
+
+        /// <summary>
+        /// Activate Tab Enter 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckOut_Load(object sender, EventArgs e)
+        {
+
+            this.AcceptButton = button2;
         }
     }
 }

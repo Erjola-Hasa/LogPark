@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -8,16 +7,16 @@ namespace LogPark
     public partial class Checkin : Form
     {
 
-
-        private ParkingService parkingService;
-
         /// <summary>
-        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// Initializes a new instance of the ParkingService 
         /// </summary>
+        private ParkingService parkingService= new ParkingService();
+
+        
         public Checkin()
         {
             InitializeComponent();
-            parkingService = new ParkingService(new ParkingRepository());
+         
 
         }
 
@@ -29,7 +28,7 @@ namespace LogPark
         /// <param name="e"></param>
         public void Checkin_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = button1;
             DateTime checkInDateTime = DateTime.Now;
             label3.Text = GenerateRandomBarcode();
             label4.Text = checkInDateTime.ToString();
@@ -52,6 +51,7 @@ namespace LogPark
             parkingService.CheckIn(barcode, checkInDateTime);
             if (parkingService != null)
             {
+               
 
                 DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 

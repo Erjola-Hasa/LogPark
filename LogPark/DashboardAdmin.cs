@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -8,7 +7,10 @@ namespace LogPark
     #region Menu Admin
     public partial class DashboardAdmin : Form
     {
-        private ParkingService parkingService;
+        /// <summary>
+        ///  Initializes a new instance of the ParkingService 
+        /// </summary>
+        private ParkingService parkingService= new ParkingService();
 
         /// <summary>
         /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
@@ -16,7 +18,6 @@ namespace LogPark
         public DashboardAdmin()
         {
             InitializeComponent();
-            parkingService = new ParkingService(new ParkingRepository());
 
         }
 
@@ -37,6 +38,9 @@ namespace LogPark
             if (freeSpaces == 0)
             {
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                DashboardAdmin dashboardAdmin = new DashboardAdmin();
+                dashboardAdmin.ShowDialog();
 
 
             }
@@ -125,13 +129,7 @@ namespace LogPark
 
 
 
-        /// <summary>
-        /// Close the application
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-      
-
+   
 
     }
 }

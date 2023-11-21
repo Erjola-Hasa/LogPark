@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -8,19 +7,18 @@ namespace LogPark
 {
     #region Menu Users
 
-    
+
     public partial class Dashboard : Form
     {
-
-        private ParkingService parkingService;
-
         /// <summary>
-        ///  Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        ///  Initializes a new instance of the ParkingService 
         /// </summary>
+        private ParkingService parkingService = new ParkingService();
+
+       
         public Dashboard()
         {
             InitializeComponent();
-            parkingService = new ParkingService(new ParkingRepository());
 
 
         }
@@ -44,6 +42,9 @@ namespace LogPark
             if (freeSpaces == 0)
             {
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                Dashboard dashboard = new Dashboard();
+                dashboard.ShowDialog();
             }
 
             label1.Text = label1.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
@@ -80,6 +81,7 @@ namespace LogPark
             login.ShowDialog();
         }
 
+
         /// <summary>
         /// CheckOut button who directs us in the CheckOut menu
         /// </summary>
@@ -92,6 +94,7 @@ namespace LogPark
                 CheckOut checkOut = new CheckOut();
                 checkOut.ShowDialog();
          }
+
 
 
         /// <summary>

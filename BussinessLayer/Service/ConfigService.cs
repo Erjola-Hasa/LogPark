@@ -25,26 +25,15 @@ namespace BusinessLayer
         /// <returns></returns>
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
-            try
-            {
-               
-                bool IsConneted = _config.ConnectDatabase(UserId, Password, ServerName, DatabaseName);
+            
+               bool IsConneted = _config.ConnectDatabase(UserId, Password, ServerName, DatabaseName);
                 if (IsConneted == true)
                 {
 
 
                     return true;
                 }
-               
-            }
-              catch (Exception ex) 
-            {
-                File.AppendAllText("error.log", ex.ToString());
-                MessageBox.Show("An error has occurred.Please verify you credintial");
-
-            }
-
-            return false;
+               return false;
 
 
         }
@@ -64,25 +53,15 @@ namespace BusinessLayer
         /// <returns></returns>
         public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
-            try
-            {
                 bool IsConneted = _config.TestDatabase(UserId, Password, ServerName, DatabaseName);
-                if (IsConneted == true)
-                {
-
-
-                    return true;
-                }
-            }
-            catch(Exception ex)
+            if (IsConneted == true)
             {
-                File.AppendAllText("error.log", ex.ToString());
-                MessageBox.Show("An error has occurred. Please verify you credintial.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                //MessageBox.Show(ex.ToString());
+
+
+                return true;
             }
-           
-                return false;
-            
+            return false;
+
         }
 
            

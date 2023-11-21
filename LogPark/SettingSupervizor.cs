@@ -10,6 +10,9 @@ namespace LogPark
     #region Supervizor Menu
     public partial class SettingSupervizor : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the ConfigService,PriceService 
+        /// </summary>
         public ConfigService configBLL = new ConfigService();
         public PriceService languageService = new PriceService();
 
@@ -116,7 +119,6 @@ namespace LogPark
             string DatabaseName = textBox1.Text;
 
 
-            // ConfigService configBLL = new ConfigService();
             bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
@@ -126,7 +128,7 @@ namespace LogPark
 
             else
             {
-                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 this.Hide();
                 SettingSupervizor settingSupervizor = new SettingSupervizor();
                 settingSupervizor.ShowDialog();
@@ -149,18 +151,17 @@ namespace LogPark
             string DatabaseName = textBox1.Text;
 
 
-            //  ConfigService configBLL = new ConfigService();
             bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
                 MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
+               DashboardSupervizor dash = new DashboardSupervizor();
+                dash.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
                 SettingSupervizor settingSupervizor = new SettingSupervizor();
                 settingSupervizor.ShowDialog();
             }
@@ -176,6 +177,7 @@ namespace LogPark
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
+            this.AcceptButton = button2;
             string SaveLanguage = Properties.Settings.Default.Language;
             ChangeLanguage(SaveLanguage);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using log4net;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,6 +16,12 @@ namespace DataAccesLayer
         ///   ConnectionString 
         /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
+
+
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
 
@@ -39,7 +46,7 @@ namespace DataAccesLayer
             }
             catch ( Exception ex )
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -93,7 +100,7 @@ namespace DataAccesLayer
             }
             catch (Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return null;

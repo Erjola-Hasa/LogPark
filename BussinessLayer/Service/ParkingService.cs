@@ -1,7 +1,7 @@
 ﻿using DataAccesLayer;
+using log4net;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,6 +11,11 @@ namespace BusinessLayer
     {
         private ParkingRepository parkingDAL= new ParkingRepository();
         PriceRepository PriceRepository = new PriceRepository();
+
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
@@ -73,7 +78,7 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+               log.Error(ex);
                 MessageBox.Show("An error has occurred. Please verify your Data.");
                return null;
             }
@@ -270,7 +275,7 @@ namespace BusinessLayer
              catch(Exception ex)
             {
                // MessageBox.Show(ex.ToString());
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please try again.");
             }
             return null;

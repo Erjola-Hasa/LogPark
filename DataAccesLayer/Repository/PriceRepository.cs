@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using log4net;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,6 +15,10 @@ namespace DataAccesLayer
        /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
 
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// Method to Update Price/Hour In parking
@@ -59,7 +64,7 @@ namespace DataAccesLayer
             }
             catch (Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }

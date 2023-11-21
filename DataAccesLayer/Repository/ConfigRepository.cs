@@ -1,6 +1,6 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Data.SqlClient;
-using System.IO;
 using System.Windows.Forms;
 
 
@@ -8,14 +8,22 @@ namespace DataAccesLayer
 {
     public class ConfigRepository
     {
-      /// <summary>
-      /// Method to Save the ConnectionString 
-      /// </summary>
-      /// <param name="UserId"></param>
-      /// <param name="Password"></param>
-      /// <param name="ServerName"></param>
-      /// <param name="DatabaseName"></param>
-      /// <returns></returns>
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
+
+
+        /// <summary>
+        /// Method to Save the ConnectionString 
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <param name="Password"></param>
+        /// <param name="ServerName"></param>
+        /// <param name="DatabaseName"></param>
+        /// <returns></returns>
 
         public bool ConnectDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
@@ -48,7 +56,7 @@ namespace DataAccesLayer
 
                 catch (Exception ex)
                 {
-                    File.AppendAllText("error.log", ex.ToString());
+                    log.Error(ex);
                     MessageBox.Show("An error has occurred.Please verify you credintial", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 return false;
@@ -101,9 +109,9 @@ namespace DataAccesLayer
 
                 catch (Exception ex)
                 {
-                    File.AppendAllText("error.log", ex.ToString());
-                    MessageBox.Show("An error has occurred. Please try again later.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                  //  MessageBox.Show(ex.ToString());
+                   log.Error (ex);
+                   MessageBox.Show("An error has occurred. Please try again later.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 
                 }
                 return false;
             }

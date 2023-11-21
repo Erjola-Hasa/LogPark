@@ -1,8 +1,8 @@
 ﻿using BusinessLayer;
+using log4net;
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -16,6 +16,12 @@ namespace LogPark
         /// </summary>
         public ConfigService configBLL = new ConfigService();
         public PriceService languageService = new PriceService();
+
+
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public SettingSupervizor()
         {
@@ -36,7 +42,7 @@ namespace LogPark
         {
             foreach (Control c in this.Controls)
             {
-                ComponentResourceManager resources = new ComponentResourceManager(typeof(Setting));
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(SettingSupervizor));
                 CultureInfo cultureInfo = new CultureInfo(lang);
 
                 doRecursiveLoading(this, cultureInfo, resources);
@@ -195,7 +201,7 @@ namespace LogPark
             catch 
             (Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error( ex);
                 MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -220,6 +226,10 @@ namespace LogPark
 
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

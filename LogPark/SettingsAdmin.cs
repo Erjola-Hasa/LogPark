@@ -1,8 +1,8 @@
 ﻿using BusinessLayer;
+using log4net;
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -18,6 +18,13 @@ namespace LogPark
         PriceService priceService = new PriceService();
         ConfigService configBLL = new ConfigService();
         UserService userService = new UserService();
+
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+
+        public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public SettingsAdmin()
         {
             InitializeComponent();
@@ -111,7 +118,7 @@ namespace LogPark
             }
             catch(Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 

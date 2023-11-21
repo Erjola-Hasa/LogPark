@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,10 @@ namespace DataAccesLayer
         /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
 
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// Select all the parking Space 
@@ -94,7 +99,7 @@ namespace DataAccesLayer
             }
             catch(Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
@@ -261,7 +266,7 @@ namespace DataAccesLayer
                 }
             }catch(Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
@@ -311,7 +316,7 @@ namespace DataAccesLayer
             }
             catch (Exception ex)
             {
-                File.AppendAllText("error.log", ex.ToString());
+                log.Error(ex);
                 MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 

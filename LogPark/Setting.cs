@@ -17,7 +17,7 @@ namespace LogPark
         public Setting()
         {
             InitializeComponent();
-
+            this.AcceptButton = button2;
         }
 
 
@@ -86,12 +86,8 @@ namespace LogPark
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.AcceptButton = button2;
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-            Properties.Settings.Default.Save();
-
+           
+           
             this.Hide();
             Dashboard dashboard = new Dashboard();
             dashboard.ShowDialog();

@@ -16,10 +16,10 @@ namespace BusinessLayer
         /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
         /// </summary>
         /// <param name="parkingDAL"></param>
-        public ParkingService(ParkingRepository parkingDAL,PriceRepository priceRepository)
+
+
+        public ParkingService()
         {
-            this.parkingDAL = parkingDAL;
-            this.PriceRepository = priceRepository;
         }
 
 

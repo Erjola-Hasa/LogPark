@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -19,6 +20,8 @@ namespace LogPark
         public SettingSupervizor()
         {
             InitializeComponent();
+
+            this.AcceptButton = button2;
 
 
         }
@@ -177,19 +180,24 @@ namespace LogPark
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            this.AcceptButton = button2;
-            string SaveLanguage = Properties.Settings.Default.Language;
-            ChangeLanguage(SaveLanguage);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
-
-            PriceService languageService = new PriceService();
-            // int Price = Convert.ToInt32(textBox5.Text);
-            int Price = Convert.ToInt32(textBox2.Text);
-            languageService.UpdatePrice(Price);
-            textBox2.Text = Price.ToString();
-            this.Hide();
-            DashboardSupervizor dsha = new DashboardSupervizor();
-            dsha.ShowDialog();
+            try
+            {
+               
+                PriceService languageService = new PriceService();
+                // int Price = Convert.ToInt32(textBox5.Text);
+                int Price = Convert.ToInt32(textBox2.Text);
+                languageService.UpdatePrice(Price);
+                textBox2.Text = Price.ToString();
+                this.Hide();
+                DashboardSupervizor dsha = new DashboardSupervizor();
+                dsha.ShowDialog();
+            }
+            catch 
+            (Exception ex)
+            {
+                File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

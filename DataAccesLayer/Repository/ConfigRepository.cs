@@ -82,15 +82,15 @@ namespace DataAccesLayer
             {
                 try
                 {
-                    con.Open();
                     if (string.IsNullOrWhiteSpace(ServerName) || string.IsNullOrWhiteSpace(DatabaseName) || string.IsNullOrWhiteSpace(UserId) || string.IsNullOrWhiteSpace(Password))
                     {
                         MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        Properties.Settings.Default.Connection = ConnectionString;
 
+                        con.Open();
+                        Properties.Settings.Default.Connection = ConnectionString;
                         con.Close();
                         return true;
 

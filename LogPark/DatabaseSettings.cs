@@ -17,6 +17,11 @@ namespace LogPark
         {
         }
 
+        /// <summary>
+        /// Enter the ServerName,DatabaseName, UserId and Password and call the testDatabase method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string ServerName = textBox1.Text;
@@ -41,6 +46,14 @@ namespace LogPark
             }
         }
 
+
+
+
+        /// <summary>
+        ///  Enter the ServerName,DatabaseName, UserId and Password  and call the connectDatabase Method
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             string ServerName = textBox1.Text;

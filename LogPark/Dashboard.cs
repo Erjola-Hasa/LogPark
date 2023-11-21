@@ -18,9 +18,9 @@ namespace LogPark
        
         public Dashboard()
         {
+          
             InitializeComponent();
-
-
+            
         }
 
 
@@ -42,9 +42,7 @@ namespace LogPark
             if (freeSpaces == 0)
             {
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Hide();
-                Dashboard dashboard = new Dashboard();
-                dashboard.ShowDialog();
+                
             }
 
             label1.Text = label1.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
@@ -109,7 +107,7 @@ namespace LogPark
                 settings.ShowDialog();
             }
 
-       
+      
 
     }
 }

@@ -148,9 +148,9 @@ namespace LogPark
 
             else
             {
-                this.Hide();
-                SettingsAdmin settingsAdmin = new SettingsAdmin();
-                settingsAdmin.ShowDialog();
+                //this.Hide();
+                //SettingsAdmin settingsAdmin = new SettingsAdmin();
+                //settingsAdmin.ShowDialog();
             }
         }
 

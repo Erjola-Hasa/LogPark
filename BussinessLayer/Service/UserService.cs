@@ -61,7 +61,8 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                 File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

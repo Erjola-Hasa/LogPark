@@ -10,19 +10,16 @@ namespace BusinessLayer
     public class ParkingService
     {
         private ParkingRepository parkingDAL= new ParkingRepository();
-        PriceRepository languageRepository = new PriceRepository();
+        PriceRepository PriceRepository = new PriceRepository();
 
         /// <summary>
         /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
         /// </summary>
         /// <param name="parkingDAL"></param>
-        public ParkingService(ParkingRepository parkingDAL)
+        public ParkingService(ParkingRepository parkingDAL,PriceRepository priceRepository)
         {
             this.parkingDAL = parkingDAL;
-        }
-
-        public ParkingService()
-        {
+            this.PriceRepository = priceRepository;
         }
 
 
@@ -132,7 +129,7 @@ namespace BusinessLayer
         public int CalculatePrice(DateTime entryTime, DateTime exitTime)
         {
                
-                int pricePerHour = languageRepository.GetPrice();
+                int pricePerHour = PriceRepository.GetPrice();
                 TimeSpan duration = exitTime - entryTime;
                 int hours = (int)duration.TotalHours;
 

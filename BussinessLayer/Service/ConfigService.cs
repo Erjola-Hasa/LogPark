@@ -1,8 +1,5 @@
-﻿
-using DataAccesLayer;
+﻿using DataAccesLayer;
 using System;
-using System.IO;
-using System.Windows.Forms;
 
 namespace BusinessLayer
 {
@@ -56,7 +53,6 @@ namespace BusinessLayer
                 bool IsConneted = _config.TestDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConneted == true)
             {
-
 
                 return true;
             }

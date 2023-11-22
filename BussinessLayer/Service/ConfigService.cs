@@ -27,9 +27,9 @@ namespace BusinessLayer
                bool IsConneted = _config.ConnectDatabase(UserId, Password, ServerName, DatabaseName);
                 if (IsConneted == true)
                 {
+                MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-                    return true;
+                return true;
                 }
                return false;
 

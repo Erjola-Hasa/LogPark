@@ -172,20 +172,7 @@ namespace LogPark
             string UserId = textBox4.Text;
             string Password = textBox7.Text;
 
-            
-            bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
-            if (IsConnected == true)
-            {
-                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
-            else
-            {
-                //this.Hide();
-                //SettingsAdmin settingsAdmin = new SettingsAdmin();
-                //settingsAdmin.ShowDialog();
-            }
+             configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
         }
 
 
@@ -201,24 +188,9 @@ namespace LogPark
             string DatabaseName = textBox1.Text;
             string UserId = textBox4.Text;
             string Password = textBox7.Text;
-
-
-
-            ConfigService configBLL = new ConfigService();
-            bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
-            if (IsConnected == true)
-            {
-                MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
-            }
-            else
-            {
-
-                SettingsAdmin settingsAdmin = new SettingsAdmin();
-                settingsAdmin.ShowDialog();
-            }
+           
+           configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+           
         }
 
 

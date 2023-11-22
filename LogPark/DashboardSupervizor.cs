@@ -12,7 +12,11 @@ namespace LogPark
         /// Initializes a new instance of the ParkingService class
         /// </summary>
         private ParkingService parkingService= new ParkingService();
-       
+
+
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form
+        /// </summary>
         public DashboardSupervizor()
         {
             InitializeComponent();
@@ -34,9 +38,7 @@ namespace LogPark
             if (freeSpaces == 0)
             {
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Hide();
-                DashboardSupervizor dashboardSupervizor = new DashboardSupervizor();
-                dashboardSupervizor.ShowDialog();
+               
             }
             label5.Text = label5.Text.Replace(" Free Space", "") + $":{freeSpaces} /  {totalParkingSpaces}";
 

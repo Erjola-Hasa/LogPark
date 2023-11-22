@@ -14,6 +14,11 @@ namespace LogPark
         /// </summary>
         ConfigService configBLL = new ConfigService();
 
+
+
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form and activate tab enter 
+        /// </summary>
         public Setting()
         {
             InitializeComponent();
@@ -22,7 +27,7 @@ namespace LogPark
 
 
         /// <summary>
-        /// Dropdown list to change the language to  English or Albanian
+        /// Gets or sets the index of the selected ComboBox item(English or Albanian Language ) and save the current language 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -47,7 +52,7 @@ namespace LogPark
 
 
         /// <summary>
-        /// Method to change the language 
+        /// Method to  current input language
         /// </summary>
         /// <param name="lang"></param>
         private void ChangeLanguage(string lang)
@@ -77,6 +82,8 @@ namespace LogPark
                     doRecursiveLoading(c, cultureInfo, resources);
             }
         }
+
+
 
         /// <summary>
         /// Save button if we change language of the application

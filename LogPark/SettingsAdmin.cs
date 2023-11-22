@@ -25,6 +25,11 @@ namespace LogPark
 
         public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+
+
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form and activate tab enter 
+        /// </summary>
         public SettingsAdmin()
         {
             InitializeComponent();
@@ -32,8 +37,37 @@ namespace LogPark
         }
 
 
+
+
         /// <summary>
-        /// Method to change language 
+        /// Gets or sets the index of the selected ComboBox item(English or Albanian Language ) and save the current language 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedItem.ToString() == "Albanian" || comboBox2.SelectedItem.ToString() == "Shqip")
+            {
+                ChangeLanguage("sq-AL");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
+                Properties.Settings.Default.Language = "sq-AL";
+            }
+
+            else
+            {
+                ChangeLanguage("en");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+                Properties.Settings.Default.Language = "en";
+            }
+            Properties.Settings.Default.Save();
+
+        }
+
+
+
+
+        /// <summary>
+        ///  Method to  current input language
         /// </summary>
         /// <param name="lang"></param>
         public void ChangeLanguage(string lang)
@@ -70,7 +104,7 @@ namespace LogPark
 
 
         /// <summary>
-        /// Get the price/hour 
+        /// Display the Price/Hour
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -191,7 +225,7 @@ namespace LogPark
 
 
         /// <summary>
-        /// Create button of the users in base of role 
+        /// Create New User 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -217,32 +251,6 @@ namespace LogPark
 
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-        }
-
-
-
-        /// <summary>
-        /// Dropdown list with language we want to change 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (comboBox2.SelectedItem.ToString() == "Albanian" || comboBox2.SelectedItem.ToString() == "Shqip")
-            {
-                ChangeLanguage("sq-AL");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
-                Properties.Settings.Default.Language = "sq-AL";
-            }
-
-            else
-            {
-                ChangeLanguage("en");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-                Properties.Settings.Default.Language = "en";
-            }
-           Properties.Settings.Default.Save();
-
         }
 
 

@@ -180,6 +180,7 @@ namespace BusinessLayer
         public string GetStatus(string barcode)
         {
             return parkingDAL.GetStatusDFromDatabase(barcode);
+          
         }
 
 

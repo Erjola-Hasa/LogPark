@@ -12,7 +12,11 @@ namespace LogPark
         /// Initializes a new instance of the ParkingService class 
         /// </summary>
         public ParkingService parkingService= new ParkingService();
-        
+
+
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form
+        /// </summary>
         public Reports()
         {
             InitializeComponent();
@@ -49,9 +53,6 @@ namespace LogPark
             {
                 MessageBox.Show("Start Date must be less than or equal to today's date.Please fill in the correct way!", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 
-                
-
-               
             }
             else
             {

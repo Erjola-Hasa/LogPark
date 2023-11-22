@@ -12,8 +12,9 @@ namespace LogPark
         /// </summary>
         private ParkingService parkingService= new ParkingService();
 
+
         /// <summary>
-        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
+        /// InitializeComponent is a method which is used to initialize  form
         /// </summary>
         public DashboardAdmin()
         {
@@ -38,9 +39,7 @@ namespace LogPark
             if (freeSpaces == 0)
             {
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Hide();
-                DashboardAdmin dashboardAdmin = new DashboardAdmin();
-                dashboardAdmin.ShowDialog();
+               
 
 
             }

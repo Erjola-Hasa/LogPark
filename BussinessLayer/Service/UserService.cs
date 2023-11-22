@@ -3,6 +3,7 @@ using log4net;
 using System;
 using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BusinessLayer
 {
@@ -90,16 +91,18 @@ namespace BusinessLayer
                 Users user = userRepository.GetUserByUserName(userName, password);
                 if (user != null)
                 {
-                    if(user.UserName== userName && user.Password==password) 
+
+                    if (user.UserName == userName && user.Password == password)
                     {
                         return user;
                     }
-                
-
+                   
+                    else
                         return null;
-                    
+
                 }
             }
+
             catch (Exception ex)
             {
                 log.Error(ex);

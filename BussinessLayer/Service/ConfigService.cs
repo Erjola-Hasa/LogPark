@@ -1,5 +1,6 @@
 ﻿using DataAccesLayer;
 using System;
+using System.Windows.Forms;
 
 namespace BusinessLayer
 {
@@ -53,6 +54,7 @@ namespace BusinessLayer
            bool IsConneted = _config.TestDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConneted == true)
             {
+                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return true;
             }

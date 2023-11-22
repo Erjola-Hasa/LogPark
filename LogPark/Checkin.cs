@@ -12,7 +12,9 @@ namespace LogPark
         /// </summary>
         private ParkingService parkingService= new ParkingService();
 
-        
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form
+        /// </summary>
         public Checkin()
         {
             InitializeComponent();

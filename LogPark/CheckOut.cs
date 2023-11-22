@@ -12,7 +12,13 @@ namespace LogPark
         ///  Initializes a new instance of the ParkingService 
         /// </summary>
         public ParkingService parkingService=new ParkingService();
-       
+
+
+
+
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form
+        /// </summary>
         public CheckOut()
         {
             InitializeComponent();
@@ -53,7 +59,7 @@ namespace LogPark
                     dashboard2.ShowDialog();
 
                 }
-                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor")
+                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor"|| AuthHelper.GetLoggedInUserRole()=="Supervisor")
                 {
                     DashboardSupervizor dashboard1 = new DashboardSupervizor();
                     dashboard1.ShowDialog();

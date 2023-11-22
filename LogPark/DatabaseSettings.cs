@@ -5,20 +5,31 @@ using System.Windows.Forms;
 
 namespace LogPark
 {
+
+
     public partial class DatabaseSettings : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the ConfigService class
+        /// </summary>
+        ConfigService configBLL = new ConfigService();
+
+
+
+
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form
+        /// </summary>
         public DatabaseSettings()
         {
             InitializeComponent();
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
+       
 
         /// <summary>
-        /// Enter the ServerName,DatabaseName, UserId and Password and call the testDatabase method
+        /// Enter the ServerName,DatabaseName, UserId and Password and test Database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -29,7 +40,7 @@ namespace LogPark
             string UserId = textBox3.Text;
             string Password = textBox4.Text;
 
-            ConfigService configBLL = new ConfigService();
+           
             bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {
@@ -50,7 +61,7 @@ namespace LogPark
 
 
         /// <summary>
-        ///  Enter the ServerName,DatabaseName, UserId and Password  and call the connectDatabase Method
+        ///  Enter the ServerName,DatabaseName, UserId and Password  and ConnectDatabase
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -61,7 +72,6 @@ namespace LogPark
             string UserId = textBox3.Text;
             string Password = textBox4.Text;
 
-            ConfigService configBLL = new ConfigService();
             bool IsConnected = configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             if (IsConnected == true)
             {

@@ -23,6 +23,11 @@ namespace LogPark
         /// </summary>
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+
+
+        /// <summary>
+        /// InitializeComponent is a method which is used to initialize  form and activate tab enter 
+        /// </summary>
         public SettingSupervizor()
         {
             InitializeComponent();
@@ -33,8 +38,33 @@ namespace LogPark
         }
 
 
+
         /// <summary>
-        /// Method to change the language 
+        /// Gets or sets the index of the selected ComboBox item(English or Albanian Language ) and save the current language 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedItem.ToString() == "Albanian" || comboBox2.SelectedItem.ToString() == "Shqip")
+            {
+                ChangeLanguage("sq-AL");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
+                Properties.Settings.Default.Language = "sq-AL";
+            }
+
+            else
+            {
+                ChangeLanguage("en");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+                Properties.Settings.Default.Language = "en";
+            }
+            Properties.Settings.Default.Save();
+
+        }
+
+        /// <summary>
+        ///  Method to  current input language
         /// </summary>
         /// <param name="lang"></param>
 
@@ -73,7 +103,7 @@ namespace LogPark
 
 
         /// <summary>
-        /// Retrive the price of the parking in the menu
+        /// Display the price of the parking 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -90,29 +120,7 @@ namespace LogPark
 
 
 
-        /// <summary>
-        /// Dropdown list with language we want to change 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox2.SelectedItem.ToString() == "Albanian" || comboBox2.SelectedItem.ToString() == "Shqip")
-            {
-                ChangeLanguage("sq-AL");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
-                Properties.Settings.Default.Language = "sq-AL";
-            }
-
-            else
-            {
-                ChangeLanguage("en");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-                Properties.Settings.Default.Language = "en";
-            }
-            Properties.Settings.Default.Save();
-
-        }
+       
 
 
         /// <summary>
@@ -122,27 +130,15 @@ namespace LogPark
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            string ServerName = textBox6.Text;
-            string UserId = textBox4.Text;
-            string Password = textBox7.Text;
-            string DatabaseName = textBox1.Text;
-
-
-            bool IsConnected = configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
-            if (IsConnected == true)
-            {
-                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
+                string ServerName = textBox6.Text;
+                string UserId = textBox4.Text;
+                string Password = textBox7.Text;
+                string DatabaseName = textBox1.Text;
+                configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
             }
-
-            else
-            {
-                
-                this.Hide();
-                SettingSupervizor settingSupervizor = new SettingSupervizor();
-                settingSupervizor.ShowDialog();
-            }
-        }
+           
+        
 
 
 
@@ -180,7 +176,7 @@ namespace LogPark
 
 
         /// <summary>
-        /// Save button of the language we change and price if we change it 
+        /// Save button for price and Language 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -226,10 +222,7 @@ namespace LogPark
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 

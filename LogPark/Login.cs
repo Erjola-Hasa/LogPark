@@ -7,8 +7,16 @@ namespace LogPark
 {
     public partial class Login : Form
     {
-      
+        /// <summary>
+        ///  Initializes a new instance of the UserService 
+        /// </summary>
+        UserService userService = new UserService();
 
+
+
+        /// <summary>
+        ///  InitializeComponent is a method which is used to initialize  form
+        /// </summary>
         public Login()
         {
             InitializeComponent();
@@ -35,24 +43,19 @@ namespace LogPark
 
 
         /// <summary>
-        /// Enter in the application with UserName and Password and validate them
+        /// Enter in the application with UserName and Password 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            this.AcceptButton = button1;
+           
 
             string username = textBox1.Text;
             string password = textBox2.Text;
             password = Cryptography.Encrypt(password);
           
-
-
-            UserService userService = new UserService();
-
-
             Users user = userService.AuthenticateUser(username, password);
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))

@@ -124,7 +124,7 @@ namespace LogPark
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
            
-           System.Environment.Exit(0);
+           Environment.Exit(0);
         }
     }
 }

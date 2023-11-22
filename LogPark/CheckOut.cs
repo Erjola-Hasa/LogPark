@@ -1,8 +1,6 @@
-﻿
+﻿using BusinessLayer;
 using System;
 using System.Windows.Forms;
-using BusinessLayer;
-using DataAccesLayer;
 
 namespace LogPark
 {

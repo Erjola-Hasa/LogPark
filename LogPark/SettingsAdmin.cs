@@ -3,6 +3,7 @@ using log4net;
 using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -24,6 +25,8 @@ namespace LogPark
         /// </summary>
 
         public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+       // private readonly Logger logger = LogManager.GetCurrentClassLogger(); // creates a logger using the class name
+
 
 
 
@@ -149,14 +152,18 @@ namespace LogPark
                 this.Hide();
                 DashboardAdmin dsha = new DashboardAdmin();
                 dsha.ShowDialog();
-        }
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                log.Error(ex);
-                MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                log.Error(ex.Message);
+             //   ex.ToString();
+             //   MessageBox.Show(ex.ToString(), "Unhandled Non-UI Thread Exception");
+                //File.AppendAllText("error.log", ex.ToString());
+                MessageBox.Show("An error has occurred. Please verify your Data.");
             }
 
-}
+        }
 
 
 

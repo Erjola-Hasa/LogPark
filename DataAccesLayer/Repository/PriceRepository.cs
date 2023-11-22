@@ -26,21 +26,29 @@ namespace DataAccesLayer
         /// <param name="PricePerHour"></param>
         public void UpdatePrice(int PricePerHour)
         {
-            using (SqlConnection db = new SqlConnection(ConnectionString))
+            try
             {
-                db.Open();
-
-
-                var parameters = new
+                using (SqlConnection db = new SqlConnection(ConnectionString))
                 {
-                    PricePerHour = PricePerHour
+                    db.Open();
 
 
-                };
+                    var parameters = new
+                    {
+                        PricePerHour = PricePerHour
 
-                db.Execute("UpdatePrice", parameters, commandType: CommandType.StoredProcedure);
 
-                db.Close();
+                    };
+
+                    db.Execute("UpdatePrice", parameters, commandType: CommandType.StoredProcedure);
+
+                    db.Close();
+                }
+            }
+            catch (Exception ex) 
+            { 
+                log.Error(ex.ToString());
+                MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

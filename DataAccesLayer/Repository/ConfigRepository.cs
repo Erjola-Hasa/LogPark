@@ -85,7 +85,7 @@ namespace DataAccesLayer
 
         public bool TestDatabase(string UserId, string Password, string ServerName, string DatabaseName)
         {
-            string ConnectionString = $"Data Source={ServerName};Initial Catalog={DatabaseName};User Id ={UserId};Password={Password} Trusted_Connection=true; MultipleActiveResultSets=true;Integrated Security=True;TrustServerCertificate=Yes";
+            string ConnectionString = $"Data Source={ServerName};Initial Catalog={DatabaseName};User Id ={UserId};Password={Password}; Trusted_Connection=true; Integrated Security=false; TrustServerCertificate=Yes";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 try

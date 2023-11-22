@@ -141,7 +141,7 @@ namespace LogPark
         {
             try
             {
-             
+
 
                 int Price = Convert.ToInt32(textBox5.Text);
                 priceService.UpdatePrice(Price);
@@ -149,14 +149,14 @@ namespace LogPark
                 this.Hide();
                 DashboardAdmin dsha = new DashboardAdmin();
                 dsha.ShowDialog();
-            }
+        }
             catch(Exception ex)
             {
                 log.Error(ex);
                 MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+}
 
 
 

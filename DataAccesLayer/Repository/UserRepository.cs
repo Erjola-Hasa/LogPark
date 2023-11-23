@@ -18,13 +18,6 @@ namespace DataAccesLayer
         string ConnectionString = Properties.Settings.Default.Connection;
 
 
-        /// <summary>
-        ///  Define a static logger variable
-        /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-
-
 
 
 
@@ -35,20 +28,15 @@ namespace DataAccesLayer
         /// <param name="user"></param>
         public void InsertUser(Users user)
         {
-            try
-            {
+           
                 using (var db = new SqlConnection(ConnectionString))
                 {
                     db.Open();
                     db.Execute("InsertUser", user, commandType: CommandType.StoredProcedure);
                     db.Close();
                 }
-            }
-            catch ( Exception ex )
-            {
-                log.Error(ex);
-                MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+           
 
         }
 
@@ -66,8 +54,7 @@ namespace DataAccesLayer
 
         public Users GetUserByUserName(string userName, string Password)
         {
-            try
-            {
+           
                 using (var db = new SqlConnection(ConnectionString))
                 {
                     db.Open();
@@ -94,12 +81,8 @@ namespace DataAccesLayer
                     }
 
                 }
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+         
             return null;
 
         }

@@ -16,11 +16,7 @@ namespace DataAccesLayer
         /// </summary>
         string ConnectionString = Properties.Settings.Default.Connection;
 
-        /// <summary>
-        ///  Define a static logger variable
-        /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
+     
         /// <summary>
         /// Select all the parking Space 
         /// </summary>
@@ -76,8 +72,7 @@ namespace DataAccesLayer
         /// <param name="checkInDateTime"></param>
         /// 
         public string InsertCheckIn(string barcode, DateTime checkInDateTime)
-        { try
-            {
+        { 
                 using (var db = new SqlConnection(ConnectionString))
                 {
 
@@ -96,14 +91,8 @@ namespace DataAccesLayer
                     db.Close();
                     return result.ToString();
                 }
-            }
-            catch(Exception ex)
-            {
-                log.Error(ex);
-                MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-
-            }
+            
+           
 
         }
 
@@ -225,8 +214,7 @@ namespace DataAccesLayer
 
         public List<Reservations> GetReservationsInPeriod(DateTime StartDateTime, DateTime EndDateTime)
         {
-            try
-            {
+            
                 using (var db = new SqlConnection(ConnectionString))
                 {
 
@@ -264,12 +252,7 @@ namespace DataAccesLayer
 
                     return reservations;
                 }
-            }catch(Exception ex)
-            {
-                log.Error(ex);
-                MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
+            
 
         }
 
@@ -284,10 +267,7 @@ namespace DataAccesLayer
 
         public string GetStatusDFromDatabase(string barcode)
         {
-            try
-            {
-
-
+        
                 using (var db = new SqlConnection(ConnectionString))
                 {
 
@@ -313,15 +293,9 @@ namespace DataAccesLayer
                     }
 
                 }
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                MessageBox.Show("An error has occurred. Please verify you credintial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-
-            }
-           // return null;
+            
+           
+            
 
         }
     }

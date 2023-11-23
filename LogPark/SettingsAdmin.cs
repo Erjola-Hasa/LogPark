@@ -1,11 +1,7 @@
 ﻿using BusinessLayer;
-using log4net;
-using log4net.Config;
-using Microsoft.Extensions.Logging;
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 

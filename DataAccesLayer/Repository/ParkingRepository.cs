@@ -1,12 +1,8 @@
 ﻿using Dapper;
-using log4net;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Windows.Forms;
-
 namespace DataAccesLayer
 {
     public class ParkingRepository

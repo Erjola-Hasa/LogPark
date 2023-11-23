@@ -1,5 +1,4 @@
-﻿using log4net;
-using System;
+﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -8,12 +7,7 @@ namespace DataAccesLayer
 {
     public class ConfigRepository
     {
-        /// <summary>
-        ///  Define a static logger variable
-        /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-
+      
 
 
         /// <summary>

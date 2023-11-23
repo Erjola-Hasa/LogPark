@@ -14,12 +14,7 @@ namespace BusinessLayer
         PriceRepository PriceRepository = new PriceRepository();
 
 
-        /// <summary>
-        ///  Define a static logger variable
-        /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-
+      
 
         /// <summary>
         /// Updates the Price record in the database with the provided Price
@@ -27,17 +22,11 @@ namespace BusinessLayer
         /// <param name="Price"></param>
         public void UpdatePrice(int Price)
         {
-            try
-            {
+           
 
                 PriceRepository.UpdatePrice(Price);
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex);
-                MessageBox.Show("An error has occurred.");
-
-            }
+            
+           
            
         }
 

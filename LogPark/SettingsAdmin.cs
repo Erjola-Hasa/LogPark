@@ -1,5 +1,7 @@
 ﻿using BusinessLayer;
 using log4net;
+using log4net.Config;
+using Microsoft.Extensions.Logging;
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -24,8 +26,11 @@ namespace LogPark
         ///  Define a static logger variable
         /// </summary>
 
-        public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-       // private readonly Logger logger = LogManager.GetCurrentClassLogger(); // creates a logger using the class name
+        static readonly log4net.ILog log =
+            log4net.LogManager.GetLogger
+     (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
 
 
 
@@ -155,12 +160,10 @@ namespace LogPark
             }
             catch (Exception ex)
             {
+               
 
                 log.Error(ex.Message);
-             //   ex.ToString();
-             //   MessageBox.Show(ex.ToString(), "Unhandled Non-UI Thread Exception");
-                //File.AppendAllText("error.log", ex.ToString());
-                MessageBox.Show("An error has occurred. Please verify your Data.");
+                MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

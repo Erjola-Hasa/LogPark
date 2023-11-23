@@ -1,4 +1,5 @@
 ﻿using DataAccesLayer;
+using log4net;
 using System;
 using System.Windows.Forms;
 
@@ -12,6 +13,10 @@ namespace BusinessLayer
         /// </summary>
         ConfigRepository _config = new ConfigRepository();
 
+        /// <summary>
+        ///  Define a static logger variable
+        /// </summary>
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// Connect with Database with specifik ServerName,DatabaseName,UserId and Password
@@ -23,18 +28,26 @@ namespace BusinessLayer
         /// <returns></returns>
         public bool ConnectToDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
-            
-               bool IsConneted = _config.ConnectDatabase(UserId, Password, ServerName, DatabaseName);
+            try
+            {
+                bool IsConneted = _config.ConnectDatabase(UserId, Password, ServerName, DatabaseName);
                 if (IsConneted == true)
                 {
-                MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Your Connection is Successful ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                return true;
+                    return true;
                 }
-               return false;
+            }catch(Exception ex)
+            
+            {
+                log.Error(ex);
+                MessageBox.Show("An error has occurred. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
+            }
+            return false;
         }
+              
+
 
 
 
@@ -51,13 +64,24 @@ namespace BusinessLayer
         /// <returns></returns>
         public bool TestDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
-           bool IsConneted = _config.TestDatabase(UserId, Password, ServerName, DatabaseName);
-            if (IsConneted == true)
+            try
             {
-                MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bool IsConneted = _config.TestDatabase(UserId, Password, ServerName, DatabaseName);
+                if (IsConneted == true)
+                {
+                    MessageBox.Show("Your Credintial are correct ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                return true;
+                    return true;
+                }
             }
+            catch (Exception ex)
+
+            {
+                log.Error(ex);
+                MessageBox.Show("An error has occurred. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
             return false;
 
         }

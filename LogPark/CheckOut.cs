@@ -58,6 +58,7 @@ namespace LogPark
                     parkingService.UpdateReservation(reservationID, exitTime, price);
                    
                     MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
                     this.Hide();
                     if (AuthHelper.GetLoggedInUserRole() == "Admin")
                     {

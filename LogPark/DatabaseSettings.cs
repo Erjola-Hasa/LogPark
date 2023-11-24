@@ -23,7 +23,7 @@ namespace LogPark
         public DatabaseSettings()
         {
             InitializeComponent();
-
+            this.AcceptButton = button1;
         }
 
        
@@ -35,6 +35,8 @@ namespace LogPark
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+        
+
             string ServerName = textBox1.Text;
             string DatabaseName = textBox2.Text;
             string UserId = textBox3.Text;

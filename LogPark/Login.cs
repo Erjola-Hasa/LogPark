@@ -20,7 +20,7 @@ namespace LogPark
         public Login()
         {
             InitializeComponent();
-         
+            this.SetDesktopLocation(Top, Right);
             
 
         }
@@ -88,7 +88,6 @@ namespace LogPark
                     this.Hide();
                     Dashboard dashboard = new Dashboard();
                     dashboard.ShowDialog();
-                    this.Close();
 
                 }
                 else if (user.Profile == "Admin")
@@ -126,5 +125,6 @@ namespace LogPark
            
            Environment.Exit(0);
         }
+     
     }
 }

@@ -23,6 +23,7 @@ namespace LogPark
         {
             InitializeComponent();
             this.AcceptButton = button2;
+            this.AcceptButton = button1;
         }
 
 

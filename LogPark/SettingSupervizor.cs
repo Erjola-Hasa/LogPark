@@ -21,7 +21,8 @@ namespace LogPark
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+      //  private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(typeof(SettingSupervizor));
 
 
 

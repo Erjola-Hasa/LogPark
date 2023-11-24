@@ -15,7 +15,9 @@ namespace BusinessLayer
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+      
+        private static readonly ILog log = LogManager.GetLogger(typeof(ParkingService));
+
 
         /// <summary>
         /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
@@ -78,7 +80,7 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-               log.Error(ex);
+               log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please verify your Data.");
                return null;
             }
@@ -276,7 +278,7 @@ namespace BusinessLayer
              catch(Exception ex)
             {
                // MessageBox.Show(ex.ToString());
-                log.Error(ex);
+                log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please try again.");
             }
             return null;

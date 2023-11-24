@@ -17,7 +17,8 @@ namespace BusinessLayer
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(typeof(UserService));
+
 
 
 
@@ -66,7 +67,7 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-                 log.Error(ex);
+                 log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please try again .", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -103,7 +104,7 @@ namespace BusinessLayer
 
             catch (Exception ex)
             {
-                log.Error(ex);
+                log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please verify your credentials.");
             }
             return null;

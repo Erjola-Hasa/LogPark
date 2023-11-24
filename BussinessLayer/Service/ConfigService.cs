@@ -16,7 +16,8 @@ namespace BusinessLayer
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
-        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+   
+        private static readonly ILog log = LogManager.GetLogger(typeof(ConfigService));
 
         /// <summary>
         /// Connect with Database with specifik ServerName,DatabaseName,UserId and Password
@@ -40,7 +41,7 @@ namespace BusinessLayer
             }catch(Exception ex)
             
             {
-                log.Error(ex);
+                log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
@@ -77,7 +78,7 @@ namespace BusinessLayer
             catch (Exception ex)
 
             {
-                log.Error(ex);
+                log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using log4net;
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -22,11 +23,9 @@ namespace LogPark
         ///  Define a static logger variable
         /// </summary>
 
-        static readonly log4net.ILog log =
-            log4net.LogManager.GetLogger
-     (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+      //  static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-
+        private static readonly ILog log = LogManager.GetLogger(typeof(SettingsAdmin));
 
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
@@ -8,12 +9,14 @@ namespace LogPark
 {
     internal static class Program
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+
 
 
         [STAThread]
         static void Main()
         {
-            
+            log4net.Config.XmlConfigurator.Configure();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             string Connection =DataAccesLayer.Properties.Settings.Default.Connection;

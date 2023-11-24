@@ -21,7 +21,7 @@ namespace LogPark
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
-      //  private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+      
         private static readonly ILog log = LogManager.GetLogger(typeof(SettingSupervizor));
 
 
@@ -184,7 +184,7 @@ namespace LogPark
             catch 
             (Exception ex)
             {
-                log.Error( ex);
+                log.Error( ex.Message);
                 MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

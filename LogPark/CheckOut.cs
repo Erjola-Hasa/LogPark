@@ -42,44 +42,54 @@ namespace LogPark
 
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
 
-
-            DialogResult result1 = MessageBox.Show("Are you sure you want to procced with the action?", "Confirm Action", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            if (result1 == DialogResult.OK)
+            if (string.IsNullOrEmpty(barcode))
             {
-                parkingService.UpdateReservation(reservationID, exitTime, price);
-                this.Hide();
-                MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please Enter the Barcode ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                if (AuthHelper.GetLoggedInUserRole() == "Admin")
+            }
+            else
+            {
+
+                DialogResult result1 = MessageBox.Show("Are you sure you want to procced with the action?", "Confirm Action", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result1 == DialogResult.OK)
                 {
-                    DashboardAdmin dashboard2 = new DashboardAdmin();
-                    dashboard2.ShowDialog();
+
+                    parkingService.UpdateReservation(reservationID, exitTime, price);
+                   
+                    MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    if (AuthHelper.GetLoggedInUserRole() == "Admin")
+                    {
+                        DashboardAdmin dashboard2 = new DashboardAdmin();
+                        dashboard2.ShowDialog();
+
+                    }
+                    else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
+                    {
+                        DashboardSupervizor dashboard1 = new DashboardSupervizor();
+                        dashboard1.ShowDialog();
+
+                    }
+
+                    else
+                    {
+                        this.Hide();
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.ShowDialog();
+                    }
 
                 }
-                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor"|| AuthHelper.GetLoggedInUserRole()=="Supervisor")
-                {
-                    DashboardSupervizor dashboard1 = new DashboardSupervizor();
-                    dashboard1.ShowDialog();
 
-                }
+
 
                 else
                 {
                     this.Hide();
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.ShowDialog();
+                    CheckOut checkOut = new CheckOut();
+                    checkOut.ShowDialog();
                 }
             }
-
-
-            else
-            {
-                this.Hide();
-                CheckOut checkOut = new CheckOut();
-                checkOut.ShowDialog();
-            }
-
 
 
         }

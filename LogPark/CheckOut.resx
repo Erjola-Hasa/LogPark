@@ -357,6 +357,9 @@
   <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
+  <data name="textBox2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
     <value>textBox2</value>
   </data>

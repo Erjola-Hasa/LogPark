@@ -361,7 +361,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthHelper.cs" />
     <Compile Include="Check.cs">
       <SubType>Form</SubType>
     </Compile>

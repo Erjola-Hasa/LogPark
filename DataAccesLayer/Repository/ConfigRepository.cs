@@ -21,7 +21,7 @@ namespace DataAccesLayer
 
         public bool ConnectDatabase(string UserId, string Password, string ServerName, String DatabaseName)
         {
-            string ConnectionString = $"Data Source={ServerName};Initial Catalog={DatabaseName};User Id ={UserId};Password={Password} Trusted_Connection=true; MultipleActiveResultSets=true;Integrated Security=false;TrustServerCertificate=Yes";
+            string ConnectionString = $"Data Source={ServerName};Initial Catalog={DatabaseName};User Id ={UserId};Password={Password}; Trusted_Connection=true; Integrated Security=false; TrustServerCertificate=Yes";
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 

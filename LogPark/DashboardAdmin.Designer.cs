@@ -92,8 +92,8 @@
             // 
             // DashboardAdmin
             // 
-            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "DashboardAdmin";
             this.Load += new System.EventHandler(this.DashboardAdmin_Load);

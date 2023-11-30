@@ -70,7 +70,7 @@ namespace BusinessLayer
             try
             {
 
-                if (IsValidBarcode(barcode) || IsValidCheckInDateTime(checkInDateTime))
+                if (IsValidBarcode(barcode) && IsValidCheckInDateTime(checkInDateTime))
 
                 {
                     parkingDAL.InsertCheckIn(barcode, checkInDateTime);
@@ -82,7 +82,7 @@ namespace BusinessLayer
             {
                log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please verify your Data.");
-               return null;
+              
             }
             return null;
         }

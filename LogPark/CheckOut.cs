@@ -36,19 +36,9 @@ namespace LogPark
 
             DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
             DateTime exitTime = DateTime.Now;
-
-
             decimal price = parkingService.CalculatePrice(entryTime, exitTime);
 
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
-
-            if (string.IsNullOrEmpty(barcode))
-            {
-                MessageBox.Show("Please Enter the Barcode ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            else
-            {
 
                 DialogResult result1 = MessageBox.Show("Are you sure you want to procced with the action?", "Confirm Action", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
@@ -90,7 +80,7 @@ namespace LogPark
                     CheckOut checkOut = new CheckOut();
                     checkOut.ShowDialog();
                 }
-            }
+            
 
 
         }
@@ -110,7 +100,7 @@ namespace LogPark
             string barcode = textBox2.Text;
 
             string Status = parkingService.GetStatus(barcode);
-            if (Status == "Pasive")
+            if (Status == "Pasive" || string.IsNullOrEmpty(barcode))
             {
                 MessageBox.Show("Invalid barcode.Please enter the correct Barcode ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Hide();
@@ -119,27 +109,28 @@ namespace LogPark
 
             }
 
-
-            int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
-            DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
+                int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
+                DateTime entryTime = parkingService.GetEntryTimeFromDatabase(barcode);
 
             if (entryTime != DateTime.MinValue)
             {
                 label4.Text = label4.Text.Replace("Entry Time", "") + $" {entryTime}";
-                DateTime exitTime = DateTime.Now;
+                    DateTime exitTime = DateTime.Now;
 
-                label5.Text = label5.Text.Replace("Exit Time", "") + $" {exitTime}";
+                    label5.Text = label5.Text.Replace("Exit Time", "") + $" {exitTime}";
 
-                decimal price = parkingService.CalculatePrice(entryTime, exitTime);
+                    decimal price = parkingService.CalculatePrice(entryTime, exitTime);
 
-                label6.Text = label6.Text.Replace("Price", "") + $" {price}";
+                    label6.Text = label6.Text.Replace("Price", "") + $" {price}";
 
 
             }
+        
             else
             {
                 MessageBox.Show("Please Enter the correct Barcode.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
         }
 

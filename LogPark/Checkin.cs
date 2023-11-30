@@ -51,8 +51,7 @@ namespace LogPark
             string barcode = label3.Text;
             DateTime checkInDateTime = DateTime.Now;
             parkingService.CheckIn(barcode, checkInDateTime);
-            if (parkingService != null)
-            {
+           
 
 
                 DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -83,7 +82,7 @@ namespace LogPark
                         dashboard.ShowDialog();
                     }
 
-                }
+               }
 
                 else
                 {
@@ -91,7 +90,7 @@ namespace LogPark
                     Check checkin = new Check();
                     checkin.ShowDialog();
                 }
-        }
+      
         }
 
 

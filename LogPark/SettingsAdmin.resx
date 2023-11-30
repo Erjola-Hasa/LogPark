@@ -343,7 +343,7 @@
     <value>209, 270</value>
   </data>
   <data name="textBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>203, 20</value>
   </data>
   <data name="textBox7.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -364,7 +364,7 @@
     <value>209, 181</value>
   </data>
   <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>203, 20</value>
   </data>
   <data name="textBox4.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -418,7 +418,7 @@
     <value>209, 92</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>203, 20</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -568,7 +568,7 @@
     <value>209, 3</value>
   </data>
   <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>203, 20</value>
   </data>
   <data name="textBox6.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -697,7 +697,7 @@
     <value>3, 0</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 74</value>
+    <value>209, 74</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -730,7 +730,7 @@
     <value>3, 74</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 74</value>
+    <value>209, 74</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -763,7 +763,7 @@
     <value>3, 148</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 74</value>
+    <value>209, 74</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -796,7 +796,7 @@
     <value>3, 222</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 74</value>
+    <value>209, 74</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -829,7 +829,7 @@
     <value>3, 296</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 105</value>
+    <value>209, 105</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -856,7 +856,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 404</value>
+    <value>218, 404</value>
   </data>
   <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 28</value>
@@ -886,10 +886,10 @@
     <value>Top, Bottom, Left</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 3</value>
+    <value>218, 3</value>
   </data>
   <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>193, 20</value>
   </data>
   <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -910,10 +910,10 @@
     <value>Top, Bottom, Left</value>
   </data>
   <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 77</value>
+    <value>218, 77</value>
   </data>
   <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>193, 20</value>
   </data>
   <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -934,10 +934,10 @@
     <value>Top, Bottom, Left</value>
   </data>
   <data name="textBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 151</value>
+    <value>218, 151</value>
   </data>
   <data name="textBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>193, 20</value>
   </data>
   <data name="textBox8.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -955,10 +955,10 @@
     <value>8</value>
   </data>
   <data name="textBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 225</value>
+    <value>218, 225</value>
   </data>
   <data name="textBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 20</value>
+    <value>193, 20</value>
   </data>
   <data name="textBox9.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -982,10 +982,10 @@
     <value>Users</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 299</value>
+    <value>218, 299</value>
   </data>
   <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 21</value>
+    <value>193, 21</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>

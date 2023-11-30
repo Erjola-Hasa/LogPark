@@ -346,7 +346,7 @@
     <value>182, 207</value>
   </data>
   <data name="textBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>154, 20</value>
   </data>
   <data name="textBox7.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -367,7 +367,7 @@
     <value>182, 139</value>
   </data>
   <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>154, 20</value>
   </data>
   <data name="textBox4.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -421,7 +421,7 @@
     <value>182, 3</value>
   </data>
   <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>154, 20</value>
   </data>
   <data name="textBox6.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -442,7 +442,7 @@
     <value>182, 71</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>154, 20</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

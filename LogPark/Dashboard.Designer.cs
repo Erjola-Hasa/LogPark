@@ -53,6 +53,7 @@
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Menu;
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 1);
@@ -64,6 +65,7 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Name = "label1";
             // 
             // button1

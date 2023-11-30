@@ -77,6 +77,7 @@
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.Controls.Add(this.comboBox2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.button2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);

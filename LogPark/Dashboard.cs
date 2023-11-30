@@ -46,6 +46,7 @@ namespace LogPark
             if (freeSpaces == 0)
             {
                 MessageBox.Show("Full Parking", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                button1.Visible = false;
                 
             }
 

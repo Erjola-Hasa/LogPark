@@ -137,6 +137,10 @@ namespace LogPark
             else
             {
                 MessageBox.Show("Please Enter the correct Barcode.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Hide();
+                CheckOut checkOut = new CheckOut();
+                checkOut.ShowDialog();
+
             }
 
 

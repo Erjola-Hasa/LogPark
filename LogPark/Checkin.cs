@@ -49,47 +49,49 @@ namespace LogPark
         public void button1_Click(object sender, EventArgs e)
         {
             string barcode = label3.Text;
-            DateTime checkInDateTime =DateTime.Now;
+            DateTime checkInDateTime = DateTime.Now;
             parkingService.CheckIn(barcode, checkInDateTime);
             if (parkingService != null)
             {
-               
+
 
                 DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (result1 == DialogResult.OK)
-                   
+                { 
+
                     MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.Hide();
-                if (AuthHelper.GetLoggedInUserRole() == "Admin")
-                {
-                    DashboardAdmin dashboard2 = new DashboardAdmin();
-                    dashboard2.ShowDialog();
+                    this.Hide();
+                    if (AuthHelper.GetLoggedInUserRole() == "Admin")
+                    {
+                        DashboardAdmin dashboard2 = new DashboardAdmin();
+                        dashboard2.ShowDialog();
 
-                }
-                else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
-                {
+                    }
+                    else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
+                    {
 
-                    DashboardSupervizor dashboard1 = new DashboardSupervizor();
-                    dashboard1.ShowDialog();
+                        DashboardSupervizor dashboard1 = new DashboardSupervizor();
+                        dashboard1.ShowDialog();
+
+                    }
+
+                    else
+                    {
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.ShowDialog();
+                    }
 
                 }
 
                 else
                 {
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.ShowDialog();
+                    this.Hide();
+                    Check checkin = new Check();
+                    checkin.ShowDialog();
                 }
-            }
-        
-    
-            else
-            {
-                this.Hide();
-                Checkin checkin = new Checkin();
-                checkin.ShowDialog();
-            }
+        }
         }
 
 

@@ -39,6 +39,13 @@ namespace LogPark
             decimal price = parkingService.CalculatePrice(entryTime, exitTime);
 
             int reservationID = parkingService.GetReservationIDFromDatabase(barcode);
+            if (string.IsNullOrEmpty(barcode))
+            {
+                MessageBox.Show("Please Enter the Barcode ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
 
                 DialogResult result1 = MessageBox.Show("Are you sure you want to procced with the action?", "Confirm Action", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
@@ -46,9 +53,9 @@ namespace LogPark
                 {
 
                     parkingService.UpdateReservation(reservationID, exitTime, price);
-                   
+
                     MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
+
                     this.Hide();
                     if (AuthHelper.GetLoggedInUserRole() == "Admin")
                     {
@@ -74,14 +81,15 @@ namespace LogPark
 
 
 
+
                 else
                 {
                     this.Hide();
                     CheckOut checkOut = new CheckOut();
                     checkOut.ShowDialog();
                 }
-            
 
+            }
 
         }
 

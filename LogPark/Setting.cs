@@ -137,6 +137,9 @@ namespace LogPark
 
           
             configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
         }
 
 

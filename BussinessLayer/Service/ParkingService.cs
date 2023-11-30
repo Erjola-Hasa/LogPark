@@ -52,10 +52,7 @@ namespace BusinessLayer
         {
            
             int reservations = parkingDAL.GetReservationsFromDatabase(status);
-
-            int reservedSpaces = reservations;
-
-            return reservedSpaces;
+            return reservations;
         }
 
 
@@ -81,7 +78,7 @@ namespace BusinessLayer
             catch (Exception ex)
             {
                log.Error(ex.Message);
-                MessageBox.Show("An error has occurred. Please verify your Data.");
+                MessageBox.Show("An error has occurred. Please verify your Data!");
               
             }
             return null;
@@ -277,7 +274,6 @@ namespace BusinessLayer
             }
              catch(Exception ex)
             {
-               // MessageBox.Show(ex.ToString());
                 log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please try again.");
             }

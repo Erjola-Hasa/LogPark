@@ -196,6 +196,9 @@ namespace LogPark
             string Password = textBox7.Text;
            
            configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            this.Hide();
+            DashboardAdmin dsha = new DashboardAdmin();
+            dsha.ShowDialog();
            
         }
 
@@ -221,6 +224,7 @@ namespace LogPark
               
 
                 userService.InsertUser(firstName, lastName, userName, password, profile);
+                
                
 
             }

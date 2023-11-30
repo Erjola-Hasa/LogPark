@@ -45,16 +45,19 @@ namespace DataAccesLayer
             {
 
                 db.Open();
-                db.Close();
+               
 
                 var parameters = new
                 {
                     Status = status,
                 };
+                db.Close();
 
                 return db.ExecuteScalar<int>("SelectFreeSpace", parameters, commandType: CommandType.StoredProcedure);
+              
 
             }
+            
         }
 
 
@@ -180,8 +183,6 @@ namespace DataAccesLayer
                 {
                     RezervationCode = barcode,
                 };
-                // db.con.Open();
-
                 object result = db.ExecuteScalar<int>("SelectRezervationID", parameters, commandType: CommandType.StoredProcedure);
                 db.Close();
                 if (result != null && result != DBNull.Value)
@@ -216,8 +217,7 @@ namespace DataAccesLayer
 
                     List<Reservations> reservations = new List<Reservations>();
 
-                    try
-                    {
+                    
                         db.Open();
                         var parameters = new
                         {
@@ -240,12 +240,8 @@ namespace DataAccesLayer
                                 reservations.Add(reservation);
                             }
                         }
-                    }
-                    finally
-                    {
-                        db.Close();
-                    }
-
+                    
+                     db.Close();
                     return reservations;
                 }
             

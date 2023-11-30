@@ -158,6 +158,9 @@ namespace LogPark
             string DatabaseName = textBox1.Text;
 
           configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            this.Hide();
+            DashboardSupervizor dshs= new DashboardSupervizor();
+            dshs.ShowDialog();
         }
 
        
@@ -174,7 +177,6 @@ namespace LogPark
             {
                
                 PriceService languageService = new PriceService();
-                // int Price = Convert.ToInt32(textBox5.Text);
                 int Price = Convert.ToInt32(textBox2.Text);
                 languageService.UpdatePrice(Price);
                 textBox2.Text = Price.ToString();

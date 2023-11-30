@@ -35,8 +35,8 @@ namespace BusinessLayer
             try
             {
 
-                Users existingUser = userRepository.GetUserByUserName(userName, password);
-                if (existingUser != null)
+                Users existingUser = userRepository.GetUserByUserName(userName, Cryptography.Encrypt(password.ToString()));
+                if (existingUser!=null)
                 {
                     MessageBox.Show("Username Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -61,6 +61,7 @@ namespace BusinessLayer
 
                     userRepository.InsertUser(user);
                     MessageBox.Show("Your Account is created ", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
 
 
                 }

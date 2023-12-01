@@ -139,7 +139,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>708, 498</value>
+    <value>640, 456</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -178,7 +178,7 @@
     <value>Albanian</value>
   </data>
   <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 3</value>
+    <value>119, 3</value>
   </data>
   <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -202,7 +202,7 @@
     <value>True</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 355</value>
+    <value>3, 313</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 24</value>
@@ -229,7 +229,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 176</value>
+    <value>3, 155</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -253,7 +253,7 @@
     <value>2</value>
   </data>
   <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 179</value>
+    <value>119, 158</value>
   </data>
   <data name="textBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 20</value>
@@ -310,7 +310,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>666, 409</value>
+    <value>598, 367</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -343,7 +343,7 @@
     <value>No</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>694, 466</value>
+    <value>626, 424</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -703,7 +703,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>702, 492</value>
+    <value>634, 450</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -730,7 +730,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>707, 516</value>
+    <value>639, 474</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

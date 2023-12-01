@@ -42,7 +42,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Method to select user by  name and password if are correct or no
+        ///  select user by  name and password 
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="Password"></param>

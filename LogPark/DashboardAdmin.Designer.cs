@@ -96,6 +96,7 @@
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "DashboardAdmin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.DashboardAdmin_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

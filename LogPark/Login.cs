@@ -124,6 +124,8 @@ namespace LogPark
         {
            
            Environment.Exit(0);
+        
+
         }
      
     }

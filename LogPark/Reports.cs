@@ -61,12 +61,10 @@ namespace LogPark
                 ReportData reportData = parkingService.GenerateReport(startDate, endDate);
                
                 label1.Text = reportData.TotalCarsInParking.ToString();
+                label8.Text=reportData.MinimumStayTime.ToString();
+                label5.Text=reportData.MaximumStayTime.ToString() ;
+                label12.Text=reportData.AverageStay.ToString();
 
-                label8.Text = label8.Text.Replace("Minimum Stay", " ") + $" {reportData.MinimumStayTime}";
-
-                label5.Text = label5.Text.Replace("Maximum Stay", " ") + $" {reportData.MaximumStayTime}";
-
-                label12.Text = label12.Text.Replace("Avarage Stay", " ") + $" {reportData.AverageStay}";
             }
         }
 

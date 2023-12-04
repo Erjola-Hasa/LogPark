@@ -31,10 +31,10 @@ namespace LogPark
                     databaseSettings.ShowDialog();
                   
             }
-                else
-                {
+             else
+                 {
                     Application.Run(new Login());
-                }
+                 }
             
 
         }

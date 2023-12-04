@@ -8,9 +8,9 @@ namespace BusinessLayer
         private readonly PriceRepository _priceRepository;
 
         /// <summary>
-        ///  Initializes a new instance of the PriceRepository class 
+        ///  Initializes a new instance of the PriceRepository  
         /// </summary>
-        //   PriceRepository PriceRepository = new PriceRepository();
+        
 
         public PriceService()
         {

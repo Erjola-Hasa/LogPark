@@ -10,7 +10,7 @@ namespace BusinessLayer
         private readonly UserRepository userRepository;
 
         /// <summary>
-        /// Initializes a new instance of the UserRepository class
+        /// Initializes a new instance of the UserRepository 
         /// </summary>
 
         public UserService()

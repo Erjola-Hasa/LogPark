@@ -9,7 +9,7 @@ namespace BusinessLayer
     {
         private ConfigRepository _config;
         /// <summary>
-        /// Initializes a new instance of the ConfigRepository class 
+        /// Initializes a new instance of the ConfigRepository  
         /// </summary>
      
         public ConfigService()

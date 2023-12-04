@@ -12,7 +12,7 @@ namespace LogPark
         /// <summary>
         /// Initializes a new instance of the ConfigService class
         /// </summary>
-        ConfigService configBLL = new ConfigService();
+     private    ConfigService configBLL;
 
 
 
@@ -24,6 +24,7 @@ namespace LogPark
         {
             InitializeComponent();
             this.AcceptButton = button1;
+            configBLL = new ConfigService();
         }
 
        

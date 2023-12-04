@@ -10,7 +10,7 @@ namespace LogPark
         /// <summary>
         /// Initializes a new instance of the ParkingService 
         /// </summary>
-        private ParkingService parkingService= new ParkingService();
+        private ParkingService parkingService;
 
         /// <summary>
         /// InitializeComponent is a method which is used to initialize  form
@@ -18,6 +18,7 @@ namespace LogPark
         public Checkin()
         {
             InitializeComponent();
+            parkingService = new ParkingService();  
          
 
         }

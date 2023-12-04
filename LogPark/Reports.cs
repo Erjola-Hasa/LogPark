@@ -11,7 +11,7 @@ namespace LogPark
         /// <summary>
         /// Initializes a new instance of the ParkingService class 
         /// </summary>
-        public ParkingService parkingService= new ParkingService();
+        public ParkingService parkingService;
 
 
         /// <summary>
@@ -20,6 +20,7 @@ namespace LogPark
         public Reports()
         {
             InitializeComponent();
+            parkingService = new ParkingService();
            
         }
 

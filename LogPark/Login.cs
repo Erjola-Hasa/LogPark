@@ -10,9 +10,8 @@ namespace LogPark
         /// <summary>
         ///  Initializes a new instance of the UserService 
         /// </summary>
-        UserService userService = new UserService();
-
-
+       
+        private UserService userService;
 
         /// <summary>
         ///  InitializeComponent is a method which is used to initialize  form
@@ -20,7 +19,7 @@ namespace LogPark
         public Login()
         {
             InitializeComponent();
-           
+           userService = new UserService();
             
 
         }

@@ -9,7 +9,7 @@ namespace LogPark
         /// <summary>
         ///  Initializes a new instance of the ParkingService 
         /// </summary>
-        public ParkingService parkingService=new ParkingService();
+        public ParkingService parkingService;
 
 
 
@@ -20,7 +20,7 @@ namespace LogPark
         public CheckOut()
         {
             InitializeComponent();
-          
+            parkingService = new ParkingService();
 
         }
 

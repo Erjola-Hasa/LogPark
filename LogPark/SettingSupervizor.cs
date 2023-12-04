@@ -14,8 +14,8 @@ namespace LogPark
         /// <summary>
         /// Initializes a new instance of the ConfigService,PriceService 
         /// </summary>
-        public ConfigService configBLL = new ConfigService();
-        public PriceService languageService = new PriceService();
+        private ConfigService configBLL;
+        private PriceService languageService;
 
 
         /// <summary>
@@ -35,6 +35,8 @@ namespace LogPark
 
             this.AcceptButton = button2;
             this.AcceptButton = button1;
+            configBLL = new ConfigService();
+            languageService = new PriceService();
 
 
         }

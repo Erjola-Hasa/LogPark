@@ -15,9 +15,9 @@ namespace LogPark
         /// <summary>
         /// Initializes a new instance of the PriceServie,ConfigService and UserService
         /// </summary>
-        PriceService priceService = new PriceService();
-        ConfigService configBLL = new ConfigService();
-        UserService userService = new UserService();
+        private PriceService priceService;
+        private ConfigService configBLL;
+        private UserService userService;
 
         /// <summary>
         ///  Define a static logger variable
@@ -38,6 +38,9 @@ namespace LogPark
             InitializeComponent();
             this.AcceptButton = button2;
             this.AcceptButton = button1;
+            priceService = new PriceService();
+            configBLL = new ConfigService();
+            userService = new UserService();
         }
 
 

@@ -10,7 +10,7 @@ namespace LogPark
         /// <summary>
         ///  Initializes a new instance of the ParkingService 
         /// </summary>
-        private ParkingService parkingService= new ParkingService();
+        private ParkingService parkingService;
 
 
         /// <summary>
@@ -19,6 +19,8 @@ namespace LogPark
         public DashboardAdmin()
         {
             InitializeComponent();
+            parkingService = new ParkingService();
+
 
         }
 

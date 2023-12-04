@@ -2,6 +2,8 @@
 {
     public static class AuthHelper
     {
+
+
         private static string loggedInUserRole;
         /// <summary>
         /// Method to Set the Role of the users

@@ -7,13 +7,16 @@ namespace BusinessLayer
 {
     public class UserService
     {
+        private readonly UserRepository userRepository;
 
         /// <summary>
         /// Initializes a new instance of the UserRepository class
         /// </summary>
-        UserRepository userRepository = new UserRepository();
 
-
+        public UserService()
+        {
+             userRepository = new UserRepository();
+        }
         /// <summary>
         ///  Define a static logger variable
         /// </summary>

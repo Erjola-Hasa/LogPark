@@ -20,7 +20,7 @@ namespace LogPark
         public Login()
         {
             InitializeComponent();
-            this.SetDesktopLocation(Top, Right);
+           
             
 
         }

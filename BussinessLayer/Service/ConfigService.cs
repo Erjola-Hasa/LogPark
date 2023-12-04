@@ -7,16 +7,20 @@ namespace BusinessLayer
 {
     public class ConfigService
     {
-
+        private ConfigRepository _config;
         /// <summary>
         /// Initializes a new instance of the ConfigRepository class 
         /// </summary>
-        ConfigRepository _config = new ConfigRepository();
+     
+        public ConfigService()
+        {
+            _config = new ConfigRepository();
+        }
 
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
-   
+
         private static readonly ILog log = LogManager.GetLogger(typeof(ConfigService));
 
         /// <summary>

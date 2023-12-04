@@ -9,13 +9,26 @@ namespace BusinessLayer
 {
     public class ParkingService
     {
-        private ParkingRepository parkingDAL= new ParkingRepository();
-        PriceRepository PriceRepository = new PriceRepository();
+        private ParkingRepository parkingDAL;
+        private PriceRepository _priceRepository;
+
+
+        /// <summary>
+        /// Initializes a new instance of the ParkingRepository,PriceRepository
+        /// </summary>
+
+
+        public ParkingService()
+        {
+            parkingDAL = new ParkingRepository();
+            _priceRepository = new PriceRepository();
+            
+        }
 
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
-      
+        /// 
         private static readonly ILog log = LogManager.GetLogger(typeof(ParkingService));
 
 
@@ -25,9 +38,7 @@ namespace BusinessLayer
         /// <param name="parkingDAL"></param>
 
 
-        public ParkingService()
-        {
-        }
+        
 
 
 
@@ -133,7 +144,7 @@ namespace BusinessLayer
         public int CalculatePrice(DateTime entryTime, DateTime exitTime)
         {
                
-                int pricePerHour = PriceRepository.GetPrice();
+                int pricePerHour = _priceRepository.GetPrice();
                 TimeSpan duration = exitTime - entryTime;
                 int hours = (int)duration.TotalHours;
 

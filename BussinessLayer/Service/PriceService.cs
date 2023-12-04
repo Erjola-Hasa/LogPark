@@ -5,13 +5,20 @@ namespace BusinessLayer
 {
     public  class PriceService
     {
+        private readonly PriceRepository _priceRepository;
+
         /// <summary>
         ///  Initializes a new instance of the PriceRepository class 
         /// </summary>
-        PriceRepository PriceRepository = new PriceRepository();
+        //   PriceRepository PriceRepository = new PriceRepository();
+
+        public PriceService()
+        {
+                _priceRepository = new PriceRepository();
+        }
 
 
-      
+
 
         /// <summary>
         /// Updates the Price record in the database with the provided Price
@@ -21,7 +28,7 @@ namespace BusinessLayer
         {
            
 
-                PriceRepository.UpdatePrice(Price);
+                _priceRepository.UpdatePrice(Price);
             
            
            
@@ -38,7 +45,7 @@ namespace BusinessLayer
         public int GetPrice()
         {
             
-            return PriceRepository.GetPrice();
+            return _priceRepository.GetPrice();
         }
     }
 

@@ -24,14 +24,7 @@ namespace LogPark
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
 
-            if ((bool)DataAccesLayer.Properties.Settings.Default["FirstRun"] == true)
-            {
-                DataAccesLayer.Properties.Settings.Default["FirstRun"] = false;
-                DataAccesLayer.Properties.Settings.Default.Save();
-                DatabaseSettings databaseSettings = new DatabaseSettings();
-                databaseSettings.ShowDialog();
-            }
-            else if (string.IsNullOrEmpty(Connection))
+            if (string.IsNullOrEmpty(Connection))
             {
            
                     DatabaseSettings databaseSettings = new DatabaseSettings();

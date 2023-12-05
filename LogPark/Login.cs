@@ -100,9 +100,6 @@ namespace LogPark
 
                 }
             }
-
-
-
             else
             {
 

@@ -18,7 +18,7 @@ namespace LogPark
         private PriceService priceService;
         private ConfigService configBLL;
         private UserService userService;
-
+        
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
@@ -27,7 +27,7 @@ namespace LogPark
         private static readonly ILog log = LogManager.GetLogger(typeof(SettingsAdmin));
 
 
-
+        
 
         /// <summary>
         /// InitializeComponent is a method which is used to initialize  form and activate tab enter 
@@ -36,8 +36,10 @@ namespace LogPark
         public SettingsAdmin()
         {
             InitializeComponent();
-            this.AcceptButton = button2;
-            this.AcceptButton = button1;
+            AcceptButton = button2;
+            
+
+            
             priceService = new PriceService();
             configBLL = new ConfigService();
             userService = new UserService();
@@ -117,7 +119,6 @@ namespace LogPark
         /// <param name="e"></param>
         private void SettingsAdmin_Load(object sender, EventArgs e)
         {
-
            
             int Price = priceService.GetPrice();
             textBox5.Text = Price.ToString();
@@ -146,6 +147,7 @@ namespace LogPark
         /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
+          
             try
             {
 
@@ -176,6 +178,7 @@ namespace LogPark
         /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
+           
             string ServerName = textBox6.Text;
             string DatabaseName = textBox1.Text;
             string UserId = textBox4.Text;
@@ -215,6 +218,7 @@ namespace LogPark
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
+          
             try
             {
 
@@ -257,6 +261,11 @@ namespace LogPark
 
 
 
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 

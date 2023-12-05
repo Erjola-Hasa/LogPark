@@ -124,7 +124,7 @@ namespace LogPark
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void label6_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login Login = new Login();
@@ -149,7 +149,7 @@ namespace LogPark
 
         }
 
-
+       
     }
 }
 #endregion

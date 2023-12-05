@@ -37,6 +37,7 @@ namespace LogPark
             this.AcceptButton = button1;
            
 
+
         }
 
 
@@ -127,6 +128,7 @@ namespace LogPark
         
 
         }
-     
+      
+
     }
 }

@@ -26,6 +26,7 @@ namespace LogPark
           
             InitializeComponent();
             parkingService = new ParkingService();
+          
         }
 
 
@@ -37,7 +38,7 @@ namespace LogPark
         /// <param name="e"></param>
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+          
 
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
             string status = "Aktive";

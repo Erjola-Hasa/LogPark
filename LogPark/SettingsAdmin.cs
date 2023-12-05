@@ -233,7 +233,7 @@ namespace LogPark
             }
             catch (Exception ex)
             {
-
+                log.Error(ex.Message);
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }

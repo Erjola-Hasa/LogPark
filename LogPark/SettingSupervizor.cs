@@ -34,9 +34,7 @@ namespace LogPark
         public SettingSupervizor()
         {
             InitializeComponent();
-
             this.AcceptButton = button2;
-            //this.AcceptButton = button1;
             configBLL = new ConfigService();
             languageService = new PriceService();
 
@@ -115,8 +113,6 @@ namespace LogPark
         /// <param name="e"></param>
         private void SettingSupervizor_Load(object sender, EventArgs e)
         {
-         
-
             int Price = languageService.GetPrice();
             textBox2.Text = Price.ToString();
         }
@@ -161,7 +157,7 @@ namespace LogPark
             string Password = textBox7.Text;
             string DatabaseName = textBox1.Text;
 
-          configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             this.Hide();
             DashboardSupervizor dshs= new DashboardSupervizor();
             dshs.ShowDialog();

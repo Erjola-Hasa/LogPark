@@ -24,7 +24,6 @@ namespace LogPark
         {
             InitializeComponent();
             this.AcceptButton = button2;
-          //  this.AcceptButton = button1;
             configBLL = new ConfigService();
         }
 
@@ -96,8 +95,6 @@ namespace LogPark
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
-           
             this.Hide();
             Dashboard dashboard = new Dashboard();
             dashboard.ShowDialog();
@@ -116,8 +113,6 @@ namespace LogPark
             string Password = textBox7.Text;
             string DatabaseName = textBox1.Text;
 
-
-           
             configBLL.TestDatabase(UserId, Password, ServerName, DatabaseName);
          
 

@@ -9,6 +9,10 @@ namespace BusinessLayer
 {
     public class ParkingService
     {
+
+        /// <summary>
+        /// Define a private  _priceRepository,parkingDAL variable
+        /// </summary>
         private ParkingRepository parkingDAL;
         private PriceRepository _priceRepository;
 

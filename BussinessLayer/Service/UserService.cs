@@ -7,6 +7,10 @@ namespace BusinessLayer
 {
     public class UserService
     {
+
+        /// <summary>
+        /// Define a private  userService variable
+        /// </summary>
         private readonly UserRepository userRepository;
 
         /// <summary>

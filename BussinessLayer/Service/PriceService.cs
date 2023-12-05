@@ -5,6 +5,10 @@ namespace BusinessLayer
 {
     public  class PriceService
     {
+
+        /// <summary>
+        /// Define a private  _priceRepository variable
+        /// </summary>
         private readonly PriceRepository _priceRepository;
 
         /// <summary>

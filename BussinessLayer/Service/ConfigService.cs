@@ -7,6 +7,10 @@ namespace BusinessLayer
 {
     public class ConfigService
     {
+
+        /// <summary>
+        /// Define a private  _config variable
+        /// </summary>
         private ConfigRepository _config;
         /// <summary>
         /// Initializes a new instance of the ConfigRepository  

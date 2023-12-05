@@ -12,7 +12,8 @@ namespace LogPark
     public partial class SettingSupervizor : Form
     {
         /// <summary>
-        /// Initializes a new instance of the ConfigService,PriceService 
+        
+        /// Define a private  ConfigBLL,languageService variable
         /// </summary>
         private ConfigService configBLL;
         private PriceService languageService;
@@ -28,6 +29,7 @@ namespace LogPark
 
         /// <summary>
         /// InitializeComponent is a method which is used to initialize  form and activate tab enter 
+        ///  Initializes a new instance of the ConfigService,PriceService 
         /// </summary>
         public SettingSupervizor()
         {

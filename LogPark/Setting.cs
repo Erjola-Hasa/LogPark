@@ -10,14 +10,15 @@ namespace LogPark
     public partial class Setting : Form
     {
         /// <summary>
-        /// Initializes a new instance of the ConfigService 
+        ///  Define a private  ConfigBLL variable
         /// </summary>
-         private ConfigService configBLL;
+        private ConfigService configBLL;
 
 
 
         /// <summary>
         /// InitializeComponent is a method which is used to initialize  form and activate tab enter 
+        /// Initializes a new instance of the ConfigService 
         /// </summary>
         public Setting()
         {

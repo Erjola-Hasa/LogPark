@@ -10,15 +10,16 @@ namespace LogPark
     public partial class DatabaseSettings : Form
     {
         /// <summary>
-        /// Initializes a new instance of the ConfigService class
+        /// Define a private  configBLL variable
         /// </summary>
-     private    ConfigService configBLL;
+        private ConfigService configBLL;
 
 
 
 
         /// <summary>
         /// InitializeComponent is a method which is used to initialize  form
+        /// Initializes a new instance of the ConfigService class
         /// </summary>
         public DatabaseSettings()
         {

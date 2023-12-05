@@ -13,7 +13,7 @@ namespace LogPark
     public partial class SettingsAdmin : Form
     {
         /// <summary>
-        /// Initializes a new instance of the PriceServie,ConfigService and UserService
+        /// Define a private  priceService,configBLL,userService variable
         /// </summary>
         private PriceService priceService;
         private ConfigService configBLL;
@@ -23,8 +23,7 @@ namespace LogPark
         ///  Define a static logger variable
         /// </summary>
 
-      //  static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
+     
         private static readonly ILog log = LogManager.GetLogger(typeof(SettingsAdmin));
 
 
@@ -32,6 +31,7 @@ namespace LogPark
 
         /// <summary>
         /// InitializeComponent is a method which is used to initialize  form and activate tab enter 
+        ///  Initializes a new instance of the PriceServie,ConfigService and UserService
         /// </summary>
         public SettingsAdmin()
         {

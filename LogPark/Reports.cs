@@ -9,13 +9,14 @@ namespace LogPark
     {
 
         /// <summary>
-        /// Initializes a new instance of the ParkingService class 
+        ///  Define a private  parkingService variable
         /// </summary>
         public ParkingService parkingService;
 
 
         /// <summary>
         /// InitializeComponent is a method which is used to initialize  form
+        /// Initializes a new instance of the ParkingService class 
         /// </summary>
         public Reports()
         {

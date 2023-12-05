@@ -8,13 +8,14 @@ namespace LogPark
     public partial class Login : Form
     {
         /// <summary>
-        ///  Initializes a new instance of the UserService 
+        ///  Define a private  userService variable
         /// </summary>
-       
+
         private UserService userService;
 
         /// <summary>
         ///  InitializeComponent is a method which is used to initialize  form
+        ///  Initializes a new instance of the UserService 
         /// </summary>
         public Login()
         {

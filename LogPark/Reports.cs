@@ -86,19 +86,39 @@ namespace LogPark
                 dashboard2.ShowDialog();
 
             }
-            else if (AuthHelper.GetLoggedInUserRole() == "Supervizor" || AuthHelper.GetLoggedInUserRole() == "Supervisor")
+            else 
             {
                 DashboardSupervizor dashboard1 = new DashboardSupervizor();
                 dashboard1.ShowDialog();
 
             }
 
+           
+
+        }
+
+        /// <summary>
+        /// Override the Close Form event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+
+            this.Hide();
+            if (AuthHelper.GetLoggedInUserRole() == "Admin")
+            {
+                DashboardAdmin dashboard2 = new DashboardAdmin();
+                dashboard2.ShowDialog();
+
+            }
             else
             {
-              
-                Dashboard dashboard = new Dashboard();
-                dashboard.ShowDialog();
+                DashboardSupervizor dashboard1 = new DashboardSupervizor();
+                dashboard1.ShowDialog();
+
             }
+
 
         }
     }

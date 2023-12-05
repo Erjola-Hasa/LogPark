@@ -37,9 +37,6 @@ namespace LogPark
         {
             InitializeComponent();
             AcceptButton = button2;
-            
-
-            
             priceService = new PriceService();
             configBLL = new ConfigService();
             userService = new UserService();
@@ -85,7 +82,6 @@ namespace LogPark
             {
                 ComponentResourceManager resources = new ComponentResourceManager(typeof(SettingsAdmin));
                 CultureInfo cultureInfo = new CultureInfo(lang);
-
                 doRecursiveLoading(this, cultureInfo, resources);
             }
         }
@@ -150,8 +146,6 @@ namespace LogPark
           
             try
             {
-
-
                 int Price = Convert.ToInt32(textBox5.Text);
                 priceService.UpdatePrice(Price);
                 textBox5.Text = Price.ToString();
@@ -161,8 +155,6 @@ namespace LogPark
             }
             catch (Exception ex)
             {
-               
-
                 log.Error(ex.Message);
                 MessageBox.Show("An error has occurred. Please Enter a number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -201,7 +193,7 @@ namespace LogPark
             string UserId = textBox4.Text;
             string Password = textBox7.Text;
            
-           configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
+            configBLL.ConnectToDatabase(UserId, Password, ServerName, DatabaseName);
             this.Hide();
             DashboardAdmin dsha = new DashboardAdmin();
             dsha.ShowDialog();
@@ -221,19 +213,14 @@ namespace LogPark
           
             try
             {
-
                 string firstName = textBox2.Text;
                 string lastName = textBox3.Text;
                 string userName = textBox8.Text;
                 string password = textBox9.Text;
                 string profile = comboBox1.Text;
 
-              
-
                 userService.InsertUser(firstName, lastName, userName, password, profile);
-                
-               
-
+ 
             }
             catch (Exception ex)
             {

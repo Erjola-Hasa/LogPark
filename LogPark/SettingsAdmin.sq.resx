@@ -117,8 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>635, 441</value>
+  </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Cilesimet</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>635, 441</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Databasa</value>
@@ -126,16 +133,27 @@
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Perdoruesi</value>
   </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 390</value>
+  </data>
   <data name="comboBox2.Items" xml:space="preserve">
     <value>Anglish</value>
   </data>
   <data name="comboBox2.Items1" xml:space="preserve">
     <value>Shqip</value>
   </data>
+  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 3</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 337</value>
+  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Ruaj</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 167</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
   </data>
@@ -148,20 +166,65 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Gjuha</value>
   </data>
+  <data name="textBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 170</value>
+  </data>
+  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>629, 435</value>
+  </data>
+  <data name="textBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 252</value>
+  </data>
+  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 169</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Emri Serverit</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 86</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 249</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 83</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Fjalekalimi</value>
   </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 83</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Emri Databases</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 335</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Testo</value>
   </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 335</value>
+  </data>
   <data name="button3.Text" xml:space="preserve">
     <value>Ruaj</value>
+  </data>
+  <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 3</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 166</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 83</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Perdoruesi</value>
@@ -181,16 +244,19 @@
   <data name="label11.Text" xml:space="preserve">
     <value>Roli</value>
   </data>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>Perdorues</value>
+  </data>
+  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 359</value>
+  </data>
   <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 42</value>
   </data>
   <data name="button4.Text" xml:space="preserve">
     <value>Krijo Perdoruesin</value>
   </data>
-  <data name="comboBox1.Items" xml:space="preserve">
-    <value>Supervizor</value>
-  </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
-    <value>Perdorues</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Konfigurimet Admin</value>
   </data>
 </root>

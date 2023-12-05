@@ -142,4 +142,7 @@
   <data name="button4.Text" xml:space="preserve">
     <value>Cilesimet</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Menu Admin</value>
+  </data>
 </root>

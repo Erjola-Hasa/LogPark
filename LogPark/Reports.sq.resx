@@ -157,4 +157,7 @@
   <data name="label14.Text" xml:space="preserve">
     <value>Data Mbarimit</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Raport</value>
+  </data>
 </root>

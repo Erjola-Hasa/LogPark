@@ -123,14 +123,12 @@ namespace LogPark
 
             if (entryTime != DateTime.MinValue)
             {
-                label4.Text = label4.Text.Replace("Entry Time", "") + $" {entryTime}";
+
+                   label4.Text = entryTime.ToString();
                     DateTime exitTime = DateTime.Now;
-
-                    label5.Text = label5.Text.Replace("Exit Time", "") + $" {exitTime}";
-
+                    label5.Text = exitTime.ToString();
                     decimal price = parkingService.CalculatePrice(entryTime, exitTime);
-
-                    label6.Text = label6.Text.Replace("Price", "") + $" {price}";
+                    label6.Text = price.ToString();
 
 
             }

@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -60,7 +59,8 @@ namespace LogPark
             {
 
 
-                ReportData reportData = parkingService.GenerateReport(startDate, endDate);
+               var reportData = parkingService.GenerateReport(startDate, endDate);
+              
                
                 label1.Text = reportData.TotalCarsInParking.ToString();
                 label8.Text=reportData.MinimumStayTime.ToString();

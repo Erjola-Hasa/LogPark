@@ -9,8 +9,7 @@ namespace LogPark
 {
     internal static class Program
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
-
+     
 
 
         [STAThread]

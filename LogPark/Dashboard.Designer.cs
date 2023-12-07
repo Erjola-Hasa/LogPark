@@ -66,7 +66,7 @@
             resources.ApplyResources(this.label1, "label1");
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.label1.Name = "label1";
             // 
             // button1

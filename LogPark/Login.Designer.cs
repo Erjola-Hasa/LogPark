@@ -41,40 +41,47 @@
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Name = "label2";
             // 
             // textBox1
             // 
             resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Name = "textBox1";
             // 
             // textBox2
             // 
             resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Name = "textBox2";
             this.textBox2.UseSystemPasswordChar = true;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.label1.Name = "label1";
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
             this.tableLayoutPanel2.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBox2, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // Login

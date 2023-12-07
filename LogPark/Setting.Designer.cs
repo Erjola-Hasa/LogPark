@@ -87,11 +87,11 @@
             // 
             // comboBox2
             // 
-            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             resources.GetString("comboBox2.Items"),
             resources.GetString("comboBox2.Items1")});
+            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -106,10 +106,12 @@
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Name = "label2";
             // 
             // textBox5
             // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.textBox5, "textBox5");
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
@@ -117,6 +119,7 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Name = "label1";
             // 
             // tabPage2
@@ -137,8 +140,8 @@
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.button3, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
             // textBox7

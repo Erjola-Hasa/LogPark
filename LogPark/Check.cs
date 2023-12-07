@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -36,8 +37,7 @@ namespace LogPark
         private void Check_Load(object sender, EventArgs e)
         {
 
-            this.AcceptButton = button1;
-
+          
             int totalParkingSpaces = parkingService.GetTotalParkingSpaces();
 
             string status = "Aktive";
@@ -48,29 +48,7 @@ namespace LogPark
         }
 
       
-       
-
-       
-
-       
-        /// <summary>
-        /// Checkin button to generate the barcode and the datetime
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            this.Hide();
-            Checkin checkin = new Checkin();
-            checkin.ShowDialog();
-           
-
-        }
-
-
-
-
-
+  
 
 
 
@@ -109,6 +87,23 @@ namespace LogPark
 
 
 
+        }
+
+
+
+
+        /// <summary>
+        ///  Checkin picturebox  to generate the barcode and the datetime
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            
+            this.Hide();
+            Checkin checkin = new Checkin();
+            checkin.ShowDialog();
         }
     }
 }

@@ -43,6 +43,7 @@
             // 
             resources.ApplyResources(this.label5, "label5");
             this.tableLayoutPanel1.SetColumnSpan(this.label5, 2);
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label5.Name = "label5";
             // 
             // button1

@@ -52,9 +52,9 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.button2, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.button4, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.button5, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.button3, 0, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // button1

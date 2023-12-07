@@ -11,7 +11,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Method to Save the ConnectionString 
+        ///  Save the ConnectionString  in Settings
         /// </summary>
         /// <param name="UserId"></param>
         /// <param name="Password"></param>
@@ -63,7 +63,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Method to Test the ConnestionString if  UserId,Password,ServerName,DatabaseName are correct
+        ///  Test the ConnestionString if  UserId,Password,ServerName,DatabaseName are correct 
         /// </summary>
         /// <param name="UserId"></param>
         /// <param name="Password"></param>

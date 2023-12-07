@@ -19,7 +19,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Add a new User
+        /// Insert User using Store Procedure 
         /// </summary>
         /// <param name="user"></param>
         public void InsertUser(Users user)
@@ -42,7 +42,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        ///  select user by  name and password 
+        ///  Select user by  name and password using SP
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="Password"></param>

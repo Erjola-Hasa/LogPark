@@ -21,11 +21,14 @@ namespace BusinessLayer
             _config = new ConfigRepository();
         }
 
+
+
         /// <summary>
         ///  Define a static logger variable
         /// </summary>
 
         private static readonly ILog log = LogManager.GetLogger(typeof(ConfigService));
+
 
         /// <summary>
         /// Connect with Database with specifik ServerName,DatabaseName,UserId and Password
@@ -46,7 +49,8 @@ namespace BusinessLayer
 
                     return true;
                 }
-            }catch(Exception ex)
+            }
+             catch(Exception ex)
             
             {
                 log.Error(ex.Message);

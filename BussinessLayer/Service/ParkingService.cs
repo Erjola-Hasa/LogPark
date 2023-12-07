@@ -36,10 +36,7 @@ namespace BusinessLayer
         private static readonly ILog log = LogManager.GetLogger(typeof(ParkingService));
 
 
-        /// <summary>
-        /// Initializes a new instance of the ParkingService class with a reference to a ParkingRepository object.
-        /// </summary>
-        /// <param name="parkingDAL"></param>
+       
 
 
         

@@ -13,7 +13,7 @@ namespace DataAccesLayer
 
        
         /// <summary>
-        /// Method to Update Price/Hour In parking
+        /// Method to Update Price/Hour In parking using SP
         /// </summary>
         /// <param name="PricePerHour"></param>
         public void UpdatePrice(int PricePerHour)
@@ -42,7 +42,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Select the price of the parking
+        /// Select the price of the parking using SP
         /// </summary>
         /// <returns></returns>
         public  int GetPrice()

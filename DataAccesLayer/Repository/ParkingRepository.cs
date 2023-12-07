@@ -34,7 +34,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Select all Parking Space who has the Status ="Aktive"
+        /// Select all Parking Space who has the Status ="Aktive" using SP
         /// </summary>
         /// <param name="status"></param>
         /// <returns></returns>
@@ -65,7 +65,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Method to checkin in parking and generate barcode and datetime 
+        ///  Insert Rezervation  in parking   using SP
         /// </summary>
         /// <param name="barcode"></param>
         /// <param name="checkInDateTime"></param>
@@ -100,7 +100,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Method to update rezervation when do check-out and give datime and price
+        ///  update rezervation when do check-out and give datime and price using SP
         /// </summary>
         /// <param name="reservationID"></param>
         /// <param name="exitTime"></param>
@@ -127,7 +127,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Select entry time about the specifik barcode
+        /// Select entry time about the specifik barcode using SP
         /// </summary>
         /// <param name="barcode"></param>
         /// <returns></returns>
@@ -164,7 +164,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        ///  Method to give us the RezervationiD  of specifik Barcode 
+        ///  Method to give us the RezervationiD  of specifik Barcode  using SP
         /// </summary>
         /// <param name="barcode"></param>
         /// <returns></returns>
@@ -194,7 +194,7 @@ namespace DataAccesLayer
             }
         }
 
-    
+
 
 
 
@@ -203,7 +203,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Select the start time and end time and give us the minimal time,totalCars ,maximalTime and AvarageTime
+        /// Select the start time and end time and give us the minimal time,totalCars ,maximalTime and AvarageTime using SP
         /// </summary>
         /// <param name="StartDateTime"></param>
         /// <param name="EndDateTime"></param>
@@ -251,7 +251,7 @@ namespace DataAccesLayer
 
 
         /// <summary>
-        /// Method to give us the status of specifik Barcode
+        /// Method to give us the status of specifik Barcode using SP
         /// </summary>
         /// <param name="barcode"></param>
         /// <returns></returns>

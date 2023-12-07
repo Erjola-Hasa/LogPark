@@ -198,6 +198,9 @@
   <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>

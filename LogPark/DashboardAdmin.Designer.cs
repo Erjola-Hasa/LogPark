@@ -43,6 +43,7 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.tableLayoutPanel2.SetColumnSpan(this.label1, 2);
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Name = "label1";
             // 
             // tableLayoutPanel2
@@ -87,8 +88,9 @@
             // button5
             // 
             resources.ApplyResources(this.button5, "button5");
+            this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // DashboardAdmin

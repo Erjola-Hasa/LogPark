@@ -32,7 +32,7 @@ namespace LogPark
         /// <param name="e"></param>
         public void Checkin_Load(object sender, EventArgs e)
         {
-            this.AcceptButton = button1;
+           
             DateTime checkInDateTime = DateTime.Now;
             label3.Text = GenerateRandomBarcode();
             label4.Text = checkInDateTime.ToString();
@@ -50,18 +50,14 @@ namespace LogPark
         /// <param name="e"></param>
         public void button1_Click(object sender, EventArgs e)
         {
-            string barcode = label3.Text;
-            DateTime checkInDateTime = DateTime.Now;
-            parkingService.CheckIn(barcode, checkInDateTime);
-           
-
-
-                DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+              string barcode = label3.Text;
+              DateTime checkInDateTime = DateTime.Now;
+              DialogResult result1 = MessageBox.Show("Are you sure you want to proceed with the action?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (result1 == DialogResult.OK)
-                { 
-
-                    MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {
+                      parkingService.CheckIn(barcode, checkInDateTime);
+                      MessageBox.Show("Your action was completed successfully", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Hide();
                     if (AuthHelper.GetLoggedInUserRole() == "Admin")

@@ -108,7 +108,7 @@ namespace BusinessLayer
         private bool IsValidCheckInDateTime(DateTime checkInDateTime)
         {
           
-            return checkInDateTime == DateTime.Now;
+            return checkInDateTime != DateTime.Now;
         }
 
 

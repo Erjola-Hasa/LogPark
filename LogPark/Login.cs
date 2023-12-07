@@ -1,7 +1,6 @@
 ﻿using BusinessLayer;
 using DataAccesLayer;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace LogPark
@@ -36,9 +35,6 @@ namespace LogPark
         {
 
             this.AcceptButton = button1;
-           
-
-
         }
 
     
@@ -50,8 +46,8 @@ namespace LogPark
     /// <param name="sender"></param>
     /// <param name="e"></param>
 
-   private void button1_Click_2(object sender, EventArgs e)
-        {
+         private void button1_Click_2(object sender, EventArgs e)
+         {
 
 
             string username = textBox1.Text;

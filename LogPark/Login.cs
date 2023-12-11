@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccesLayer;
 using System;
 using System.Windows.Forms;
 
@@ -54,7 +53,7 @@ namespace LogPark
             string password = textBox2.Text;
             password = Cryptography.Encrypt(password);
           
-            Users user = userService.AuthenticateUser(username, password);
+            var user = userService.AuthenticateUser(username, password);
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
             {

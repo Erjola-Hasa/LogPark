@@ -36,7 +36,7 @@ namespace LogPark
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
            
-            if (comboBox2.Text == "AL") 
+            if (comboBox2.Text == "SQ") 
             {
                 ChangeLanguage("sq");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
@@ -56,10 +56,11 @@ namespace LogPark
 
         private void Setting_Load(object sender, EventArgs e)
         {
-            comboBox2.Items.Add("AL");
+            comboBox2.Items.Add("SQ");
             comboBox2.Items.Add("EN");
 
             comboBox2.Text = Properties.Settings.Default.Language;
+
 
             System.Data.SqlClient.SqlConnectionStringBuilder connBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
             string ConnectionString = DataAccesLayer.Properties.Settings.Default.Connection;

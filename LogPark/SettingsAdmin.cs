@@ -52,11 +52,11 @@ namespace LogPark
         /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedItem.ToString() == "Albanian" || comboBox2.SelectedItem.ToString() == "Shqip")
+            if (comboBox2.Text == "SQ")
             {
-                ChangeLanguage("sq-AL");
+                ChangeLanguage("sq");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
-                Properties.Settings.Default.Language = "sq-AL";
+                Properties.Settings.Default.Language = "sq";
             }
 
             else
@@ -118,6 +118,23 @@ namespace LogPark
            
             int Price = priceService.GetPrice();
             textBox5.Text = Price.ToString();
+
+
+            System.Data.SqlClient.SqlConnectionStringBuilder connBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+            string ConnectionString = DataAccesLayer.Properties.Settings.Default.Connection;
+            connBuilder.ConnectionString = ConnectionString;
+            string server = connBuilder.DataSource;
+            textBox6.Text = server;
+            string database = connBuilder.InitialCatalog;
+            string userid = connBuilder.UserID;
+            textBox1.Text = database;
+            textBox4.Text = userid;
+
+
+            comboBox2.Items.Add("SQ");
+            comboBox2.Items.Add("EN");
+
+            comboBox2.Text = Properties.Settings.Default.Language;
 
         }
 

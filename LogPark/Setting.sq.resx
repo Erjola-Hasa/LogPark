@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Cilesimet</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Databasa</value>
-  </data>
-  <data name="comboBox2.Items" xml:space="preserve">
-    <value>Anglish</value>
-  </data>
-  <data name="comboBox2.Items1" xml:space="preserve">
-    <value>Shqip</value>
-  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Ruaj</value>
   </data>
@@ -145,6 +133,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Gjuha</value>
   </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Cilesimet</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Emri Serverit</value>
   </data>
@@ -157,11 +148,14 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Emri Perdoruesit</value>
   </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>Ruaj</value>
+  </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Testo</value>
   </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>Ruaj</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Databasa</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Konfigurimet</value>

@@ -35,12 +35,13 @@ namespace LogPark
         /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (comboBox2.SelectedItem.ToString() == "Albanian"|| comboBox2.SelectedItem.ToString() == "Shqip")
+           
+            if (comboBox2.Text == "AL") 
             {
-                ChangeLanguage("sq-AL");
+                ChangeLanguage("sq");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
-                Properties.Settings.Default.Language = "sq-AL";
+                Properties.Settings.Default.Language = "sq";
+                
             }
 
             else
@@ -48,8 +49,28 @@ namespace LogPark
                 ChangeLanguage("en");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
                 Properties.Settings.Default.Language = "en";
+               
             }
             Properties.Settings.Default.Save();
+        }
+
+        private void Setting_Load(object sender, EventArgs e)
+        {
+            comboBox2.Items.Add("AL");
+            comboBox2.Items.Add("EN");
+
+            comboBox2.Text = Properties.Settings.Default.Language;
+
+            System.Data.SqlClient.SqlConnectionStringBuilder connBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+            string ConnectionString = DataAccesLayer.Properties.Settings.Default.Connection;
+            connBuilder.ConnectionString = ConnectionString;
+            string server = connBuilder.DataSource;
+            textBox6.Text = server;
+            string database = connBuilder.InitialCatalog;
+            string userid = connBuilder.UserID;
+            textBox1.Text = database;
+            textBox4.Text = userid;
+
         }
 
 
@@ -158,5 +179,6 @@ namespace LogPark
 
         }
 
+        
     }
 }

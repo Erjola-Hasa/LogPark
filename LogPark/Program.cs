@@ -22,6 +22,7 @@ namespace LogPark
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SaveLanguage);
 
 
+
             if (string.IsNullOrEmpty(Connection))
             {
            

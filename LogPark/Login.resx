@@ -130,7 +130,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 199</value>
+    <value>105, 235</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 16</value>
@@ -163,7 +163,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 58</value>
+    <value>289, 70</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 21</value>
@@ -190,7 +190,7 @@
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 196</value>
+    <value>289, 232</value>
   </data>
   <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 21</value>
@@ -217,7 +217,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 279</value>
+    <value>289, 327</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 38</value>
@@ -250,7 +250,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 61</value>
+    <value>102, 73</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 16</value>
@@ -279,7 +279,7 @@
   <data name="tableLayoutPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAtYAAAGtCAYAAAAyHTNZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7svQVYVVn7xv193///f9+Zed9puxssLOyg7MCgURG7Yxx1nNJxxnG6
+        wQAADsEBuJFr7QAA/7JJREFUeF7svQVYVVn7xv193///f9+Zed9puxssLOyg7MCgURG7Yxx1nNJxxnG6
         2xi7W6S7S0JAGkEEG8Ggwftbz9pnH845bBQdxFrPdd3X3ic4Z59gn9++972e9f9AlChRokSJEiVKlChR
         /7gEWIsSJUqUKFGiRIkSVQclwFqUKFGiRIkSJUqUqDooAdaiRIkSJUqUKFGiRNVBCbAWJUqUKFGiRIkS
         JaoOSoC1KFGiRIkSJUqUKFF1UAKsRYkSJUqUKFGiRImqgxJgLUqUKFGiRIkSJUpUHZQAa1GiRIkSJUqU
@@ -2646,7 +2646,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>641, 409</value>
+    <value>740, 457</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2678,7 +2678,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMAAAADfCAYAAACgXNxJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAufxJREFUeF7s/XWgVNX/PQ4//zzP7/eNz1uluxsu3WJhF7Zidwso3d3dgrSUWIh0
+        vwAADr8BOAVTJAAAufxJREFUeF7s/XWgVNX/PQ4//zzP7/eNz1uluxsu3WJhF7Zidwso3d3dgrSUWIh0
         l0jn7b4ztzvocj1r7TNn5txhCBUUfbN1cabuzDl7r/WKXef/g1vlVvkvLrcEcKv8V5dbAvhXl988uFUu
         V24J4LoXm3TXC5cr1vv+/xX+24seOF+7VZzllgACFCddrgW+omci3AU/2ES0cJGvXQm/8V8ffL/g+039
         Z71v/ef820t/rzAKn/F/e7klgADFRzQLgWjkhFXsT/qT3yak8xt9xaa5UwL2a4L1X+G/LgyfDJx/6Ts7
@@ -3476,7 +3476,7 @@
 </value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>641, 409</value>
+    <value>740, 457</value>
   </data>
   <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>

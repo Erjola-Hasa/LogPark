@@ -1,8 +1,10 @@
 ﻿using BusinessLayer;
 using log4net;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -44,31 +46,81 @@ namespace LogPark
 
 
 
+        /// <summary>
+        /// Disctionary names  languageDisplayNames mapping language codes(sq) to display names(Albania)
+        /// </summary>
+
+        private Dictionary<string, string> languageDisplayNames = new Dictionary<string, string>
+     {
+           {"sq", "Albania"},
+           {"en", "English"},
+
+     };
 
         /// <summary>
-        /// Gets or sets the index of the selected ComboBox item(English or Albanian Language ) and save the current language 
+        /// An event handler triggered when the user    selected  language  ComboBox item(English or Albanian Language ) and save the current language in the settings
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
+
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboBox2.Text == "SQ")
             {
-                ChangeLanguage("sq");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sq");
-                Properties.Settings.Default.Language = "sq";
-            }
+                if (comboBox2.SelectedItem != null)
+                {
+                    string selectedLanguageCode = languageDisplayNames.FirstOrDefault(x => x.Value == comboBox2.SelectedItem.ToString()).Key;
 
-            else
-            {
-                ChangeLanguage("en");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-                Properties.Settings.Default.Language = "en";
+                    ChangeLanguage(selectedLanguageCode);
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(selectedLanguageCode);
+                    Properties.Settings.Default.Language = selectedLanguageCode;
+                    Properties.Settings.Default.Save();
+                }
             }
-            Properties.Settings.Default.Save();
-
         }
 
+
+
+        /// <summary>
+        /// Display the Price/Hour
+        /// Method to populate the combox with language display names during the forms load and display the database information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SettingsAdmin_Load(object sender, EventArgs e)
+        {
+
+            int Price = priceService.GetPrice();
+            textBox5.Text = Price.ToString();
+
+
+            System.Data.SqlClient.SqlConnectionStringBuilder connBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+            string ConnectionString = DataAccesLayer.Properties.Settings.Default.Connection;
+            connBuilder.ConnectionString = ConnectionString;
+            string server = connBuilder.DataSource;
+            textBox6.Text = server;
+            string database = connBuilder.InitialCatalog;
+            string userid = connBuilder.UserID;
+            textBox1.Text = database;
+            textBox4.Text = userid;
+
+
+            comboBox2.Items.AddRange(languageDisplayNames.Values.ToArray());
+            string savedLanguage = Properties.Settings.Default.Language;
+            string selectedLanguage = languageDisplayNames.ContainsKey(savedLanguage) ? languageDisplayNames[savedLanguage] : null;
+
+            if (!string.IsNullOrEmpty(selectedLanguage))
+            {
+                comboBox2.SelectedItem = selectedLanguage;
+            }
+            else
+            {
+
+                comboBox2.SelectedIndex = 0;
+            }
+
+
+        }
 
 
 
@@ -108,36 +160,7 @@ namespace LogPark
 
 
 
-        /// <summary>
-        /// Display the Price/Hour
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SettingsAdmin_Load(object sender, EventArgs e)
-        {
-           
-            int Price = priceService.GetPrice();
-            textBox5.Text = Price.ToString();
-
-
-            System.Data.SqlClient.SqlConnectionStringBuilder connBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
-            string ConnectionString = DataAccesLayer.Properties.Settings.Default.Connection;
-            connBuilder.ConnectionString = ConnectionString;
-            string server = connBuilder.DataSource;
-            textBox6.Text = server;
-            string database = connBuilder.InitialCatalog;
-            string userid = connBuilder.UserID;
-            textBox1.Text = database;
-            textBox4.Text = userid;
-
-
-            comboBox2.Items.Add("SQ");
-            comboBox2.Items.Add("EN");
-
-            comboBox2.Text = Properties.Settings.Default.Language;
-
-        }
-
+      
 
 
         /// <summary>
